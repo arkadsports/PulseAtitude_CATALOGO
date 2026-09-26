@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="o" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8C549" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#8A540B" stop-opacity=".55"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="#101010"/>
+  <g transform="translate(300 292)" stroke="url(#o)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-150 44 q4 -46 44 -58 q34 -10 62 12 l44 32 q40 22 96 30 q30 4 30 26 l0 18 q0 12 -14 12 l-248 0 q-16 0 -16 -18 z"/>
+    <path d="M-104 -2 l22 26 M-66 -18 l24 28 M-28 -30 l26 28"/>
+  </g>
+  <text x="300" y="470" text-anchor="middle" font-family="Barlow, Arial" font-size="26" letter-spacing="7" fill="#7a7a7a">SEM FOTO</text>
+</svg>

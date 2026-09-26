@@ -1,0 +1,116 @@
+/* Pulse Atitude — estilos do catálogo.
+   A paleta sai da própria logo: preto quase puro (80% da arte), o ouro em três
+   paradas — claro, médio e escuro — e o branco das letras "RUNNING · TRAINING ·
+   CASUAL". O site é escuro de propósito: é assim que a marca se apresenta. */
+
+@import 'tailwindcss';
+
+@theme {
+  /* Ouro da logo, medido na arte */
+  --color-ouro: #d7972a;
+  --color-ouro-claro: #f8c549;
+  --color-ouro-brilho: #ffe08a;
+  --color-ouro-escuro: #8a540b;
+
+  /* Pretos */
+  --color-breu: #050505;
+  --color-carvao: #0f0f0f;
+  --color-grafite: #171717;
+  --color-fio: #272727;
+
+  /* Texto */
+  --color-nevoa: #a1a1a1;
+
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  --font-sans: 'Barlow', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-breu);
+    color: #ededed;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ouro-claro);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-ouro);
+    color: #000;
+  }
+
+  /* Barra de rolagem no tom da marca, onde o navegador deixa. */
+  * {
+    scrollbar-color: var(--color-fio) transparent;
+  }
+}
+
+@layer components {
+  /* Texto em ouro escovado — usado nos títulos e no nome da marca.
+     A parada final para em #b7781a, e não no ouro mais escuro da logo: sobre
+     preto, o pé das letras sumiria. */
+  .ouro-texto {
+    background: linear-gradient(180deg, #ffe08a 0%, #f8c549 30%, #e5ab37 65%, #b7781a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ouro-fio {
+    background: linear-gradient(90deg, transparent, var(--color-ouro), transparent);
+  }
+
+  /* Botão principal: o mesmo degradê do ouro da logo, texto preto. */
+  .btn-ouro {
+    background: linear-gradient(135deg, #f8c549 0%, #d7972a 55%, #8a540b 100%);
+    color: #0a0a0a;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .btn-ouro:hover {
+    filter: brightness(1.08);
+  }
+
+  .btn-ouro:active {
+    transform: translateY(1px);
+  }
+}
+
+@layer utilities {
+  /* Faixa que corre sem parar — a frase da campanha no topo. */
+  .marquise {
+    animation: correr 38s linear infinite;
+  }
+
+  @keyframes correr {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquise {
+      animation: none;
+    }
+  }
+}

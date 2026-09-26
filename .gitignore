@@ -1,0 +1,13 @@
+node_modules
+dist
+.env
+.vercel
+# Dados brutos do fornecedor e fotos baixadas: ficam só no seu computador
+# (e no Cloudflare R2). O repositório pode ser público — o catálogo do
+# fornecedor não entra nele.
+data/raw/
+data/.lote.json
+fotos.log
+fotos.err
+public/img/
+!public/img/.gitkeep

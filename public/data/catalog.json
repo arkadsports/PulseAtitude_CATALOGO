@@ -1,0 +1,370 @@
+{
+  "generatedAt": "2026-09-26T01:46:08.237Z",
+  "demo": true,
+  "products": [
+    {
+      "id": "NK-001",
+      "name": "Pegasus 41",
+      "brand": "nike",
+      "category": "running",
+      "colorway": "Preto / Ouro",
+      "sizes": [
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "NK-002",
+      "name": "Vomero 18",
+      "brand": "nike",
+      "category": "running",
+      "colorway": "Branco / Cinza",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "NK-003",
+      "name": "Air Max 90",
+      "brand": "nike",
+      "category": "casual",
+      "colorway": "Preto / Branco",
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "ON-004",
+      "name": "Cloudmonster 2",
+      "brand": "on",
+      "category": "running",
+      "colorway": "Grafite / Coral",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "ON-005",
+      "name": "Cloudsurfer",
+      "brand": "on",
+      "category": "running",
+      "colorway": "Branco / Azul",
+      "sizes": [
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "AD-006",
+      "name": "Dropset 3",
+      "brand": "adidas",
+      "category": "training",
+      "colorway": "Preto / Lima",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "AD-007",
+      "name": "Adizero SL2",
+      "brand": "adidas",
+      "category": "running",
+      "colorway": "Azul / Branco",
+      "sizes": [
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "AD-008",
+      "name": "Samba OG",
+      "brand": "adidas",
+      "category": "casual",
+      "colorway": "Preto / Branco",
+      "sizes": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "AS-009",
+      "name": "Gel-Nimbus 27",
+      "brand": "asics",
+      "category": "running",
+      "colorway": "Azul / Prata",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "AS-010",
+      "name": "Novablast 5",
+      "brand": "asics",
+      "category": "running",
+      "colorway": "Amarelo / Preto",
+      "sizes": [
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "NB-011",
+      "name": "9060",
+      "brand": "new-balance",
+      "category": "casual",
+      "colorway": "Cinza / Creme",
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "NB-012",
+      "name": "Fresh Foam 1080 v14",
+      "brand": "new-balance",
+      "category": "running",
+      "colorway": "Preto / Cinza",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "PM-013",
+      "name": "Fuse 3.0",
+      "brand": "puma",
+      "category": "training",
+      "colorway": "Preto / Vermelho",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "PM-014",
+      "name": "Suede Classic",
+      "brand": "puma",
+      "category": "casual",
+      "colorway": "Bordô / Branco",
+      "sizes": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "MZ-015",
+      "name": "Wave Rider 28",
+      "brand": "mizuno",
+      "category": "running",
+      "colorway": "Azul / Laranja",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "MZ-016",
+      "name": "Wave Inspire 21",
+      "brand": "mizuno",
+      "category": "running",
+      "colorway": "Preto / Prata",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "VN-017",
+      "name": "Old Skool",
+      "brand": "vans",
+      "category": "casual",
+      "colorway": "Preto / Branco",
+      "sizes": [
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    },
+    {
+      "id": "VN-018",
+      "name": "Knu Skool",
+      "brand": "vans",
+      "category": "casual",
+      "colorway": "Bege / Marrom",
+      "sizes": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "photos": 4,
+      "cover": 0,
+      "price": null
+    }
+  ]
+}
