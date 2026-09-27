@@ -22,21 +22,33 @@ const MANIFEST = path.resolve('data/images.json');
 // Marcas: o slug do site e os jeitos de escrever que o fornecedor usa.
 // Mantenha alinhado com BRANDS em src/config.ts.
 // ---------------------------------------------------------------------------
+// Os nomes em chinês são os que o fornecedor usa nas categorias e nos títulos.
 const MARCAS = [
-  ['nike', ['nike', 'air jordan', 'jordan']],
-  ['on', ['on running', 'on cloud', 'oncloud']],
-  ['adidas', ['adidas', 'yeezy']],
-  ['asics', ['asics']],
-  ['new-balance', ['new balance', 'newbalance', 'nb ']],
-  ['puma', ['puma']],
-  ['mizuno', ['mizuno']],
-  ['vans', ['vans']],
+  ['nike', ['nike', 'air jordan', 'jordan', 'air force', 'dunk', '耐克', '空军']],
+  ['on', ['on running', 'on cloud', 'oncloud', '昂跑']],
+  ['adidas', ['adidas', 'yeezy', '阿迪']],
+  ['asics', ['asics', '亚瑟士']],
+  ['new-balance', ['new balance', 'newbalance', 'nb ', '新百伦']],
+  ['puma', ['puma', '彪马']],
+  ['mizuno', ['mizuno', '美津浓']],
+  ['vans', ['vans', '万斯']],
 ];
+
+// O que sai do nome do produto: só o nome da marca, nunca o do modelo
+// ("On Cloud 5" continua "Cloud 5", "Air Jordan 1" continua "Air Jordan 1").
+const MARCA_NO_NOME = ['nike', 'on running', 'adidas', 'asics', 'new balance', 'newbalance', 'puma', 'mizuno', 'vans'];
 
 // Uso. A ordem importa: a primeira que casar vence.
 const USOS = [
-  ['running', ['running', 'run ', 'corrida', 'pegasus', 'nimbus', 'novablast', 'wave rider', 'cloudmonster', 'adizero', '1080']],
-  ['training', ['training', 'trainer', 'gym', 'treino', 'crossfit', 'dropset', 'metcon']],
+  ['running', [
+    'running', 'run ', 'corrida', '跑鞋', '跑步', '马拉松',
+    'pegasus', 'vomero', 'alphafly', 'vaporfly', 'zoom fly', 'invincible', 'structure', 'streakfly',
+    'adizero', 'ultraboost', 'supernova', 'adistar', 'solarglide',
+    'nimbus', 'novablast', 'kayano', 'cumulus', 'wave rider', 'fresh foam', '1080', '880',
+    'cloudmonster', 'cloudsurfer', 'cloudflow', 'cloudrunner', 'cloudboom', 'cloudeclipse', 'cloudstratus',
+    'velocity nitro', 'deviate nitro', 'magnify nitro',
+  ]],
+  ['training', ['training', 'trainer', 'gym', 'treino', 'crossfit', 'dropset', 'metcon', '训练']],
   ['casual', ['casual', 'lifestyle', 'skate', 'retro', 'classic', 'old skool', 'samba', 'suede', 'dunk', 'force']],
 ];
 
@@ -74,7 +86,7 @@ function acharTamanhos(titulo) {
     }
   }
   // Sem faixa: pega números soltos de 33 a 46 que apareçam depois de "size"/"eur".
-  const trecho = t.split(/size|eur|tamanho/)[1];
+  const trecho = t.split(/size|eur|tamanho|尺码|码/)[1];
   if (trecho) {
     const soltos = [...trecho.matchAll(/\b(3[3-9]|4[0-6])\b/g)].map((m) => m[1]);
     if (soltos.length) return [...new Set(soltos)].sort((a, b) => Number(a) - Number(b));
@@ -82,17 +94,25 @@ function acharTamanhos(titulo) {
   return [];
 }
 
+/** Código do modelo que o fornecedor escreve depois de "货号：" — "HF3704 001". */
+function acharCodigo(titulo) {
+  const m = (titulo || '').match(/(?:货号|号)\s*[:：]?\s*([A-Z0-9]{4,}(?:[\s-][A-Z0-9]{3})?)/i);
+  return m ? m[1].replace(/\s+/g, ' ').toUpperCase() : '';
+}
+
 /** Nome do produto: tira marca, tamanhos e ruído do título do fornecedor. */
-function limparNome(titulo, marcaSlug) {
-  let n = (titulo || '').trim();
-  const apelidos = MARCAS.find(([s]) => s === marcaSlug)?.[1] ?? [];
-  for (const a of apelidos) n = n.replace(new RegExp(a.trim(), 'ig'), ' ');
+function limparNome(titulo) {
+  // Tudo depois de "尺码" (tamanho) é a grade; o resto em chinês é descrição
+  // ("舒适 织物 透气" = confortável, tecido, respirável) e não entra no nome.
+  let n = (titulo || '').split(/尺码|码数|货号|号\s*[:：]/)[0];
+  n = n.replace(/[　-〿㐀-鿿＀-￯]+/g, ' ');
+  for (const a of MARCA_NO_NOME) n = n.replace(new RegExp(`\\b${a}\\b`, 'ig'), ' ');
   n = n
     .replace(/\b(size|eur|tamanho|sizes?)\b[\s:]*[\d\s\-~–,]*/gi, ' ')
     .replace(/\b(3[0-9]|4[0-9])\s*[-~–]\s*(3[0-9]|4[0-9])\b/g, ' ')
     .replace(/[#@]\S+/g, ' ')
     .replace(/\s{2,}/g, ' ')
-    .replace(/^[\s\-–—|,.]+|[\s\-–—|,.]+$/g, '')
+    .replace(/^[\s\-–—|,.:#×]+|[\s\-–—|,.:#×]+$/g, '')
     .trim();
   return n || 'Modelo sem nome';
 }
@@ -129,6 +149,7 @@ async function main() {
       continue;
     }
 
+    const codigo = acharCodigo(a.title);
     let fotos = manifest[id] ?? 0;
     if (!fotos) {
       const lista = await ler(path.join(RAW, 'photos', `${id}.json`), []);
@@ -137,7 +158,9 @@ async function main() {
 
     products.push({
       id,
-      name: limparNome(a.title, marca),
+      // Título todo em chinês: o que sobra para identificar o par é o código.
+      name: limparNome(a.title) === 'Modelo sem nome' && codigo ? `Ref. ${codigo}` : limparNome(a.title),
+      tags: codigo ? [codigo] : [],
       brand: marca,
       category: acharUso(a.title, textoCat),
       colorway: '',
@@ -148,7 +171,9 @@ async function main() {
     });
   }
 
-  products.sort((x, y) => x.brand.localeCompare(y.brand) || x.name.localeCompare(y.name));
+  // Mais novo primeiro: o número do álbum cresce com o tempo no Yupoo, e é esta
+  // ordem que a vitrine usa em "O que chegou" e na grade.
+  products.sort((x, y) => Number(y.id) - Number(x.id));
 
   await fs.mkdir(path.dirname(SAIDA), { recursive: true });
   await fs.writeFile(

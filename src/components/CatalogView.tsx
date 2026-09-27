@@ -3,12 +3,16 @@
 //
 // Os filtros vivem na URL (?q=&marca=&eixo=&min=&max=): assim o cliente manda o
 // link do que achou e o outro lado abre exatamente a mesma lista.
-import { useMemo, type ReactNode } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SlidersHorizontal, X } from 'lucide-react';
 import ProductCard from './ProductCard';
 import { BRANDS, CATEGORIES } from '../config';
 import { normalize, priceOf, useCatalog, type Product } from '../lib/catalog';
+
+/** Quantos modelos entram na grade de cada vez. Com milhares de produtos, a
+ *  grade inteira de uma vez travaria o navegador. */
+const POR_VEZ = 48;
 
 type Props = {
   titulo: string;
@@ -80,6 +84,12 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
     }
     return m;
   }, [catalog, eixo]);
+
+  // Mudou o filtro, a grade volta para o começo.
+  const chaveFiltro = [q, marca, eixo, min, max].join('|');
+  const [pagina, setPagina] = useState({ chave: chaveFiltro, n: POR_VEZ });
+  const mostrando = pagina.chave === chaveFiltro ? pagina.n : POR_VEZ;
+  const visiveis = resultados.slice(0, mostrando);
 
   const filtrando = Boolean(q || (!marcaFixa && marca) || (!eixoFixo && eixo) || min || max);
 
@@ -209,10 +219,24 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
             {resultados.length === 1 ? 'modelo' : 'modelos'}
           </p>
           <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
-            {resultados.map((p) => (
+            {visiveis.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
+          {visiveis.length < resultados.length ? (
+            <div className="mt-10 text-center">
+              <button
+                type="button"
+                onClick={() => setPagina({ chave: chaveFiltro, n: mostrando + POR_VEZ })}
+                className="rounded-full border border-ouro px-8 py-3 text-sm font-bold uppercase tracking-wider text-ouro-claro transition-colors hover:bg-ouro hover:text-black"
+              >
+                Mostrar mais
+              </button>
+              <p className="mt-3 text-xs text-nevoa">
+                {visiveis.length} de {resultados.length}
+              </p>
+            </div>
+          ) : null}
         </>
       )}
     </div>

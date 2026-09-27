@@ -1,4 +1,4 @@
-// ETAPA 4 (quando for publicar) — Envia public/img para um bucket do Cloudflare R2.
+// ETAPA 4 (quando for publicar) — Envia a pasta das fotos (IMG_DIR, padrão public/img) para um bucket do Cloudflare R2.
 // As fotos do catálogo completo passam de alguns GB, grande demais para a Vercel.
 // O R2 tem 10 GB grátis e não cobra pelo tráfego das imagens.
 //
@@ -25,7 +25,8 @@ const s3 = new S3Client({
   endpoint: `https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
   credentials: { accessKeyId: R2_ACCESS_KEY_ID, secretAccessKey: R2_SECRET_ACCESS_KEY },
 });
-const IMG = path.resolve('public/img');
+// Pasta das fotos. IMG_DIR no .env tira do projeto (e do OneDrive) os GB de fotos.
+const IMG = path.resolve(process.env.IMG_DIR || 'public/img');
 
 async function* walk(dir) {
   for (const e of await fs.readdir(dir, { withFileTypes: true })) {

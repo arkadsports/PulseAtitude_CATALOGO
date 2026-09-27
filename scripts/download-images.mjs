@@ -1,4 +1,4 @@
-// ETAPA 3 — Baixa as fotos dos álbuns, converte para WebP e salva em public/img/<álbum>/.
+// ETAPA 3 — Baixa as fotos dos álbuns, converte para WebP e salva em IMG_DIR/<álbum>/ (padrão: public/img).
 // Para cada foto gera 2 arquivos:
 //   <n>-thumb.webp  (600 px, para a grade)
 //   <n>-full.webp   (1600 px, para a página do produto e o zoom)
@@ -7,6 +7,7 @@
 //   npm run images -- --covers         -> só a 1ª foto de cada álbum (rápido)
 //   npm run images -- --brand=nike     -> só uma marca
 //   npm run images -- --limit=50       -> só os 50 primeiros (para testar)
+//   npm run images -- --max=5          -> no máximo 5 fotos por álbum
 //
 // Depois de baixar, rode de novo: npm run build-catalog
 //
@@ -19,7 +20,8 @@ import pLimit from 'p-limit';
 
 const BASE = (process.env.YUPOO_BASE || '').replace(/\/$/, '');
 const RAW = path.resolve('data/raw');
-const IMG = path.resolve('public/img');
+// Pasta das fotos. IMG_DIR no .env tira do projeto (e do OneDrive) os GB de fotos.
+const IMG = path.resolve(process.env.IMG_DIR || 'public/img');
 const MANIFEST = path.resolve('data/images.json');
 const args = Object.fromEntries(
   process.argv
@@ -53,6 +55,15 @@ async function main() {
   const manifest = JSON.parse(await fs.readFile(MANIFEST, 'utf8').catch(() => '{}'));
   let ids = Object.keys(albums).filter((id) => !albums[id].locked);
 
+  // Só o que virou produto: álbum de marca que o site não vende não gasta disco.
+  const catalogo = JSON.parse(
+    await fs.readFile('public/data/catalog.json', 'utf8').catch(() => '{"products":[]}'),
+  );
+  if (!catalogo.demo && catalogo.products.length) {
+    const noSite = new Set(catalogo.products.map((p) => p.id));
+    ids = ids.filter((id) => noSite.has(id));
+  }
+
   if (args.brand) {
     const catalog = JSON.parse(
       await fs.readFile('public/data/catalog.json', 'utf8').catch(() => '{"products":[]}'),
@@ -78,6 +89,7 @@ async function main() {
         );
         if (!urls.length && albums[id].cover) urls = [albums[id].cover.replace(/\/(small|medium)\./, '/big.')];
         if (args.covers) urls = urls.slice(0, 1);
+        else if (args.max) urls = urls.slice(0, Number(args.max));
         const dir = path.join(IMG, id);
         await fs.mkdir(dir, { recursive: true });
 

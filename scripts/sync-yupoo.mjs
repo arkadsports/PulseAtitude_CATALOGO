@@ -61,6 +61,13 @@ async function readCategories() {
         if (cid) cats.push({ id: cid, name: $(c).text().trim(), parentId: id });
       });
   });
+  // Outro tema do Yupoo: menu plano, sem subcategorias.
+  if (!cats.length) {
+    $('ul.showheader__categoryList a').each((_, a) => {
+      const id = ($(a).attr('href') || '').match(/categories\/(\d+)/)?.[1];
+      if (id && id !== '0') cats.push({ id, name: $(a).text().trim(), parentId: null });
+    });
+  }
   return cats;
 }
 
@@ -70,7 +77,12 @@ async function readCategoryAlbums(cat) {
   const seen = new Set();
   const sub = cat.parentId ? 'true' : 'false';
   for (let page = 1; page < 200; page++) {
-    const $ = cheerio.load(await get(`${BASE}/categories/${cat.id}?isSubCate=${sub}&page=${page}`));
+    // "todos" é a lista geral: pega também os álbuns que não estão em categoria nenhuma.
+    const url =
+      cat.id === 'todos'
+        ? `${BASE}/categories?page=${page}`
+        : `${BASE}/categories/${cat.id}?isSubCate=${sub}&page=${page}`;
+    const $ = cheerio.load(await get(url));
     let added = 0;
     $('a.album__main').each((_, a) => {
       // Álbum com senha: o link fica em data-href e o título vem escondido.
@@ -120,12 +132,12 @@ async function main() {
   const limit = pLimit(2);
   let done = 0;
   await Promise.all(
-    cats.map((cat) =>
+    [...cats, { id: 'todos', name: '', parentId: null }].map((cat) =>
       limit(async () => {
         const list = await readCategoryAlbums(cat);
         for (const a of list) {
           albums[a.id] ??= { id: a.id, title: a.title, cover: a.cover, locked: a.locked, categories: [] };
-          albums[a.id].categories.push(cat.id);
+          if (cat.id !== 'todos') albums[a.id].categories.push(cat.id);
         }
         done++;
         if (done % 20 === 0) console.log(`   ${done}/${cats.length} categorias lidas`);

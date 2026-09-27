@@ -6,7 +6,7 @@ export const STORE = {
   tagline: 'Running · Training · Casual',
   /** WhatsApp com DDI + DDD, só dígitos. Ex.: '5584999999999'.
    *  Vazio = o botão abre o WhatsApp sem destinatário. PREENCHER. */
-  whatsapp: '',
+  whatsapp: '5584981045695',
   instagram: 'pulseatitude',
   leadTime: '20 a 30 dias',
 };

@@ -11,3 +11,6 @@ fotos.log
 fotos.err
 public/img/
 !public/img/.gitkeep
+# Registros das execuções e o manifesto local das fotos baixadas
+*.log
+data/images.json
