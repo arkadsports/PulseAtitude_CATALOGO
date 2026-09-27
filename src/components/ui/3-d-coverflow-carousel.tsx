@@ -7,7 +7,8 @@
 //   • "items" é obrigatório e o catálogo de pratos que vinha de exemplo saiu —
 //     quem manda as cartas é a lista de marcas em config.ts;
 //   • as distâncias encolhem no celular: com 330px fixos a carta vizinha saía
-//     da tela em telefone.
+//     da tela em telefone;
+//   • "logo" opcional: quando vem, a logo toma o lugar do título escrito.
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 const ChevronLeftIcon = () => (
@@ -34,6 +35,8 @@ export interface CarouselItem {
   titleLine2?: string;
   desc?: string;
   img: string;
+  /** Logo da marca (branca, fundo transparente). Substitui o título escrito. */
+  logo?: string;
   ctaText?: string;
   ctaUrl?: string;
 }
@@ -265,6 +268,30 @@ export function CoverFlowCarousel({
                   }}
                 />
 
+                {/* Carta lateral: só a logo, para a marca ser reconhecida de longe.
+                    Na carta do centro ela sai daqui e entra no título, abaixo. */}
+                {item.logo ? (
+                  <img
+                    src={item.logo}
+                    alt=""
+                    aria-hidden
+                    style={{
+                      position: 'absolute',
+                      left: '50%',
+                      bottom: '22%',
+                      transform: 'translateX(-50%)',
+                      height: '64px',
+                      maxWidth: '70%',
+                      objectFit: 'contain',
+                      zIndex: 15,
+                      opacity: isCenter ? 0 : 0.85,
+                      transition: 'opacity 500ms ease',
+                      filter: 'drop-shadow(0 3px 10px rgba(0,0,0,0.9))',
+                      pointerEvents: 'none',
+                    }}
+                  />
+                ) : null}
+
                 <div
                   style={{
                     position: 'relative',
@@ -319,7 +346,22 @@ export function CoverFlowCarousel({
                         textShadow: '0 3px 12px rgba(0,0,0,0.95)',
                       }}
                     >
-                      {item.titleLine1}
+                      {item.logo ? (
+                        <img
+                          src={item.logo}
+                          alt={item.titleLine1}
+                          style={{
+                            display: 'block',
+                            height: '64px',
+                            maxWidth: '220px',
+                            objectFit: 'contain',
+                            margin: '0 auto 6px',
+                            filter: 'drop-shadow(0 3px 10px rgba(0,0,0,0.9))',
+                          }}
+                        />
+                      ) : (
+                        item.titleLine1
+                      )}
                     </h2>
 
                     {item.titleLine2 && (

@@ -50,8 +50,14 @@ async function apagarComTentativas(p) {
 
 const files = [];
 for await (const f of walk(IMG)) if (f.endsWith('.webp')) files.push(f);
+// Primeiro a capa de todo mundo, do álbum mais novo ao mais antigo (a ordem da
+// vitrine); depois as outras miniaturas, e por último as fotos grandes. Assim a
+// grade enche de foto antes, mesmo com o envio pela metade.
+const peso = (f) => (path.basename(f) === '0-thumb.webp' ? 0 : f.endsWith('-thumb.webp') ? 1 : 2);
+const album = (f) => Number(path.basename(path.dirname(f))) || 0;
+files.sort((a, b) => peso(a) - peso(b) || album(b) - album(a));
 console.log(`${files.length} arquivos para conferir/enviar${APAGAR ? ' (apagando o local depois)' : ''}...`);
-const limit = pLimit(8);
+const limit = pLimit(24);
 let sent = 0, skipped = 0, apagados = 0, falhas = 0, travados = 0;
 
 await Promise.all(files.map((f) => limit(async () => {

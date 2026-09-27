@@ -16,6 +16,7 @@ export default function Hero({ modelos }: { modelos: number }) {
         titleLine2: b.tagline,
         desc: b.blurb,
         img: b.hero,
+        logo: b.logo,
         ctaText: `Ver ${b.name}`,
         ctaUrl: `/marca/${b.slug}`,
       })),

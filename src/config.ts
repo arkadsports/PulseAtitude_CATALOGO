@@ -64,6 +64,8 @@ export type Brand = {
   /** Foto da carta: alguém usando o tênis da marca.
    *  Troque por foto de verdade em public/hero/<slug>.jpg e atualize aqui. */
   hero: string;
+  /** Logo em branco, fundo transparente, para as cartas do carrossel. */
+  logo: string;
 };
 
 export const BRANDS: Brand[] = [
@@ -74,6 +76,7 @@ export const BRANDS: Brand[] = [
     tagline: 'A PASSADA',
     blurb: 'que não pede licença',
     hero: '/hero/nike.svg',
+    logo: '/marcas/nike.png',
   },
   {
     slug: 'on',
@@ -82,6 +85,7 @@ export const BRANDS: Brand[] = [
     tagline: 'LEVEZA SUÍÇA',
     blurb: 'feita para o asfalto',
     hero: '/hero/on.svg',
+    logo: '/marcas/on.png',
   },
   {
     slug: 'adidas',
@@ -90,6 +94,7 @@ export const BRANDS: Brand[] = [
     tagline: 'DO AQUECIMENTO',
     blurb: 'ao último movimento',
     hero: '/hero/adidas.svg',
+    logo: '/marcas/adidas.png',
   },
   {
     slug: 'asics',
@@ -98,6 +103,7 @@ export const BRANDS: Brand[] = [
     tagline: 'AMORTECIMENTO',
     blurb: 'de quem corre de verdade',
     hero: '/hero/asics.svg',
+    logo: '/marcas/asics.png',
   },
   {
     slug: 'new-balance',
@@ -106,6 +112,7 @@ export const BRANDS: Brand[] = [
     tagline: 'O CLÁSSICO',
     blurb: 'que combina com tudo',
     hero: '/hero/new-balance.svg',
+    logo: '/marcas/new-balance.png',
   },
   {
     slug: 'puma',
@@ -114,6 +121,7 @@ export const BRANDS: Brand[] = [
     tagline: 'EXPLOSÃO',
     blurb: 'em cada apoio',
     hero: '/hero/puma.svg',
+    logo: '/marcas/puma.png',
   },
   {
     slug: 'mizuno',
@@ -122,6 +130,7 @@ export const BRANDS: Brand[] = [
     tagline: 'ESTABILIDADE',
     blurb: 'quilômetro após quilômetro',
     hero: '/hero/mizuno.svg',
+    logo: '/marcas/mizuno.png',
   },
   {
     slug: 'vans',
@@ -130,6 +139,7 @@ export const BRANDS: Brand[] = [
     tagline: 'ATITUDE',
     blurb: 'desde sempre',
     hero: '/hero/vans.svg',
+    logo: '/marcas/vans.png',
   },
 ];
 

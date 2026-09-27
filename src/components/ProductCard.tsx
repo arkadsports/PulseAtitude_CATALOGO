@@ -11,11 +11,12 @@ export default function ProductCard({ product }: { product: Product }) {
   const eixo = CATEGORIES.find((c) => c.slug === product.category)?.name;
 
   // "relative" com "hover:z-10": a carta cresce 5% ao passar o mouse e não pode
-  // ficar por baixo da vizinha.
+  // ficar por baixo da vizinha. "w-full max-w-[340px]": a grade centraliza o
+  // item, e sem largura própria o link encolhe e a carta (w-full) some com ele.
   return (
     <Link
       to={`/produto/${product.id}`}
-      className="relative block rounded-3xl hover:z-10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ouro-claro"
+      className="relative block w-full max-w-[340px] rounded-3xl hover:z-10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ouro-claro"
       aria-label={`${marca?.name ?? ''} ${product.name}`}
     >
       <InteractiveProductCard
