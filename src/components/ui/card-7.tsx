@@ -6,6 +6,7 @@
 //   • "photos" manda no número de bolinhas, que antes era fixo em 4;
 //   • "sizes" desenha os tamanhos disponíveis, que é o que o cliente procura;
 //   • o preço usa o ouro da marca e aceita "Sob consulta";
+//   • a foto fica no plano da carta (no original, atrás do fundo dela);
 //   • "fallbackUrl" troca a foto que não carregou — o catálogo entra no ar
 //     antes de todas as fotos subirem, e carta sem imagem fica quebrada.
 import * as React from 'react';
@@ -91,7 +92,9 @@ export function InteractiveProductCard({
       )}
       {...props}
     >
-      {/* Foto — cresce um pouco para não mostrar a borda quando inclina. */}
+      {/* Foto. No original ela ia para translateZ(-20px) e, com preserve-3d,
+          ficava atrás do fundo da própria carta — só a borda aparecia. Fica no
+          plano da carta; a profundidade vem do conteúdo, que sai para a frente. */}
       <img
         src={src}
         alt={title}
@@ -99,8 +102,7 @@ export function InteractiveProductCard({
         onError={() => {
           if (fallbackUrl && src !== fallbackUrl) setSrc(fallbackUrl);
         }}
-        className="absolute inset-0 h-full w-full object-cover rounded-3xl transition-transform duration-300 group-hover:scale-110"
-        style={{ transform: 'translateZ(-20px) scale(1.1)' }}
+        className="absolute inset-0 h-full w-full object-cover rounded-3xl"
       />
       {/* Véu escuro: o texto tem de ler sobre qualquer foto. */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/40 rounded-3xl" />
