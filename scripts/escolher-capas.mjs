@@ -1,10 +1,12 @@
 // ETAPA 3b — Escolhe a foto de capa de cada produto: nunca a sola.
 //
 // O fornecedor abre quase todo álbum pela sola (foto 0) e segue com o tênis de
-// lado (foto 1). A regra parte disso — a capa é a foto 1 — e só volta para a
-// foto 0 quando um modelo de visão (CLIP, rodando aqui no computador) tem
-// certeza das duas coisas: a foto 1 parece MUITO mais sola que a 0, e a 0
-// claramente não é sola. É o álbum que o fornecedor montou ao contrário.
+// lado (foto 1). A regra parte disso — a capa é a foto 1 — e só foge dela
+// quando um modelo de visão (CLIP, rodando aqui no computador) acha que a
+// foto 1 é a sola: ela parece MUITO mais sola que a 0, e a 0 não parece.
+// Aí a capa vai para a foto 2, que nesses álbuns é quase sempre o tênis de
+// cima ou de lado. (Ir para a foto 0 errava: em ~1/5 desses casos a 0 também
+// era sola, e o modelo é que tinha se enganado.)
 //
 // Por que não deixar o modelo decidir sozinho: em tênis de uma cor só (todo
 // preto, todo vermelho) ele não distingue sola de lateral e errava ~3% das
@@ -27,11 +29,11 @@ const NOTAS = path.resolve('data/capas-notas.json');
 const SOLA = 'the underside of a shoe showing the rubber outsole';
 const ROTULOS = [SOLA, 'a shoe'];
 
-/** A regra: [nota de sola da foto 0, da foto 1] -> índice da capa. */
-function capa([s0, s1]) {
-  const foto1ESola = s1 - s0 > 0.2;
-  const foto0NaoESola = s0 < 0.2;
-  return foto1ESola && foto0NaoESola ? 0 : 1;
+/** A regra: [nota de sola da foto 0, da foto 1] e quantas fotos -> índice da capa. */
+function capa([s0, s1], fotos) {
+  const foto1ESola = s1 - s0 > 0.2 && s0 < 0.2;
+  if (!foto1ESola) return 1;
+  return fotos >= 3 ? 2 : 0;
 }
 
 const catalogo = JSON.parse(await fs.readFile('public/data/catalog.json', 'utf8'));
@@ -69,7 +71,7 @@ if (pendentes.length) {
 }
 
 const capas = {};
-for (const p of comDuas) capas[p.id] = capa(notas[p.id]);
+for (const p of comDuas) capas[p.id] = capa(notas[p.id], p.photos);
 await fs.writeFile(SAIDA, JSON.stringify(capas));
-const naZero = Object.values(capas).filter((i) => i === 0).length;
-console.log(`Pronto: ${Object.keys(capas).length} capas, ${naZero} ficam na foto 0. Agora: npm run build-catalog`);
+const fora = Object.values(capas).filter((i) => i !== 1).length;
+console.log(`Pronto: ${Object.keys(capas).length} capas, ${fora} fora da foto 1. Agora: npm run build-catalog`);
