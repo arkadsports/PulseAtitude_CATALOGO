@@ -146,6 +146,6 @@ export const SIZES = ['33', '34', '35', '36', '37', '38', '39', '40', '41', '42'
 // Em produção, a URL pública do bucket no Cloudflare R2 — que é endereço
 // público mesmo, não é segredo. Fica em VITE_IMAGE_BASE na Vercel.
 // ---------------------------------------------------------------------------
-const R2 = '';
+const R2 = 'https://pub-dbd133e902ba4341b7a171c127db6fdb.r2.dev';
 export const IMAGE_BASE =
   (import.meta.env.VITE_IMAGE_BASE as string | undefined)?.replace(/\/$/, '') || R2 || '/img';
