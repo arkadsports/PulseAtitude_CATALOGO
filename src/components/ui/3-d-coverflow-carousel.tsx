@@ -8,7 +8,8 @@
 //     quem manda as cartas é a lista de marcas em config.ts;
 //   • as distâncias encolhem no celular: com 330px fixos a carta vizinha saía
 //     da tela em telefone;
-//   • "logo" opcional: quando vem, a logo toma o lugar do título escrito.
+//   • "logo" opcional: quando vem, a logo toma o lugar do título escrito;
+//   • "credit" opcional: linha discreta com o autor da foto (licenças CC BY-SA).
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 const ChevronLeftIcon = () => (
@@ -37,6 +38,9 @@ export interface CarouselItem {
   img: string;
   /** Logo da marca (branca, fundo transparente). Substitui o título escrito. */
   logo?: string;
+  /** Crédito da foto, "Foto: Fulano · CC BY-SA 4.0"; vira link se houver creditUrl. */
+  credit?: string;
+  creditUrl?: string;
   ctaText?: string;
   ctaUrl?: string;
 }
@@ -309,7 +313,36 @@ export function CoverFlowCarousel({
                     pointerEvents: isCenter ? 'auto' : 'none',
                   }}
                 >
-                  <div style={{ textAlign: 'right', width: '100%', paddingRight: '4px' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      justifyContent: 'space-between',
+                      gap: '8px',
+                      width: '100%',
+                      paddingRight: '4px',
+                    }}
+                  >
+                    {item.credit ? (
+                      <a
+                        href={item.creditUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          maxWidth: '65%',
+                          textAlign: 'left',
+                          fontSize: '0.62rem',
+                          lineHeight: 1.25,
+                          color: 'rgba(255,255,255,0.55)',
+                          textDecoration: 'none',
+                          textShadow: '0 1px 4px rgba(0,0,0,0.9)',
+                        }}
+                      >
+                        {item.credit}
+                      </a>
+                    ) : (
+                      <span />
+                    )}
                     <span
                       style={{
                         display: 'inline-block',

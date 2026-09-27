@@ -17,6 +17,8 @@ export default function Hero({ modelos }: { modelos: number }) {
         desc: b.blurb,
         img: b.hero,
         logo: b.logo,
+        credit: b.heroCredito ? `Foto: ${b.heroCredito.autor} · ${b.heroCredito.licenca}` : undefined,
+        creditUrl: b.heroCredito?.url,
         ctaText: `Ver ${b.name}`,
         ctaUrl: `/marca/${b.slug}`,
       })),

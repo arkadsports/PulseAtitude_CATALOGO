@@ -35,11 +35,13 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
   lista que alimenta ao mesmo tempo o carrossel da abertura, a página
   `/marcas` e os chips do filtro. Para acrescentar marca, mexa **só ali**.
 
-- **As artes das marcas são provisórias.** `public/hero/<slug>.svg` são
-  desenhos feitos aqui para o carrossel não nascer vazio. Troque por foto de
-  verdade — alguém correndo com o tênis da marca — e atualize o campo `hero`
-  em `src/config.ts` para `/hero/nike.jpg`. O formato que melhor cai na carta
-  é retrato, perto de 2:3.
+- **As fotos das cartas de marca são de licença livre.** `public/hero/<slug>.webp`
+  (660×990, retrato 2:3) saíram do Wikimedia Commons: alguém usando o tênis ou o
+  modelo mais conhecido da marca. As CC BY-SA pedem crédito ao autor — ele está
+  em `heroCredito`, em `src/config.ts`, e aparece discreto no alto da carta.
+  CC0 não pede nada. Foto de campanha da própria marca tem direito autoral: não
+  use sem autorização. As logos, em `public/marcas/<slug>.png`, são brancas com
+  fundo transparente.
 
 - **Os filtros moram na URL.** `?q=&marca=&eixo=&min=&max=`. O cliente manda o
   link do que achou e o outro lado abre exatamente a mesma lista. É também o
@@ -156,7 +158,6 @@ VITE_IMAGE_BASE = https://pub-xxxxxxxx.r2.dev
   WhatsApp sem destinatário: a mensagem vai pronta, mas o cliente escolhe para
   quem mandar. Ponha o número com DDI e DDD, só dígitos (`5584999999999`).
 - `STORE.instagram` está como `pulseatitude` — confira.
-- Fotos de verdade em `public/hero/` para as cartas do carrossel.
 - Preços, quando houver.
 
 ## Como está organizado

@@ -61,9 +61,11 @@ export type Brand = {
   tagline: string;
   /** Linha de apoio da carta. */
   blurb: string;
-  /** Foto da carta: alguém usando o tênis da marca.
-   *  Troque por foto de verdade em public/hero/<slug>.jpg e atualize aqui. */
+  /** Foto da carta: alguém usando o tênis da marca ou o modelo mais conhecido.
+   *  Retrato 2:3 (660×990), em public/hero/<slug>.webp. */
   hero: string;
+  /** Crédito da foto, quando a licença pede (CC BY-SA). CC0 não pede. */
+  heroCredito?: { autor: string; licenca: string; url: string };
   /** Logo em branco, fundo transparente, para as cartas do carrossel. */
   logo: string;
 };
@@ -75,7 +77,7 @@ export const BRANDS: Brand[] = [
     category: 'running',
     tagline: 'A PASSADA',
     blurb: 'que não pede licença',
-    hero: '/hero/nike.svg',
+    hero: '/hero/nike.webp',
     logo: '/marcas/nike.png',
   },
   {
@@ -84,7 +86,8 @@ export const BRANDS: Brand[] = [
     category: 'running',
     tagline: 'LEVEZA SUÍÇA',
     blurb: 'feita para o asfalto',
-    hero: '/hero/on.svg',
+    hero: '/hero/on.webp',
+    heroCredito: { autor: 'Matti Blume', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:OutDoor_2018,_Friedrichshafen_(1X7A0305).jpg' },
     logo: '/marcas/on.png',
   },
   {
@@ -93,7 +96,8 @@ export const BRANDS: Brand[] = [
     category: 'training',
     tagline: 'DO AQUECIMENTO',
     blurb: 'ao último movimento',
-    hero: '/hero/adidas.svg',
+    hero: '/hero/adidas.webp',
+    heroCredito: { autor: 'Ksharks2', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Adidas_Samba_original_sneaker_March-_2024.jpg' },
     logo: '/marcas/adidas.png',
   },
   {
@@ -102,7 +106,8 @@ export const BRANDS: Brand[] = [
     category: 'running',
     tagline: 'AMORTECIMENTO',
     blurb: 'de quem corre de verdade',
-    hero: '/hero/asics.svg',
+    hero: '/hero/asics.webp',
+    heroCredito: { autor: 'Petar Milošević', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Human_running_gait_-_terminal_swing_to_heel_strike_(runner_with_Asics_Metaspeed_Edge_Paris_-_2024_Ljubljana_Marathon).jpg' },
     logo: '/marcas/asics.png',
   },
   {
@@ -111,7 +116,7 @@ export const BRANDS: Brand[] = [
     category: 'casual',
     tagline: 'O CLÁSSICO',
     blurb: 'que combina com tudo',
-    hero: '/hero/new-balance.svg',
+    hero: '/hero/new-balance.webp',
     logo: '/marcas/new-balance.png',
   },
   {
@@ -120,7 +125,7 @@ export const BRANDS: Brand[] = [
     category: 'training',
     tagline: 'EXPLOSÃO',
     blurb: 'em cada apoio',
-    hero: '/hero/puma.svg',
+    hero: '/hero/puma.webp',
     logo: '/marcas/puma.png',
   },
   {
@@ -129,7 +134,8 @@ export const BRANDS: Brand[] = [
     category: 'running',
     tagline: 'ESTABILIDADE',
     blurb: 'quilômetro após quilômetro',
-    hero: '/hero/mizuno.svg',
+    hero: '/hero/mizuno.webp',
+    heroCredito: { autor: 'Ssu', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Mizuno_Wave_Horizon_5_running_shoe.jpg' },
     logo: '/marcas/mizuno.png',
   },
   {
@@ -138,7 +144,8 @@ export const BRANDS: Brand[] = [
     category: 'casual',
     tagline: 'ATITUDE',
     blurb: 'desde sempre',
-    hero: '/hero/vans.svg',
+    hero: '/hero/vans.webp',
+    heroCredito: { autor: 'Downtowngal', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Vans_sneakers_and_socks.jpg' },
     logo: '/marcas/vans.png',
   },
 ];
