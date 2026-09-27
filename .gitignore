@@ -14,3 +14,6 @@ public/img/
 # Registros das execuções e o manifesto local das fotos baixadas
 *.log
 data/images.json
+data/capas.json
+data/capas-notas.json
+data/cores.json

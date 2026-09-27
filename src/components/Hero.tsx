@@ -1,29 +1,11 @@
-// Abertura: a pergunta da campanha, os três eixos e o carrossel de marcas.
-// Cada carta do carrossel é uma marca e leva para o catálogo já filtrado nela.
-import { useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { CoverFlowCarousel, type CarouselItem } from './ui/3-d-coverflow-carousel';
-import { BRANDS, CATEGORIES, COPY } from '../config';
+// Abertura: a pergunta da campanha, compacta, e logo abaixo a galeria de
+// marcas (a sanfona do catálogo da Arkad) com os modelos da marca aberta.
+// Depois, os três eixos.
+import { Link } from 'react-router-dom';
+import BrandGallery from './BrandGallery';
+import { CATEGORIES, COPY } from '../config';
 
 export default function Hero({ modelos }: { modelos: number }) {
-  const navigate = useNavigate();
-
-  const cartas = useMemo<CarouselItem[]>(
-    () =>
-      BRANDS.map((b) => ({
-        tag: `#${CATEGORIES.find((c) => c.slug === b.category)?.name ?? b.category}`,
-        titleLine1: b.name,
-        titleLine2: b.tagline,
-        desc: b.blurb,
-        img: b.hero,
-        logo: b.logo,
-        credit: b.heroCredito ? `Foto: ${b.heroCredito.autor} · ${b.heroCredito.licenca}` : undefined,
-        creditUrl: b.heroCredito?.url,
-        ctaText: `Ver ${b.name}`,
-        ctaUrl: `/marca/${b.slug}`,
-      })),
-    [],
-  );
 
   return (
     <>
@@ -38,44 +20,46 @@ export default function Hero({ modelos }: { modelos: number }) {
           }}
         />
 
-        <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:py-28">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.45em] text-ouro sm:text-sm">
+        <div className="relative mx-auto max-w-4xl px-4 py-8 text-center sm:py-12">
+          <p className="font-display text-[11px] font-bold uppercase tracking-[0.4em] text-ouro sm:text-xs">
             {COPY.eixos}
           </p>
 
-          <h1 className="ouro-texto mt-6 font-display text-[clamp(2.4rem,8vw,5.5rem)] font-black uppercase leading-[0.95] tracking-tight">
+          <h1 className="ouro-texto mt-3 font-display text-[clamp(1.7rem,4.6vw,3.1rem)] font-black uppercase leading-[0.95] tracking-tight">
             {COPY.manchete}
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
             {COPY.submanchete}
           </p>
 
-          <div className="mx-auto mt-8 h-px w-40 ouro-fio" />
+          <div className="mx-auto mt-5 h-px w-32 ouro-fio" />
 
-          <p className="mt-8 font-display text-xl font-extrabold uppercase tracking-[0.12em] text-white sm:text-2xl">
+          <p className="mt-5 font-display text-base font-extrabold uppercase tracking-[0.12em] text-white sm:text-lg">
             {COPY.atitude}
           </p>
-          <p className="mt-2 text-sm uppercase tracking-[0.25em] text-nevoa">{COPY.atributos}</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.25em] text-nevoa">{COPY.atributos}</p>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link to="/catalogo" className="btn-ouro rounded-full px-8 py-3.5 text-sm">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link to="/catalogo" className="btn-ouro rounded-full px-6 py-2.5 text-xs">
               Ver o catálogo
             </Link>
             <Link
               to="/marcas"
-              className="rounded-full border border-fio px-8 py-3.5 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:border-ouro hover:text-ouro-claro"
+              className="rounded-full border border-fio px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-ouro hover:text-ouro-claro"
             >
               Escolher por marca
             </Link>
           </div>
 
-          <p className="mt-8 text-xs uppercase tracking-[0.3em] text-nevoa">
+          <p className="mt-5 text-[11px] uppercase tracking-[0.3em] text-nevoa">
             {modelos > 0 ? `${modelos} modelos · ` : ''}
             {COPY.entrega}
           </p>
         </div>
       </section>
+
+      <BrandGallery />
 
       {/* Os três eixos, em faixa */}
       <section className="border-b border-fio bg-carvao">
@@ -94,13 +78,6 @@ export default function Hero({ modelos }: { modelos: number }) {
           ))}
         </div>
       </section>
-
-      {/* Carrossel de marcas */}
-      <CoverFlowCarousel
-        items={cartas}
-        sectionLabel="Escolha pela marca"
-        onCtaClick={(item) => item.ctaUrl && navigate(item.ctaUrl)}
-      />
     </>
   );
 }

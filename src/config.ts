@@ -92,7 +92,7 @@ export const BRANDS: Brand[] = [
   },
   {
     slug: 'adidas',
-    name: 'adidas',
+    name: 'Adidas',
     category: 'training',
     tagline: 'DO AQUECIMENTO',
     blurb: 'ao último movimento',
@@ -151,6 +151,25 @@ export const BRANDS: Brand[] = [
 ];
 
 export const brandBySlug = new Map(BRANDS.map((b) => [b.slug, b]));
+
+// ---------------------------------------------------------------------------
+// Cores — saem da foto de capa (scripts/cores.mjs) e viram o filtro "Cor".
+// A bolinha usa "hex"; o slug é o que fica no catálogo e na URL (?cor=azul).
+// ---------------------------------------------------------------------------
+export const COLORS: { slug: string; name: string; hex: string }[] = [
+  { slug: 'preto', name: 'Preto', hex: '#111111' },
+  { slug: 'branco', name: 'Branco', hex: '#F5F5F5' },
+  { slug: 'cinza', name: 'Cinza', hex: '#8E8E8E' },
+  { slug: 'bege', name: 'Bege', hex: '#D9C3A0' },
+  { slug: 'marrom', name: 'Marrom', hex: '#6F4A2E' },
+  { slug: 'vermelho', name: 'Vermelho', hex: '#D32F2F' },
+  { slug: 'rosa', name: 'Rosa', hex: '#F28DB2' },
+  { slug: 'laranja', name: 'Laranja', hex: '#F57C00' },
+  { slug: 'amarelo', name: 'Amarelo', hex: '#F4D03F' },
+  { slug: 'verde', name: 'Verde', hex: '#2E9E5B' },
+  { slug: 'azul', name: 'Azul', hex: '#1E6FD9' },
+  { slug: 'roxo', name: 'Roxo', hex: '#7B4BC4' },
+];
 
 // ---------------------------------------------------------------------------
 // Grade de tamanhos (BR). O produto declara quais tem; a página só oferece

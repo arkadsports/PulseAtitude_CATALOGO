@@ -13,6 +13,8 @@ export type Product = {
   category: CategorySlug;
   /** Cor da peça, do jeito que o cliente enxerga: "Preto / Ouro". */
   colorway?: string;
+  /** Slugs de COLORS (config.ts), da cor que mais aparece para a que menos. */
+  colors?: string[];
   /** Tamanhos que existem. Só estes aparecem na página. */
   sizes: string[];
   /** Quantas fotos existem no bucket para este produto. */

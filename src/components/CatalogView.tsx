@@ -1,18 +1,23 @@
 // A grade do catálogo com os filtros. É a mesma tela para /catalogo, /marca/:slug,
 // /categoria/:slug e /busca — muda só o que já vem escolhido.
 //
-// Os filtros vivem na URL (?q=&marca=&eixo=&min=&max=): assim o cliente manda o
-// link do que achou e o outro lado abre exatamente a mesma lista.
+// Os filtros vivem na URL (?q=&marca=&eixo=&cor=&min=&max=): assim o cliente
+// manda o link do que achou e o outro lado abre exatamente a mesma lista.
+//
+// Sem marca escolhida, o resultado vem separado por marca — uma faixa para
+// cada, com os primeiros modelos e "Ver todos". Com marca, a grade inteira.
 import { useMemo, useState, type ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SlidersHorizontal, X } from 'lucide-react';
 import ProductCard from './ProductCard';
-import { BRANDS, CATEGORIES } from '../config';
+import { BRANDS, CATEGORIES, COLORS, type Brand } from '../config';
 import { normalize, priceOf, useCatalog, type Product } from '../lib/catalog';
 
 /** Quantos modelos entram na grade de cada vez. Com milhares de produtos, a
  *  grade inteira de uma vez travaria o navegador. */
 const POR_VEZ = 48;
+/** Modelos de cada marca na visão separada por marca (duas fileiras). */
+const POR_MARCA = 8;
 
 type Props = {
   titulo: string;
@@ -30,6 +35,7 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
   const q = params.get('q') ?? '';
   const marca = marcaFixa ?? params.get('marca') ?? '';
   const eixo = eixoFixo ?? params.get('eixo') ?? '';
+  const cor = params.get('cor') ?? '';
   const min = params.get('min') ?? '';
   const max = params.get('max') ?? '';
 
@@ -56,6 +62,7 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
     return catalog.products.filter((p) => {
       if (marca && p.brand !== marca) return false;
       if (eixo && p.category !== eixo) return false;
+      if (cor && !(p.colors ?? []).includes(cor)) return false;
 
       if (palavras.length) {
         const nomeMarca = BRANDS.find((b) => b.slug === p.brand)?.name ?? p.brand;
@@ -73,25 +80,49 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
 
       return true;
     });
-  }, [catalog, q, marca, eixo, min, max]);
+  }, [catalog, q, marca, eixo, cor, min, max]);
 
-  // Contagem por marca, para mostrar ao lado do nome no filtro.
+  // Contagens para mostrar ao lado de cada opção do filtro.
   const porMarca = useMemo(() => {
     const m = new Map<string, number>();
     for (const p of catalog.products) {
       if (eixo && p.category !== eixo) continue;
+      if (cor && !(p.colors ?? []).includes(cor)) continue;
       m.set(p.brand, (m.get(p.brand) ?? 0) + 1);
     }
     return m;
-  }, [catalog, eixo]);
+  }, [catalog, eixo, cor]);
+
+  const porCor = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const p of catalog.products) {
+      if (marca && p.brand !== marca) continue;
+      if (eixo && p.category !== eixo) continue;
+      for (const c of p.colors ?? []) m.set(c, (m.get(c) ?? 0) + 1);
+    }
+    return m;
+  }, [catalog, marca, eixo]);
+
+  // Separado por marca, na ordem de BRANDS; marca sem resultado não aparece.
+  const porMarcaNaGrade = useMemo(
+    () =>
+      BRANDS.map((b) => ({ marca: b, produtos: resultados.filter((p) => p.brand === b.slug) })).filter(
+        (g) => g.produtos.length > 0,
+      ),
+    [resultados],
+  );
+  const verMarca = (slug: string) => {
+    mexer('marca', slug);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Mudou o filtro, a grade volta para o começo.
-  const chaveFiltro = [q, marca, eixo, min, max].join('|');
+  const chaveFiltro = [q, marca, eixo, cor, min, max].join('|');
   const [pagina, setPagina] = useState({ chave: chaveFiltro, n: POR_VEZ });
   const mostrando = pagina.chave === chaveFiltro ? pagina.n : POR_VEZ;
   const visiveis = resultados.slice(0, mostrando);
 
-  const filtrando = Boolean(q || (!marcaFixa && marca) || (!eixoFixo && eixo) || min || max);
+  const filtrando = Boolean(q || (!marcaFixa && marca) || (!eixoFixo && eixo) || cor || min || max);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10">
@@ -169,6 +200,30 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
           </fieldset>
         )}
 
+        {/* Cor — sai da foto de capa de cada produto. Sem cor no catálogo, some. */}
+        {porCor.size === 0 && !cor ? null : (
+        <fieldset className="mt-4">
+          <legend className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-nevoa">Cor</legend>
+          {/* Quebra linha em vez de rolar: com 12 cores, a escolhida sumia à direita. */}
+          <div className="flex flex-wrap gap-2 pb-1">
+            <Chip ativo={cor === ''} onClick={() => mexer('cor', '')}>
+              Todas
+            </Chip>
+            {COLORS.filter((c) => (porCor.get(c.slug) ?? 0) > 0 || cor === c.slug).map((c) => (
+              <Chip key={c.slug} ativo={cor === c.slug} onClick={() => mexer('cor', cor === c.slug ? '' : c.slug)}>
+                <span
+                  aria-hidden
+                  className="mr-1.5 inline-block h-3 w-3 rounded-full align-[-1px] ring-1 ring-white/30"
+                  style={{ backgroundColor: c.hex }}
+                />
+                {c.name}
+                <small className="ml-1.5 opacity-60">{porCor.get(c.slug) ?? 0}</small>
+              </Chip>
+            ))}
+          </div>
+        </fieldset>
+        )}
+
         {/* Preço — o campo existe desde já; liga sozinho quando houver preço. */}
         <fieldset className="mt-4">
           <legend className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-nevoa">Preço</legend>
@@ -217,29 +272,82 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
           <p className="mb-5 text-sm text-nevoa">
             <strong className="text-white">{resultados.length}</strong>{' '}
             {resultados.length === 1 ? 'modelo' : 'modelos'}
+            {marca ? null : <> em {porMarcaNaGrade.length} {porMarcaNaGrade.length === 1 ? 'marca' : 'marcas'}</>}
           </p>
-          <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
-            {visiveis.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-          {visiveis.length < resultados.length ? (
-            <div className="mt-10 text-center">
-              <button
-                type="button"
-                onClick={() => setPagina({ chave: chaveFiltro, n: mostrando + POR_VEZ })}
-                className="rounded-full border border-ouro px-8 py-3 text-sm font-bold uppercase tracking-wider text-ouro-claro transition-colors hover:bg-ouro hover:text-black"
-              >
-                Mostrar mais
-              </button>
-              <p className="mt-3 text-xs text-nevoa">
-                {visiveis.length} de {resultados.length}
-              </p>
+          {marca ? (
+            <>
+              <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
+                {visiveis.map((p) => (
+                  <ProductCard key={p.id} product={p} />
+                ))}
+              </div>
+              {visiveis.length < resultados.length ? (
+                <div className="mt-10 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setPagina({ chave: chaveFiltro, n: mostrando + POR_VEZ })}
+                    className="rounded-full border border-ouro px-8 py-3 text-sm font-bold uppercase tracking-wider text-ouro-claro transition-colors hover:bg-ouro hover:text-black"
+                  >
+                    Mostrar mais
+                  </button>
+                  <p className="mt-3 text-xs text-nevoa">
+                    {visiveis.length} de {resultados.length}
+                  </p>
+                </div>
+              ) : null}
+            </>
+          ) : (
+            <div className="space-y-14">
+              {porMarcaNaGrade.map(({ marca: b, produtos }) => (
+                <FaixaDaMarca key={b.slug} marca={b} produtos={produtos} onVerTodos={() => verMarca(b.slug)} />
+              ))}
             </div>
-          ) : null}
+          )}
         </>
       )}
     </div>
+  );
+}
+
+/** Uma marca na visão separada: logo, contagem, os primeiros modelos e "Ver todos". */
+function FaixaDaMarca({
+  marca,
+  produtos,
+  onVerTodos,
+}: {
+  marca: Brand;
+  produtos: Product[];
+  onVerTodos: () => void;
+}) {
+  const sobra = produtos.length - POR_MARCA;
+  return (
+    <section aria-label={marca.name}>
+      <header className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-fio pb-4">
+        <div className="flex items-center gap-4">
+          <img src={marca.logo} alt="" aria-hidden className="h-9 w-auto max-w-[110px] object-contain" />
+          <div>
+            <h2 className="font-display text-2xl font-extrabold uppercase leading-none text-white">{marca.name}</h2>
+            <p className="mt-1 text-xs text-nevoa">
+              {produtos.length} {produtos.length === 1 ? 'modelo' : 'modelos'}
+            </p>
+          </div>
+        </div>
+        {sobra > 0 ? (
+          <button
+            type="button"
+            onClick={onVerTodos}
+            className="text-sm font-semibold uppercase tracking-wider text-ouro-claro transition-colors hover:text-white"
+          >
+            Ver todos os {produtos.length} →
+          </button>
+        ) : null}
+      </header>
+      <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
+        {produtos.slice(0, POR_MARCA).map((p) => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
+    </section>
   );
 }
 

@@ -11,6 +11,8 @@
     "sync": "node --env-file-if-exists=.env scripts/sync-yupoo.mjs",
     "build-catalog": "node --env-file-if-exists=.env scripts/build-catalog.mjs",
     "images": "node --env-file-if-exists=.env scripts/download-images.mjs",
+    "capas": "node --env-file-if-exists=.env scripts/escolher-capas.mjs",
+    "cores": "node --env-file-if-exists=.env scripts/cores.mjs",
     "upload-images": "node --env-file=.env scripts/upload-r2.mjs",
     "seed": "node scripts/seed-demo.mjs"
   },

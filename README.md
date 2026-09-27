@@ -32,18 +32,21 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
 
 - **Uma marca puxa um eixo.** `BRANDS` em `src/config.ts` casa cada marca com
   um uso (Nike → running, adidas → training, New Balance → casual…). É essa
-  lista que alimenta ao mesmo tempo o carrossel da abertura, a página
-  `/marcas` e os chips do filtro. Para acrescentar marca, mexa **só ali**.
+  lista que alimenta ao mesmo tempo a galeria de marcas da abertura, a página
+  `/marcas`, as faixas por marca do catálogo e os chips do filtro. Para
+  acrescentar marca, mexa **só ali**. Marca sem nenhum modelo no catálogo não
+  aparece na galeria da abertura.
 
 - **As fotos das cartas de marca são de licença livre.** `public/hero/<slug>.webp`
   (660×990, retrato 2:3) saíram do Wikimedia Commons: alguém usando o tênis ou o
   modelo mais conhecido da marca. As CC BY-SA pedem crédito ao autor — ele está
-  em `heroCredito`, em `src/config.ts`, e aparece discreto no alto da carta.
+  em `heroCredito`, em `src/config.ts`, e aparece discreto embaixo da galeria
+  de marcas, quando a marca está aberta.
   CC0 não pede nada. Foto de campanha da própria marca tem direito autoral: não
   use sem autorização. As logos, em `public/marcas/<slug>.png`, são brancas com
   fundo transparente.
 
-- **Os filtros moram na URL.** `?q=&marca=&eixo=&min=&max=`. O cliente manda o
+- **Os filtros moram na URL.** `?q=&marca=&eixo=&cor=&min=&max=`. O cliente manda o
   link do que achou e o outro lado abre exatamente a mesma lista. É também o
   que faz `/marca/nike` e `/categoria/running` serem a mesma tela com um
   filtro travado.
@@ -77,8 +80,16 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
 npm run sync            # 1. lê o fornecedor  -> data/raw/
 npm run build-catalog   # 2. vira catálogo    -> public/data/catalog.json
 npm run images          # 3. baixa as fotos   -> public/img/  (webp, 2 tamanhos)
+npm run capas           # 3b. escolhe a capa (nunca a sola) -> data/capas.json
+npm run cores           # 3c. tira as cores da capa        -> data/cores.json
 npm run upload-images   # 4. sobe para o R2
+npm run build-catalog   # de novo, para gravar capa e cores no catálogo
 ```
+
+As etapas 3b e 3c usam um modelo de visão que roda no computador (instale uma
+vez com `npm i --no-save @huggingface/transformers`); o cabeçalho de cada
+script explica a regra. As fotos ficam em `IMG_DIR` (no `.env`), fora do
+OneDrive.
 
 O site lê **um arquivo só**: `public/data/catalog.json`. Se a base vier de
 outro lugar que não o Yupoo — planilha, banco, exportação do fornecedor —
@@ -168,11 +179,12 @@ src/
   lib/catalog.tsx           carrega o catalog.json e entrega às telas
   components/
     Layout.tsx              faixa, cabeçalho com busca, rodapé
-    Hero.tsx                abertura + carrossel de marcas
-    CatalogView.tsx         a grade com busca e filtros (marca, uso, preço)
+    Hero.tsx                abertura compacta + galeria de marcas + eixos
+    BrandGallery.tsx        "Escolha a marca": a sanfona e os modelos da marca aberta
+    CatalogView.tsx         separada por marca, com filtros (marca, uso, cor, preço)
     ProductCard.tsx         a carta ligada à página do produto
     ui/card-7.tsx                    carta 3D
-    ui/3-d-coverflow-carousel.tsx    carrossel das marcas
+    ui/elastic-gallery.tsx           galeria sanfona (a mesma do catálogo da Arkad)
   pages/
     Home.tsx                início
     Lists.tsx               /catalogo, /marca/:slug, /categoria/:slug, /marcas, /busca

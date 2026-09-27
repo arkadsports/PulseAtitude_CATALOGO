@@ -17,6 +17,15 @@ import path from 'node:path';
 const RAW = path.resolve('data/raw');
 const SAIDA = path.resolve('public/data/catalog.json');
 const MANIFEST = path.resolve('data/images.json');
+// Capa de cada produto, escolhida por "npm run capas" para nunca ser a sola.
+const CAPAS = path.resolve('data/capas.json');
+// Cores de cada produto, tiradas da foto de capa por "npm run cores".
+const CORES = path.resolve('data/cores.json');
+// Mesmos nomes de COLORS, em src/config.ts: é o texto que o cliente lê.
+const NOME_COR = {
+  preto: 'Preto', branco: 'Branco', cinza: 'Cinza', bege: 'Bege', marrom: 'Marrom', vermelho: 'Vermelho',
+  rosa: 'Rosa', laranja: 'Laranja', amarelo: 'Amarelo', verde: 'Verde', azul: 'Azul', roxo: 'Roxo',
+};
 
 // ---------------------------------------------------------------------------
 // Marcas: o slug do site e os jeitos de escrever que o fornecedor usa.
@@ -107,6 +116,8 @@ function limparNome(titulo) {
   let n = (titulo || '').split(/尺码|码数|货号|号\s*[:：]/)[0];
   n = n.replace(/[　-〿㐀-鿿＀-￯]+/g, ' ');
   for (const a of MARCA_NO_NOME) n = n.replace(new RegExp(`\\b${a}\\b`, 'ig'), ' ');
+  // O fornecedor às vezes corta a primeira letra da marca: "ike Air Jordan", "didas Samba".
+  n = n.replace(/^\s*(n?ike|ke|a?didas|das|ordan)\b/i, ' ');
   n = n
     .replace(/\b(size|eur|tamanho|sizes?)\b[\s:]*[\d\s\-~–,]*/gi, ' ')
     .replace(/\b(3[0-9]|4[0-9])\s*[-~–]\s*(3[0-9]|4[0-9])\b/g, ' ')
@@ -114,7 +125,8 @@ function limparNome(titulo) {
     .replace(/\s{2,}/g, ' ')
     .replace(/^[\s\-–—|,.:#×]+|[\s\-–—|,.:#×]+$/g, '')
     .trim();
-  return n || 'Modelo sem nome';
+  // Inicial maiúscula: o fornecedor escreve "originals SAMBA".
+  return n ? n[0].toUpperCase() + n.slice(1) : 'Modelo sem nome';
 }
 
 const ler = async (f, padrao) => {
@@ -135,6 +147,8 @@ async function main() {
   const nomeCat = new Map(cats.map((c) => [c.id, c.name]));
   // Quantas fotos cada álbum tem baixadas; sem manifesto, conta a lista bruta.
   const manifest = await ler(MANIFEST, {});
+  const capas = await ler(CAPAS, {});
+  const cores = await ler(CORES, {});
 
   const products = [];
   const semMarca = [];
@@ -156,6 +170,7 @@ async function main() {
       fotos = lista.length;
     }
 
+    const suasCores = cores[id] ?? [];
     products.push({
       id,
       // Título todo em chinês: o que sobra para identificar o par é o código.
@@ -163,10 +178,11 @@ async function main() {
       tags: codigo ? [codigo] : [],
       brand: marca,
       category: acharUso(a.title, textoCat),
-      colorway: '',
+      colorway: suasCores.map((c) => NOME_COR[c] ?? c).join(' / '),
+      colors: suasCores,
       sizes: acharTamanhos(a.title),
       photos: fotos,
-      cover: 0,
+      cover: Math.min(capas[id] ?? 0, Math.max(fotos - 1, 0)),
       price: null,
     });
   }
