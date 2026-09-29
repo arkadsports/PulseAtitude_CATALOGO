@@ -4,20 +4,28 @@
 // Os filtros vivem na URL (?q=&marca=&eixo=&cor=&min=&max=): assim o cliente
 // manda o link do que achou e o outro lado abre exatamente a mesma lista.
 //
+// Marca e tipo de tênis (eixo) são filtros independentes, e somam: Nike +
+// Running mostra só os Nike classificados como Running. O tipo vem do cadastro
+// de cada produto (scripts/build-catalog.mjs) e o filtro o respeita à risca.
+//
 // Sem marca escolhida, o resultado vem separado por marca — uma faixa para
 // cada, com os primeiros modelos e "Ver todos". Com marca, a grade inteira.
 import { useMemo, useState, type ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SlidersHorizontal, X } from 'lucide-react';
-import ProductCard from './ProductCard';
+import ProductGrid from './ProductGrid';
 import { BRANDS, CATEGORIES, COLORS, type Brand } from '../config';
 import { normalize, priceOf, useCatalog, type Product } from '../lib/catalog';
 
 /** Quantos modelos entram na grade de cada vez. Com milhares de produtos, a
  *  grade inteira de uma vez travaria o navegador. */
 const POR_VEZ = 48;
-/** Modelos de cada marca na visão separada por marca (duas fileiras). */
+/** Posições de cada marca na visão separada por marca (duas fileiras). */
 const POR_MARCA = 8;
+/** Frases comerciais na grade inteira: a primeira na 8ª posição, depois 1 a cada 16. */
+const PROMOS_GRADE = { primeira: 7, aCada: 16 };
+/** Na faixa de cada marca, uma frase na 6ª posição — só em faixas alternadas. */
+const PROMO_FAIXA = { primeira: 5, aCada: 1000 };
 
 type Props = {
   titulo: string;
@@ -92,6 +100,16 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
     }
     return m;
   }, [catalog, eixo, cor]);
+
+  const porTipo = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const p of catalog.products) {
+      if (marca && p.brand !== marca) continue;
+      if (cor && !(p.colors ?? []).includes(cor)) continue;
+      m.set(p.category, (m.get(p.category) ?? 0) + 1);
+    }
+    return m;
+  }, [catalog, marca, cor]);
 
   const porCor = useMemo(() => {
     const m = new Map<string, number>();
@@ -173,7 +191,8 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
               <Chip ativo={marca === ''} onClick={() => mexer('marca', '')}>
                 Todas
               </Chip>
-              {BRANDS.map((b) => (
+              {/* Marca sem modelo nos outros filtros (ex.: Vans em Running) não aparece. */}
+              {BRANDS.filter((b) => (porMarca.get(b.slug) ?? 0) > 0 || marca === b.slug).map((b) => (
                 <Chip key={b.slug} ativo={marca === b.slug} onClick={() => mexer('marca', b.slug)}>
                   {b.name}
                   <small className="ml-1.5 opacity-60">{porMarca.get(b.slug) ?? 0}</small>
@@ -186,7 +205,7 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
         {/* Eixo */}
         {eixoFixo ? null : (
           <fieldset className="mt-4">
-            <legend className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-nevoa">Uso</legend>
+            <legend className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-nevoa">Tipo de tênis</legend>
             <div className="flex gap-2 overflow-x-auto pb-1">
               <Chip ativo={eixo === ''} onClick={() => mexer('eixo', '')}>
                 Todos
@@ -194,6 +213,7 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
               {CATEGORIES.map((c) => (
                 <Chip key={c.slug} ativo={eixo === c.slug} onClick={() => mexer('eixo', c.slug)}>
                   {c.name}
+                  <small className="ml-1.5 opacity-60">{porTipo.get(c.slug) ?? 0}</small>
                 </Chip>
               ))}
             </div>
@@ -276,11 +296,7 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
           </p>
           {marca ? (
             <>
-              <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
-                {visiveis.map((p) => (
-                  <ProductCard key={p.id} product={p} />
-                ))}
-              </div>
+              <ProductGrid key={chaveFiltro} produtos={visiveis} promos={PROMOS_GRADE} />
               {visiveis.length < resultados.length ? (
                 <div className="mt-10 text-center">
                   <button
@@ -298,8 +314,14 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
             </>
           ) : (
             <div className="space-y-14">
-              {porMarcaNaGrade.map(({ marca: b, produtos }) => (
-                <FaixaDaMarca key={b.slug} marca={b} produtos={produtos} onVerTodos={() => verMarca(b.slug)} />
+              {porMarcaNaGrade.map(({ marca: b, produtos }, i) => (
+                <FaixaDaMarca
+                  key={`${b.slug}|${chaveFiltro}`}
+                  marca={b}
+                  produtos={produtos}
+                  comFrase={i % 2 === 0}
+                  onVerTodos={() => verMarca(b.slug)}
+                />
               ))}
             </div>
           )}
@@ -313,12 +335,17 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
 function FaixaDaMarca({
   marca,
   produtos,
+  comFrase,
   onVerTodos,
 }: {
   marca: Brand;
   produtos: Product[];
+  /** Faixas alternadas levam uma frase comercial, para não poluir. */
+  comFrase: boolean;
   onVerTodos: () => void;
 }) {
+  // A frase ocupa uma das posições: as duas fileiras continuam cheias.
+  const cabem = comFrase && produtos.length >= PROMO_FAIXA.primeira ? POR_MARCA - 1 : POR_MARCA;
   const sobra = produtos.length - POR_MARCA;
   return (
     <section aria-label={marca.name}>
@@ -342,11 +369,7 @@ function FaixaDaMarca({
           </button>
         ) : null}
       </header>
-      <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
-        {produtos.slice(0, POR_MARCA).map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))}
-      </div>
+      <ProductGrid produtos={produtos.slice(0, cabem)} promos={cabem < POR_MARCA ? PROMO_FAIXA : false} />
     </section>
   );
 }

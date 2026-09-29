@@ -47,21 +47,72 @@ const MARCAS = [
 // ("On Cloud 5" continua "Cloud 5", "Air Jordan 1" continua "Air Jordan 1").
 const MARCA_NO_NOME = ['nike', 'on running', 'adidas', 'asics', 'new balance', 'newbalance', 'puma', 'mizuno', 'vans'];
 
-// Uso. A ordem importa: a primeira que casar vence.
-const USOS = [
-  ['running', [
-    'running', 'run ', 'corrida', '跑鞋', '跑步', '马拉松',
-    'pegasus', 'vomero', 'alphafly', 'vaporfly', 'zoom fly', 'invincible', 'structure', 'streakfly',
-    'adizero', 'ultraboost', 'supernova', 'adistar', 'solarglide',
-    'nimbus', 'novablast', 'kayano', 'cumulus', 'wave rider', 'fresh foam', '1080', '880',
-    'cloudmonster', 'cloudsurfer', 'cloudflow', 'cloudrunner', 'cloudboom', 'cloudeclipse', 'cloudstratus',
-    'velocity nitro', 'deviate nitro', 'magnify nitro',
+// ---------------------------------------------------------------------------
+// Tipo de tênis: running, training ou casual. Um tipo só por produto, e ele
+// vale para qualquer marca — é o que o filtro "Tipo de tênis" usa, à risca.
+//
+// Quem decide é o MODELO, lido no nome (nunca no código do produto: "880"
+// dentro de "DW8806" fazia Air Force 1 virar corrida). As listas são olhadas
+// nesta ordem, e a primeira que casar vence:
+//   1. modelos casuais — o fornecedor chama de "跑鞋" (tênis de corrida) até
+//      P-6000 e Air Force; o modelo manda mais que a descrição;
+//   2. modelos de treino;
+//   3. modelos de corrida.
+// Modelo que não está em lista nenhuma cai nas palavras da descrição
+// (PALAVRAS_TIPO) e, sem nada, em casual.
+// Achou um tênis no tipo errado? Acrescente o modelo na lista certa.
+// ---------------------------------------------------------------------------
+const MODELOS_TIPO = [
+  ['casual', [
+    // Nike
+    'air force', 'af1', 'force 1', 'force1', 'dunk', 'jordan', 'aj1', 'aj4', 'p-6000', 'p6000', 'v2k', 'vomero 5',
+    'initiator', 'moon shoe', 'cortez', 'blazer', 'air max', 'killshot', 'bapesta', 'mind', 'calm', 'sprint sister',
+    'terra manta', 'field general', 'total 90', 'shox', 'tl', 'kobe', 'lebron', 'sabrina', 'ja 1', 'ja 2', 'ja 3',
+    'big low', 'air rift', 'huarache', 'air more', 'foamposite', 'uptempo', 'waffle', 'daybreak', 'ld-1000', 'ldv',
+    // Adidas
+    'samba', 'gazelle', 'spezial', 'handball', 'superstar', 'stan smith', 'campus', 'forum', 'sl 72', 'sl72', 'tokyo',
+    'taekwondo', 'jellyfish', 'ozweego', 'adipista', 'anfu', 'country', 'rivalry', 'adimatic', 'yeezy', 'y-3', 'bad bunny',
+    'drop step', 'hyperboost edge', 'response cl', 'daroga', 'adiracer',
+    // New Balance
+    '9060', '1906', '2002', '530', '550', '327', '574', '990', '991', '992', '993', '204', '1000', '610', '740', '480',
+    // Puma
+    'speedcat', 'suede', 'palermo', 'roma', 'mostro', 'h-street', 'ballerina', 'avanti', 'inhale',
+    // On
+    'cloudtilt', 'loudtilt', 'roger', 'cloud 5', 'cloud 6', 'cloudnova', 'cloudaway', 'cloudrift', 'cloudzone', 'k-tech',
+    'kith',
+    // Vans
+    'old skool', 'sk8', 'authentic', 'era', 'slip-on', 'knu skool',
   ]],
-  ['training', ['training', 'trainer', 'gym', 'treino', 'crossfit', 'dropset', 'metcon', '训练']],
-  ['casual', ['casual', 'lifestyle', 'skate', 'retro', 'classic', 'old skool', 'samba', 'suede', 'dunk', 'force']],
+  ['training', [
+    'metcon', 'cloud x', 'cloudx', 'cloudpulse', 'loudpulse', 'dropset', 'nano x', 'rapidmotion', 'trinity', 'amp training',
+    'mc trainer', 'free metcon', 'savaleos',
+  ]],
+  ['running', [
+    // Nike
+    'pegasus', 'vomero', 'alphafly', 'vaporfly', 'zoom fly', 'invincible', 'structure', 'streakfly', 'infinity',
+    'journey run', 'revolution', 'winflo', 'interact run', 'downshifter', 'flex', 'free rn', 'free 3.0', 'free 4.0',
+    'free 5.0', 'mountain fly', 'wildhorse', 'kiger', 'ultrafly', 'zegama', 'juniper', 'react miler', 'tempo',
+    // Adidas
+    'adizero', 'adios', 'boston', 'ultraboost', 'supernova', 'adistar', 'solarglide', 'duramo', 'runfalcon', 'evo sl',
+    'agravic', 'terrex', 'switch fwd', 'questar', 'response',
+    // On
+    'cloudmonster', 'cloudsurfer', 'cloudflow', 'cloudrunner', 'cloudboom', 'cloudeclipse', 'cloudstratus',
+    'cloudultra', 'cloudvista', 'cloudspark', 'cloudgo', 'cloudventure', 'cloudhorizon', 'cloudsolo', 'cloudtrax',
+    'oudsurfer',
+    // New Balance
+    'fresh foam', 'fuelcell', '1080', '880', 'rebel', 'more v', 'sc elite', 'sc trainer', '860', 'hierro',
+    // Puma
+    'nitro', 'velocity', 'deviate', 'magnify', 'fast-r', 'fast r',
+  ]],
 ];
 
-const USO_PADRAO = 'casual';
+// Só para modelo que não está em MODELOS_TIPO: palavras da descrição.
+const PALAVRAS_TIPO = [
+  ['running', ['running', 'run', 'corrida', '跑鞋', '跑步', '马拉松', '慢跑']],
+  ['training', ['training', 'gym', 'treino', 'crossfit', '训练', '综合训练']],
+];
+
+const TIPO_PADRAO = 'casual';
 
 const normal = (s) =>
   (s || '')
@@ -75,10 +126,25 @@ function acharMarca(...textos) {
   return null;
 }
 
-function acharUso(...textos) {
-  const t = ' ' + normal(textos.join(' ')) + ' ';
-  for (const [slug, palavras] of USOS) if (palavras.some((p) => t.includes(p))) return slug;
-  return USO_PADRAO;
+/** A palavra aparece inteira no texto (não dentro de outra, nem de um código). */
+const escapar = (p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const temPalavra = (texto, p) =>
+  /^[a-z0-9]/.test(p)
+    ? new RegExp(`(^|[^a-z0-9])${escapar(p)}($|[^a-z0-9])`).test(texto)
+    : texto.includes(p);
+
+/** Tipo de tênis do produto. "nome" é o nome limpo; "descricao", o título
+ *  do fornecedor antes do código e dos tamanhos (onde vem "跑鞋", "训练"...). */
+function acharTipo(nome, descricao) {
+  // "NB204", "M1906R", "U9060": separa o número do prefixo para casar "204", "1906"...
+  // "NIKEVOMERO": a marca grudada no modelo também se separa.
+  const n = normal(nome)
+    .replace(/(^|[^a-z0-9])(nb|m|u|w|ml|mr|wl)(\d{3,4})/g, '$1$2 $3')
+    .replace(/nike(?=[a-z])/g, 'nike ');
+  for (const [tipo, modelos] of MODELOS_TIPO) if (modelos.some((m) => temPalavra(n, m))) return tipo;
+  const d = normal(descricao);
+  for (const [tipo, palavras] of PALAVRAS_TIPO) if (palavras.some((p) => temPalavra(d, p))) return tipo;
+  return TIPO_PADRAO;
 }
 
 /** Tamanhos a partir do título: "36-45", "size 39~44", "eur 40 41 42". */
@@ -171,13 +237,15 @@ async function main() {
     }
 
     const suasCores = cores[id] ?? [];
+    // Título todo em chinês: o que sobra para identificar o par é o código.
+    const nomeLimpo = limparNome(a.title);
+    const nome = nomeLimpo === 'Modelo sem nome' && codigo ? `Ref. ${codigo}` : nomeLimpo;
     products.push({
       id,
-      // Título todo em chinês: o que sobra para identificar o par é o código.
-      name: limparNome(a.title) === 'Modelo sem nome' && codigo ? `Ref. ${codigo}` : limparNome(a.title),
+      name: nome,
       tags: codigo ? [codigo] : [],
       brand: marca,
-      category: acharUso(a.title, textoCat),
+      category: acharTipo(nome, (a.title || '').split(/尺码|码数|货号|号\s*[:：]/)[0]),
       colorway: suasCores.map((c) => NOME_COR[c] ?? c).join(' / '),
       colors: suasCores,
       sizes: acharTamanhos(a.title),

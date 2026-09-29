@@ -26,6 +26,33 @@ export const COPY = {
 };
 
 // ---------------------------------------------------------------------------
+// Frases comerciais — os cards que aparecem intercalados entre os tênis.
+// Cada uma tem um "tipo": o site alterna os tipos para o cliente não ver
+// sempre a mesma mensagem (components/PromoCard.tsx). Para acrescentar ou
+// trocar uma frase, mexa só aqui.
+// ---------------------------------------------------------------------------
+export type PromoTipo = 'preco' | 'economia' | 'estilo' | 'pagamento';
+
+export const PROMOS: { tipo: PromoTipo; texto: string }[] = [
+  { tipo: 'preco', texto: 'Por que pagar mais caro no Brasil?' },
+  { tipo: 'preco', texto: 'Você sabia que na Pulse os tênis podem sair pelo menos 30% mais baratos?' },
+  { tipo: 'preco', texto: 'Preço justo para quem sabe o que está comprando.' },
+  { tipo: 'economia', texto: 'Mais tênis, menos dinheiro gasto.' },
+  { tipo: 'economia', texto: 'Economize sem abrir mão do seu estilo.' },
+  { tipo: 'economia', texto: 'Seu próximo tênis pode caber ainda melhor no seu bolso.' },
+  { tipo: 'estilo', texto: 'Seu tênis favorito por um preço que faz sentido.' },
+  { tipo: 'estilo', texto: 'Aqui, você paga menos pelo mesmo estilo.' },
+  { tipo: 'pagamento', texto: 'Até 10x sem juros no cartão.' },
+  { tipo: 'pagamento', texto: 'Parcele em até 10x sem juros.' },
+  { tipo: 'pagamento', texto: 'Pagamento facilitado para você comprar sem pesar no bolso.' },
+  { tipo: 'pagamento', texto: 'Escolha seu tênis. Divida o pagamento. Aproveite.' },
+  { tipo: 'pagamento', texto: 'Encontrou o seu? Agora ficou fácil pagar.' },
+];
+
+/** A condição de pagamento em destaque nos cards de pagamento. */
+export const PARCELAS = { vezes: 10, texto: 'sem juros no cartão' };
+
+// ---------------------------------------------------------------------------
 // Preço
 // ---------------------------------------------------------------------------
 // Ainda não há preço definido: o campo existe no catálogo e na tela, e aparece
@@ -55,8 +82,6 @@ export const CATEGORIES: { slug: CategorySlug; name: string; blurb: string }[] =
 export type Brand = {
   slug: string;
   name: string;
-  /** O eixo que a marca representa na vitrine. */
-  category: CategorySlug;
   /** Frase curta da carta no carrossel. */
   tagline: string;
   /** Linha de apoio da carta. */
@@ -74,7 +99,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'nike',
     name: 'Nike',
-    category: 'running',
     tagline: 'A PASSADA',
     blurb: 'que não pede licença',
     hero: '/hero/nike.webp',
@@ -83,7 +107,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'on',
     name: 'On',
-    category: 'running',
     tagline: 'LEVEZA SUÍÇA',
     blurb: 'feita para o asfalto',
     hero: '/hero/on.webp',
@@ -93,7 +116,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'adidas',
     name: 'Adidas',
-    category: 'training',
     tagline: 'DO AQUECIMENTO',
     blurb: 'ao último movimento',
     hero: '/hero/adidas.webp',
@@ -103,7 +125,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'asics',
     name: 'ASICS',
-    category: 'running',
     tagline: 'AMORTECIMENTO',
     blurb: 'de quem corre de verdade',
     hero: '/hero/asics.webp',
@@ -113,7 +134,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'new-balance',
     name: 'New Balance',
-    category: 'casual',
     tagline: 'O CLÁSSICO',
     blurb: 'que combina com tudo',
     hero: '/hero/new-balance.webp',
@@ -122,7 +142,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'puma',
     name: 'Puma',
-    category: 'training',
     tagline: 'EXPLOSÃO',
     blurb: 'em cada apoio',
     hero: '/hero/puma.webp',
@@ -131,7 +150,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'mizuno',
     name: 'Mizuno',
-    category: 'running',
     tagline: 'ESTABILIDADE',
     blurb: 'quilômetro após quilômetro',
     hero: '/hero/mizuno.webp',
@@ -141,7 +159,6 @@ export const BRANDS: Brand[] = [
   {
     slug: 'vans',
     name: 'Vans',
-    category: 'casual',
     tagline: 'ATITUDE',
     blurb: 'desde sempre',
     hero: '/hero/vans.webp',

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T20:24:47.580Z",
+  "generatedAt": "2026-09-29T12:52:43.349Z",
   "products": [
     {
       "id": "256429145",
@@ -61,7 +61,7 @@
       "name": "ACG MOUNTAIN FLY GTX S",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -849,7 +849,7 @@
         "LA6230"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "training",
       "colorway": "Preto / Laranja / Branco",
       "colors": [
         "preto",
@@ -1451,7 +1451,7 @@
         "MR530CE"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Preto",
       "colors": [
         "cinza",
@@ -2036,7 +2036,7 @@
         "3WG10354898"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -2169,7 +2169,7 @@
         "LA6217"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "training",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -3042,7 +3042,7 @@
       "name": "ACG LDV",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza",
       "colors": [
         "azul",
@@ -3071,7 +3071,7 @@
         "IF2857 200"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Preto",
       "colors": [
         "branco",
@@ -3461,7 +3461,7 @@
         "3WG30065258"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -3485,7 +3485,7 @@
         "IV2864 320"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Amarelo",
       "colors": [
         "amarelo"
@@ -4429,7 +4429,7 @@
         "3ME10104303"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Amarelo",
       "colors": [
         "branco",
@@ -4884,7 +4884,7 @@
         "IO7855 701"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Amarelo / Preto",
       "colors": [
         "amarelo",
@@ -5173,7 +5173,7 @@
         "CD6404 107"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -5204,7 +5204,7 @@
         "HQ3818 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -5942,7 +5942,7 @@
         "HJ4497 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Verde",
       "colors": [
         "preto",
@@ -6166,7 +6166,7 @@
       "name": "Cloudvista 3 Mid WP",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -6386,7 +6386,7 @@
       "name": "TERREX FREEHIKR SL GTX",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -6410,7 +6410,7 @@
         "HQ4884"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -6961,7 +6961,7 @@
         "LA6219"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "training",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -7216,7 +7216,7 @@
       "name": "Duramo RC U",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -7240,7 +7240,7 @@
         "LF58611"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -7374,7 +7374,7 @@
         "HJ4497 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Roxo / Azul",
       "colors": [
         "preto",
@@ -7520,7 +7520,7 @@
         "KK3077"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Laranja / Branco",
       "colors": [
         "laranja",
@@ -7691,7 +7691,7 @@
       "name": "Adizero Dropset Elite Hyrox 36 36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "training",
       "colorway": "Branco / Azul",
       "colors": [
         "branco",
@@ -7718,7 +7718,7 @@
         "LA6212"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "training",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -7802,7 +7802,7 @@
         "DW8806 032"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -8359,7 +8359,7 @@
       "name": "Cloudvista 2 Cloudvista 2 Waterproof",
       "tags": [],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Bege / Cinza / Branco",
       "colors": [
         "bege",
@@ -8389,7 +8389,7 @@
         "3ME30142856"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -8706,7 +8706,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -8736,7 +8736,7 @@
         "KK3078"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Rosa / Branco / Vermelho",
       "colors": [
         "rosa",
@@ -8967,7 +8967,7 @@
         "KI7128"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Marrom / Bege",
       "colors": [
         "preto",
@@ -9110,7 +9110,7 @@
         "HQ2056 108"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Bege / Branco",
       "colors": [
         "cinza",
@@ -9217,7 +9217,7 @@
         "HF5668 700"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Rosa / Amarelo / Bege",
       "colors": [
         "rosa",
@@ -9755,7 +9755,7 @@
       "name": "Air Max Fusion",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -10062,7 +10062,7 @@
         "KI7791"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Rosa",
       "colors": [
         "vermelho",
@@ -10092,7 +10092,7 @@
         "FD0736 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Rosa / Bege",
       "colors": [
         "cinza",
@@ -10151,7 +10151,7 @@
         "IR1215 104"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -10401,7 +10401,7 @@
         "KZ9045"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -10515,7 +10515,7 @@
         "HQ3818 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -10709,7 +10709,7 @@
         "SF5668 003"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -10738,7 +10738,7 @@
         "DA5424 109"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -10998,7 +10998,7 @@
       "name": "ZEGAMA DOME",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Bege",
       "colors": [
         "bege"
@@ -11027,7 +11027,7 @@
         "HQ8618 005"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -11204,7 +11204,7 @@
         "3ME10104286"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -11258,7 +11258,7 @@
         "LA3855"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -11469,7 +11469,7 @@
         "FV2338 103"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -11935,7 +11935,7 @@
         "IR7317 300"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Verde / Branco",
       "colors": [
         "verde",
@@ -12047,7 +12047,7 @@
         "HQ4307 005"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -12343,7 +12343,7 @@
         "3MG10758607"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -12569,7 +12569,7 @@
         "HJ4497 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -13027,7 +13027,7 @@
         "HF5668 400"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -13414,7 +13414,7 @@
         "IZ6659 400"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -14003,7 +14003,7 @@
       "name": "NB204",
       "tags": [],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -14032,7 +14032,7 @@
         "U204L80V"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -14220,7 +14220,7 @@
       "name": "Zoom Vomero 5",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -14249,7 +14249,7 @@
         "FJ4151 004"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -14415,7 +14415,7 @@
         "3MG10758606"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Marrom / Bege",
       "colors": [
         "marrom",
@@ -14755,7 +14755,7 @@
         "HQ2056 011"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -15351,7 +15351,7 @@
       "name": "Adipista Trainers",
       "tags": [],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Bege / Branco",
       "colors": [
         "bege",
@@ -15379,7 +15379,7 @@
         "HQ9164"
       ],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Bege / Branco",
       "colors": [
         "bege",
@@ -15488,7 +15488,7 @@
         "HJ4497 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -15547,7 +15547,7 @@
         "IV6029 030"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -15761,7 +15761,7 @@
         "3MG30045072"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -16105,7 +16105,7 @@
         "CD6404 108"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho / Branco",
       "colors": [
         "cinza",
@@ -16215,7 +16215,7 @@
         "DH0623 128"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -16241,7 +16241,7 @@
         "DH0623 008"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -16761,7 +16761,7 @@
         "KI8278"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -16894,7 +16894,7 @@
         "FV6603 101"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -16976,7 +16976,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -17200,7 +17200,7 @@
         "HF5668 801"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Laranja / Bege",
       "colors": [
         "laranja",
@@ -18672,7 +18672,7 @@
       "name": "Cloudvista 3 Mid WP",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -18701,7 +18701,7 @@
         "3MG10758605"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -19009,7 +19009,7 @@
         "IV5675 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Branco",
       "colors": [
         "azul",
@@ -19085,7 +19085,7 @@
       "name": "NB204",
       "tags": [],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Marrom / Bege",
       "colors": [
         "marrom",
@@ -19114,7 +19114,7 @@
         "U204LSE1"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Marrom / Bege / Preto",
       "colors": [
         "marrom",
@@ -19769,7 +19769,7 @@
         "3ME10104843"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -19818,7 +19818,7 @@
       "name": "NB204",
       "tags": [],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -19847,7 +19847,7 @@
         "U204LKTH"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Rosa",
       "colors": [
         "vermelho",
@@ -20551,7 +20551,7 @@
       "name": "ACG ZEGAMA TRAIL6",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -20640,7 +20640,7 @@
         "KI7128"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Marrom",
       "colors": [
         "cinza",
@@ -20671,7 +20671,7 @@
         "KI7791"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Marrom / Rosa",
       "colors": [
         "vermelho",
@@ -20894,7 +20894,7 @@
         "IR0042 900"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Laranja / Branco",
       "colors": [
         "laranja",
@@ -21406,7 +21406,7 @@
       "name": "ACG Ultrafly TRAIL",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -21655,7 +21655,7 @@
         "IR5279 003"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -22424,7 +22424,7 @@
         "IR5279 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -22452,7 +22452,7 @@
       "name": "NB204",
       "tags": [],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -22481,7 +22481,7 @@
         "U204L7A8"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -23221,7 +23221,7 @@
         "3MG30085098"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "training",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -23247,7 +23247,7 @@
       "name": "Cloudtilt C",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -23275,7 +23275,7 @@
       "name": "Cloudtilt C",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -24033,7 +24033,7 @@
         "3MG30065101"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "training",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -24458,7 +24458,7 @@
         "KI8282"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Vermelho",
       "colors": [
         "preto",
@@ -24484,7 +24484,7 @@
         "HQ4307 200"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Bege / Marrom",
       "colors": [
         "bege",
@@ -24629,7 +24629,7 @@
         "3WE30221238"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -25176,7 +25176,7 @@
         "3ME10103740"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -25201,7 +25201,7 @@
         "FD0736 201"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Rosa / Bege",
       "colors": [
         "rosa",
@@ -25901,7 +25901,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -26098,7 +26098,7 @@
         "3MG10758605"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Bege",
       "colors": [
         "bege"
@@ -26124,7 +26124,7 @@
         "3MG10758610"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -26153,7 +26153,7 @@
         "3WG30066221"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -26177,7 +26177,7 @@
         "3WG30060969"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "training",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -26393,7 +26393,7 @@
         "HJ4497 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -26508,7 +26508,7 @@
         "IH8042 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege",
       "colors": [
         "bege"
@@ -26536,7 +26536,7 @@
         "IR2004 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -27019,7 +27019,7 @@
         "HQ4309 002"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -27046,7 +27046,7 @@
         "HQ4309 611"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Rosa",
       "colors": [
         "branco",
@@ -27101,7 +27101,7 @@
         "KI8275"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -27581,7 +27581,7 @@
       "name": "TERREX FREEHIKER 3",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -27636,7 +27636,7 @@
         "DW8806 019"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -27883,7 +27883,7 @@
         "3MF10910710"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -28023,7 +28023,7 @@
         "HJ5269 600"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Rosa / Branco",
       "colors": [
         "rosa",
@@ -28253,7 +28253,7 @@
         "3MG30080714"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "training",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -28280,7 +28280,7 @@
         "3MG30065103"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "training",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -28592,7 +28592,7 @@
         "CD6404 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -28620,7 +28620,7 @@
         "IV5761 094"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -28649,7 +28649,7 @@
         "MR530153"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -29433,7 +29433,7 @@
         "CD6404 034"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -30293,7 +30293,7 @@
         "CD6404 606"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -30540,7 +30540,7 @@
         "U204L4HH"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -30654,7 +30654,7 @@
         "IV5761 094"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -30911,7 +30911,7 @@
         "FD0736 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Bege",
       "colors": [
         "cinza",
@@ -31220,7 +31220,7 @@
         "IF2857 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Preto",
       "colors": [
         "cinza",
@@ -31386,7 +31386,7 @@
       "name": "Cloudtilt C",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Vermelho",
       "colors": [
         "preto",
@@ -31442,7 +31442,7 @@
         "3MG10758603"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -31498,7 +31498,7 @@
       "name": "Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul / Verde",
       "colors": [
         "azul",
@@ -31527,7 +31527,7 @@
         "FV2338 006"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -31586,7 +31586,7 @@
         "3MG10758601"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -32034,7 +32034,7 @@
         "IV6029 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -32334,7 +32334,7 @@
         "HF0728 201"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -32723,7 +32723,7 @@
         "3MG30081043"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "training",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -32752,7 +32752,7 @@
         "3MG30080462"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -32892,7 +32892,7 @@
         "3ME10101430"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -34145,7 +34145,7 @@
         "3MG30090106"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -34172,7 +34172,7 @@
         "3MG30090201"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -34199,7 +34199,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul / Cinza / Branco",
       "colors": [
         "azul",
@@ -34227,7 +34227,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -34255,7 +34255,7 @@
         "IQ9788 271"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Amarelo / Branco",
       "colors": [
         "amarelo",
@@ -34313,7 +34313,7 @@
         "IH8042 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -34340,7 +34340,7 @@
         "IQ0598 209"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Bege",
       "colors": [
         "vermelho",
@@ -34716,7 +34716,7 @@
         "HV5064 020"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -34804,7 +34804,7 @@
         "HF5668 002"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -34942,7 +34942,7 @@
         "3WE10130264"
       ],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -34970,7 +34970,7 @@
         "3ME10101002"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -35838,7 +35838,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Amarelo",
       "colors": [
         "branco",
@@ -35865,7 +35865,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Rosa / Branco",
       "colors": [
         "rosa",
@@ -35892,7 +35892,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Amarelo / Branco",
       "colors": [
         "amarelo",
@@ -35977,7 +35977,7 @@
         "FQ6873 101"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -36177,7 +36177,7 @@
         "IH4382 200"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Bege",
       "colors": [
         "cinza",
@@ -36206,7 +36206,7 @@
         "FD9876 101"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -36235,7 +36235,7 @@
         "IR1332 500"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Rosa / Branco",
       "colors": [
         "rosa",
@@ -36259,7 +36259,7 @@
         "IV5675 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -36640,7 +36640,7 @@
         "IO7592 077"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -36666,7 +36666,7 @@
         "IO7592 077"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -36824,7 +36824,7 @@
         "IR5279 003"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -37686,7 +37686,7 @@
         "IR5279 003"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -37715,7 +37715,7 @@
         "IR5279 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -37914,7 +37914,7 @@
       "name": "V2K Run",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -37932,7 +37932,7 @@
         "FD0736 118"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho / Branco",
       "colors": [
         "cinza",
@@ -38432,7 +38432,7 @@
         "3WF10063014"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Marrom / Amarelo / Branco",
       "colors": [
         "marrom",
@@ -38462,7 +38462,7 @@
         "3WF10063014"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Marrom / Amarelo / Branco",
       "colors": [
         "marrom",
@@ -38490,7 +38490,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -39099,7 +39099,7 @@
         "IQ0296 491"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -39129,7 +39129,7 @@
         "IO8711 101"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza / Preto",
       "colors": [
         "branco",
@@ -39246,7 +39246,7 @@
         "IO3496 103"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho",
       "colors": [
         "cinza",
@@ -39417,7 +39417,7 @@
         "IF2857 080"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza / Preto",
       "colors": [
         "branco",
@@ -39505,7 +39505,7 @@
         "DW8806 027"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza / Preto",
       "colors": [
         "azul",
@@ -39561,7 +39561,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Laranja / Branco",
       "colors": [
         "laranja",
@@ -39620,7 +39620,7 @@
         "HF5342 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -39931,7 +39931,7 @@
         "HQ4307 005"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -39959,7 +39959,7 @@
         "HQ4307 601"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -39986,7 +39986,7 @@
         "IM5237 400"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -40011,7 +40011,7 @@
         "IV6035 030"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho / Branco",
       "colors": [
         "cinza",
@@ -40037,7 +40037,7 @@
         "IR5279 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -40118,7 +40118,7 @@
         "CD6404 102"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -40147,7 +40147,7 @@
         "IB4019 019"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -40876,7 +40876,7 @@
         "HQ1183 141"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -41343,7 +41343,7 @@
         "HQ4307 600"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -42310,7 +42310,7 @@
       "name": "Cloudtilt Cloud X",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Amarelo / Bege",
       "colors": [
         "cinza",
@@ -42424,7 +42424,7 @@
       "name": "Adipista Trainers",
       "tags": [],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Cinza / Branco",
       "colors": [
         "preto",
@@ -42453,7 +42453,7 @@
         "EG8662"
       ],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -42680,7 +42680,7 @@
         "BV1021 110"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho / Branco",
       "colors": [
         "cinza",
@@ -42967,7 +42967,7 @@
         "3ME10101430"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -43585,7 +43585,7 @@
         "IR1477 121"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -44176,7 +44176,7 @@
       "name": "Cloudtilt C",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Rosa / Branco / Vermelho",
       "colors": [
         "rosa",
@@ -44204,7 +44204,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Roxo / Branco / Rosa",
       "colors": [
         "roxo",
@@ -44700,7 +44700,7 @@
         "3WF10433589"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Bege",
       "colors": [
         "branco",
@@ -45121,7 +45121,7 @@
         "HF0015 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -45151,7 +45151,7 @@
         "IO6590 200"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Preto / Marrom",
       "colors": [
         "vermelho",
@@ -45773,7 +45773,7 @@
         "BV1021 108"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Rosa",
       "colors": [
         "cinza",
@@ -45799,7 +45799,7 @@
         "CD6404 105"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -46051,7 +46051,7 @@
         "MR530SJ"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -46192,7 +46192,7 @@
         "FD0736 119"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul / Branco",
       "colors": [
         "cinza",
@@ -46307,7 +46307,7 @@
         "IH8042 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege / Branco",
       "colors": [
         "bege",
@@ -47865,7 +47865,7 @@
         "3WF10430924"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -47998,7 +47998,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco / Azul",
       "colors": [
         "cinza",
@@ -48026,7 +48026,7 @@
       "name": "Cloudtilt Cloud X",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -48367,7 +48367,7 @@
         "HQ9160"
       ],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -49589,7 +49589,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -49615,7 +49615,7 @@
       "name": "Cloudtilt C",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Amarelo",
       "colors": [
         "amarelo"
@@ -50056,7 +50056,7 @@
         "IB7328 200"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -50664,7 +50664,7 @@
         "IO3496 104"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Bege / Marrom",
       "colors": [
         "cinza",
@@ -51380,7 +51380,7 @@
         "IR1215 101"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Bege",
       "colors": [
         "cinza",
@@ -52401,7 +52401,7 @@
         "IB7328 003"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Bege",
       "colors": [
         "cinza",
@@ -52456,7 +52456,7 @@
         "MR530SJ"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -53244,7 +53244,7 @@
         "IF2857 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -53272,7 +53272,7 @@
         "IF2857 600"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -53357,7 +53357,7 @@
         "IR0042 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -53493,7 +53493,7 @@
         "3MF10541010"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Branco",
       "colors": [
         "preto",
@@ -54352,7 +54352,7 @@
         "IR2175 401"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho / Azul / Preto",
       "colors": [
         "vermelho",
@@ -54380,7 +54380,7 @@
         "HQ4309 500"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -54408,7 +54408,7 @@
         "IM5237 600"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho / Preto",
       "colors": [
         "cinza",
@@ -54462,7 +54462,7 @@
       "name": "Switch FWD",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -54490,7 +54490,7 @@
         "CG4866"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -54519,7 +54519,7 @@
         "HY5028 200"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -54571,7 +54571,7 @@
         "IF2857 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -55335,7 +55335,7 @@
       "name": "Y-3 ADIZERO RC6",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -55562,7 +55562,7 @@
         "3MF31125551"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -55717,7 +55717,7 @@
         "DW8806 031"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege",
       "colors": [
         "bege"
@@ -55971,7 +55971,7 @@
         "MR530ASM"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Marrom",
       "colors": [
         "cinza",
@@ -55999,7 +55999,7 @@
         "IV2864 320"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Amarelo",
       "colors": [
         "amarelo"
@@ -56141,7 +56141,7 @@
         "IF1787 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege / Amarelo / Marrom",
       "colors": [
         "bege",
@@ -56171,7 +56171,7 @@
         "BV1021 105"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Azul",
       "colors": [
         "cinza",
@@ -56710,7 +56710,7 @@
         "3MG10804757"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Branco",
       "colors": [
         "azul",
@@ -57442,7 +57442,7 @@
         "IB7328 002"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -58348,7 +58348,7 @@
         "IR1332 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -58519,7 +58519,7 @@
         "3WE10050924"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -58780,7 +58780,7 @@
         "DW8806 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Verde",
       "colors": [
         "cinza",
@@ -58953,7 +58953,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco / Bege",
       "colors": [
         "cinza",
@@ -58981,7 +58981,7 @@
       "name": "Cloudtilt Cloud X",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -59446,7 +59446,7 @@
         "IR1477 010"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -59697,7 +59697,7 @@
         "FN8454 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza",
       "colors": [
         "azul",
@@ -60284,7 +60284,7 @@
         "KJ8874"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Bege / Marrom / Laranja",
       "colors": [
         "bege",
@@ -60918,7 +60918,7 @@
       "name": "Cloudtilt Cloud X",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -61254,7 +61254,7 @@
         "IR2175 401"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -61280,7 +61280,7 @@
       "name": "Switch FWD A",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -61308,7 +61308,7 @@
         "CG4761"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -61613,7 +61613,7 @@
         "3ME10103284"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -61925,7 +61925,7 @@
         "HQ4309 300"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -63190,7 +63190,7 @@
         "HQ4307 001"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Bege",
       "colors": [
         "branco",
@@ -63217,7 +63217,7 @@
         "HQ4307 001"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -63527,7 +63527,7 @@
         "BV10210 106"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -63754,7 +63754,7 @@
       "name": "ACG LDV",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -63812,7 +63812,7 @@
         "IF2857 040"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -63916,7 +63916,7 @@
         "3MF30443397"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Verde / Branco",
       "colors": [
         "verde",
@@ -65090,7 +65090,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -65179,7 +65179,7 @@
         "KJ1996"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul / Cinza / Branco",
       "colors": [
         "azul",
@@ -65664,7 +65664,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -66057,7 +66057,7 @@
       "name": "Cloudtilt Cloud X",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza / Verde",
       "colors": [
         "branco",
@@ -66085,7 +66085,7 @@
       "name": "Cloudtilt Clo",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -66534,7 +66534,7 @@
         "KJ8872"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -67042,7 +67042,7 @@
         "KK1896"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -67066,7 +67066,7 @@
         "FV2337 102"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Vermelho / Branco",
       "colors": [
         "cinza",
@@ -67096,7 +67096,7 @@
         "FV2338 700"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Amarelo / Preto",
       "colors": [
         "amarelo",
@@ -67179,7 +67179,7 @@
       "name": "Cloudtilt",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -67891,7 +67891,7 @@
         "BV1021 110"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho",
       "colors": [
         "cinza",
@@ -69271,7 +69271,7 @@
         "FV2338 100"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -69554,7 +69554,7 @@
         "IR2004 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -69720,7 +69720,7 @@
         "KJ8870"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -69891,7 +69891,7 @@
         "HQ4307 102"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -70483,7 +70483,7 @@
         "IR2175 400"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -70567,7 +70567,7 @@
         "IU7549 072"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -71143,7 +71143,7 @@
         "HP7010"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -71935,7 +71935,7 @@
         "HF5668 400"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -73862,7 +73862,7 @@
         "IO3496 103"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho",
       "colors": [
         "cinza",
@@ -74142,7 +74142,7 @@
         "KH6880"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Marrom",
       "colors": [
         "preto",
@@ -76741,7 +76741,7 @@
       "name": "Zoom Vomero 5",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Bege",
       "colors": [
         "branco",
@@ -76770,7 +76770,7 @@
         "FN7649 110"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -78056,7 +78056,7 @@
         "IU7549 400"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -78253,7 +78253,7 @@
         "DA5424 200"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Marrom / Bege",
       "colors": [
         "preto",
@@ -78341,7 +78341,7 @@
         "KK1892"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -78786,7 +78786,7 @@
       "name": "Cloud 6 Push",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -78983,7 +78983,7 @@
         "DW8806 029"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Branco",
       "colors": [
         "vermelho",
@@ -79412,7 +79412,7 @@
       "name": "Cloudtilt C",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -79441,7 +79441,7 @@
         "3WE10053740"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -79743,7 +79743,7 @@
         "LA6218"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "training",
       "colorway": "Vermelho / Preto / Branco",
       "colors": [
         "vermelho",
@@ -80551,7 +80551,7 @@
         "FD0736 116"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Amarelo / Bege",
       "colors": [
         "branco",
@@ -82304,7 +82304,7 @@
       "name": "P-6000",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -82333,7 +82333,7 @@
         "IH4465 095"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -82861,7 +82861,7 @@
         "FV2338 105"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Bege / Cinza",
       "colors": [
         "bege",
@@ -83150,7 +83150,7 @@
         "HF5668 003"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -83762,7 +83762,7 @@
         "HJ7245 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Bege",
       "colors": [
         "cinza",
@@ -84612,7 +84612,7 @@
         "IU7549 072"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -84923,7 +84923,7 @@
         "HQ3500 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -85037,7 +85037,7 @@
         "HP7023"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco / Preto",
       "colors": [
         "cinza",
@@ -85736,7 +85736,7 @@
         "IH0946 202"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege / Amarelo",
       "colors": [
         "bege",
@@ -85875,7 +85875,7 @@
         "II6236 400"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza / Preto",
       "colors": [
         "azul",
@@ -86469,7 +86469,7 @@
         "ID8648"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Bege / Branco",
       "colors": [
         "bege",
@@ -86556,7 +86556,7 @@
         "IH0946 201"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -86833,7 +86833,7 @@
         "JS2579"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Verde",
       "colors": [
         "azul",
@@ -87860,7 +87860,7 @@
       "name": "P-6000",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -87890,7 +87890,7 @@
         "FV6603 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -88549,7 +88549,7 @@
         "KI6875"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Preto",
       "colors": [
         "branco",
@@ -88661,7 +88661,7 @@
       "name": "P-6000",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -88690,7 +88690,7 @@
         "CD6404 018"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -89406,7 +89406,7 @@
         "BV1021 018"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -90159,7 +90159,7 @@
         "FD0736 113"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -90313,7 +90313,7 @@
       "name": "ACG Ultrafly TRAIL 40 40.5 41 42 42.5 43 44 44.5 45",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Verde",
       "colors": [
         "verde"
@@ -90337,7 +90337,7 @@
         "HF5668 700"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Laranja / Vermelho",
       "colors": [
         "laranja",
@@ -90617,7 +90617,7 @@
         "KH6360"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege / Branco",
       "colors": [
         "bege",
@@ -91103,7 +91103,7 @@
         "DW8806 025"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Branco",
       "colors": [
         "vermelho",
@@ -93503,7 +93503,7 @@
         "DW8806 024"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Verde / Amarelo",
       "colors": [
         "verde",
@@ -93532,7 +93532,7 @@
         "HV9272 107"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Laranja",
       "colors": [
         "cinza",
@@ -93558,7 +93558,7 @@
         "HV9272 700"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -93583,7 +93583,7 @@
         "HV9272 002"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -94300,7 +94300,7 @@
         "IQ0577 025"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -94580,7 +94580,7 @@
         "DW8806 022"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -95010,7 +95010,7 @@
         "DW8806 023"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Branco",
       "colors": [
         "azul",
@@ -97292,7 +97292,7 @@
         "BV1021 200"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Marrom / Vermelho",
       "colors": [
         "marrom",
@@ -97400,7 +97400,7 @@
         "HF5668 101"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Branco / Rosa",
       "colors": [
         "branco",
@@ -98351,7 +98351,7 @@
         "KJ6683"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -98375,7 +98375,7 @@
         "KJ8875"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -98399,7 +98399,7 @@
         "KJ8877"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -99631,7 +99631,7 @@
         "IO8711 101"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -99661,7 +99661,7 @@
         "KI6876"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -103445,7 +103445,7 @@
         "IV4311 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -103473,7 +103473,7 @@
         "IV4311 300"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Verde",
       "colors": [
         "cinza",
@@ -103874,7 +103874,7 @@
         "JR9902"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -103899,7 +103899,7 @@
         "JR9110"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -103923,7 +103923,7 @@
         "JR9901"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -104000,7 +104000,7 @@
         "U204LBC1"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Marrom / Preto",
       "colors": [
         "marrom",
@@ -104720,7 +104720,7 @@
         "DW8806 016"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -105906,7 +105906,7 @@
         "IQ9789 062"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Amarelo / Branco",
       "colors": [
         "cinza",
@@ -106312,7 +106312,7 @@
         "IU7549 400"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -106906,7 +106906,7 @@
         "DW8806 015"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Vermelho",
       "colors": [
         "azul",
@@ -107802,7 +107802,7 @@
         "IH0572 030"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Marrom / Rosa",
       "colors": [
         "cinza",
@@ -108427,7 +108427,7 @@
         "IO3496 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -108966,7 +108966,7 @@
         "Q9789 062"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -108994,7 +108994,7 @@
         "DW8806 014"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -109864,7 +109864,7 @@
       "name": "Vomero 5",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -109892,7 +109892,7 @@
         "FD9920 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -112744,7 +112744,7 @@
         "3MG10154774"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -112773,7 +112773,7 @@
         "3MG10150462"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -112803,7 +112803,7 @@
         "3WG10141200"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -113121,7 +113121,7 @@
         "FN5880 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -114177,7 +114177,7 @@
         "HQ4307 601"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -114204,7 +114204,7 @@
         "HQ4307 101"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza / Vermelho",
       "colors": [
         "branco",
@@ -114233,7 +114233,7 @@
         "IH4382 200"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Bege",
       "colors": [
         "cinza",
@@ -114772,7 +114772,7 @@
       "name": "Flex Plus Pegasu",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Vermelho",
       "colors": [
         "cinza",
@@ -114802,7 +114802,7 @@
         "FQ7261 402"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul / Cinza",
       "colors": [
         "azul",
@@ -115226,7 +115226,7 @@
         "FD0736 106"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Rosa",
       "colors": [
         "rosa"
@@ -116810,7 +116810,7 @@
         "HP7008"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Amarelo",
       "colors": [
         "preto",
@@ -117400,7 +117400,7 @@
         "3MG10243147"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -117429,7 +117429,7 @@
         "3ME10102336"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -117459,7 +117459,7 @@
         "3WE10054845"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Rosa / Cinza",
       "colors": [
         "rosa",
@@ -117852,7 +117852,7 @@
         "816568-010"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -119194,7 +119194,7 @@
         "DD8806 017"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -119252,7 +119252,7 @@
         "HJ4646 300"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Marrom / Amarelo",
       "colors": [
         "cinza",
@@ -119282,7 +119282,7 @@
         "IQ1127 220"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Bege / Preto",
       "colors": [
         "cinza",
@@ -119935,7 +119935,7 @@
         "806568 007"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -120387,7 +120387,7 @@
         "FN5880 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Vermelho",
       "colors": [
         "cinza",
@@ -120816,7 +120816,7 @@
         "HQ4307 301"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -120843,7 +120843,7 @@
         "HQ4307 400"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -120871,7 +120871,7 @@
         "HY5028 200"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -122781,7 +122781,7 @@
         "U204L80V"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Preto / Cinza",
       "colors": [
         "branco",
@@ -122811,7 +122811,7 @@
         "U204L273"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Marrom / Cinza",
       "colors": [
         "marrom",
@@ -123074,7 +123074,7 @@
         "HQ7468"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Laranja / Preto",
       "colors": [
         "laranja",
@@ -123948,7 +123948,7 @@
         "HY5028 001"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -124475,7 +124475,7 @@
         "DW8806 013"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -125320,7 +125320,7 @@
         "KJ5731"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -125347,7 +125347,7 @@
         "KI0164"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Rosa",
       "colors": [
         "cinza",
@@ -125458,7 +125458,7 @@
       "name": "Speedcat Go",
       "tags": [],
       "brand": "puma",
-      "category": "training",
+      "category": "casual",
       "colorway": "Rosa",
       "colors": [
         "rosa"
@@ -125606,7 +125606,7 @@
         "KK3072"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -125635,7 +125635,7 @@
         "KK3075"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege",
       "colors": [
         "bege"
@@ -125663,7 +125663,7 @@
         "KK3074"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -125692,7 +125692,7 @@
         "KK3089"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -125720,7 +125720,7 @@
         "KK3092"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -126155,7 +126155,7 @@
       "name": "Cloudultra Pro",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Amarelo",
       "colors": [
         "amarelo"
@@ -126183,7 +126183,7 @@
         "3MF30170158"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Bege / Amarelo",
       "colors": [
         "cinza",
@@ -126298,7 +126298,7 @@
         "KI1921"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Preto",
       "colors": [
         "branco",
@@ -126848,7 +126848,7 @@
         "FV2295 300"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Verde / Preto / Azul",
       "colors": [
         "verde",
@@ -126878,7 +126878,7 @@
         "HQ2181 400"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -127532,7 +127532,7 @@
         "FN5880 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -128578,7 +128578,7 @@
         "FN5880 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -128690,7 +128690,7 @@
         "CD6404 031"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -128806,7 +128806,7 @@
         "KI1988"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Vermelho",
       "colors": [
         "branco",
@@ -129254,7 +129254,7 @@
         "CQ7743 200"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege",
       "colors": [
         "bege"
@@ -130156,7 +130156,7 @@
         "BZ6880 107"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza",
       "colors": [
         "azul",
@@ -130690,7 +130690,7 @@
         "HQ4309 610"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Rosa / Vermelho / Branco",
       "colors": [
         "rosa",
@@ -130719,7 +130719,7 @@
         "3MG10271430"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -130774,7 +130774,7 @@
       "name": "RAF SIMONS RESPONSE TRAIL\"",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -130801,7 +130801,7 @@
       "name": "RAF SIMONS RESPONSE TRAIL\" \"",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -130967,7 +130967,7 @@
       "name": "NK Mind 001",
       "tags": [],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Bege / Vermelho / Branco",
       "colors": [
         "bege",
@@ -130996,7 +130996,7 @@
         "HQ4307 003"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -131166,7 +131166,7 @@
         "3WE10053286"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -131609,7 +131609,7 @@
         "KJ5731"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -131638,7 +131638,7 @@
         "CD6404 608"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -131742,7 +131742,7 @@
         "FV2338 001"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -132497,7 +132497,7 @@
         "3MF10041200"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco",
       "colors": [
         "branco"
@@ -132822,7 +132822,7 @@
         "FD0736 115"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Rosa / Cinza",
       "colors": [
         "rosa",
@@ -134233,7 +134233,7 @@
         "3ME10103252"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -134567,7 +134567,7 @@
         "DV3337 007"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -134621,7 +134621,7 @@
         "3MG10273686"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -135813,7 +135813,7 @@
       "name": "Originals Adistar Jellyfish",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -135843,7 +135843,7 @@
         "JP9262"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -135990,7 +135990,7 @@
         "HQ4307 400"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -136018,7 +136018,7 @@
         "HQ4307 301"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -136073,7 +136073,7 @@
         "IQ0298 010"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Marrom",
       "colors": [
         "preto",
@@ -136100,7 +136100,7 @@
         "CD6404 028"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -136409,7 +136409,7 @@
         "3ME31071591"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Preto / Cinza / Azul",
       "colors": [
         "preto",
@@ -137143,7 +137143,7 @@
         "JS4519"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -137194,7 +137194,7 @@
         "FV2337 201"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Marrom / Bege",
       "colors": [
         "marrom",
@@ -137420,7 +137420,7 @@
         "3MG10244728"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -137449,7 +137449,7 @@
         "3MG10244728"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Rosa / Bege / Vermelho",
       "colors": [
         "rosa",
@@ -137593,7 +137593,7 @@
       "name": "Originals ANFU TRAINERS",
       "tags": [],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Cinza / Branco",
       "colors": [
         "preto",
@@ -137622,7 +137622,7 @@
         "KH6224"
       ],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -139448,7 +139448,7 @@
         "BV1021 109"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Marrom",
       "colors": [
         "cinza",
@@ -140176,7 +140176,7 @@
         "MR530AAM"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza",
       "colors": [
         "branco",
@@ -140521,7 +140521,7 @@
         "KI1912"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza / Preto",
       "colors": [
         "azul",
@@ -140552,7 +140552,7 @@
         "KI1911"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza",
       "colors": [
         "azul",
@@ -140871,7 +140871,7 @@
         "3MF10742145"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho / Cinza",
       "colors": [
         "vermelho",
@@ -141066,7 +141066,7 @@
         "3ME30113427"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -141239,7 +141239,7 @@
         "U204L6A6"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -141265,7 +141265,7 @@
         "U204L6A6"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Branco / Cinza / Rosa",
       "colors": [
         "branco",
@@ -141292,7 +141292,7 @@
         "U204L2SZ"
       ],
       "brand": "new-balance",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -141318,7 +141318,7 @@
         "HQ7468"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Laranja / Preto",
       "colors": [
         "laranja",
@@ -141349,7 +141349,7 @@
         "JP9265"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Preto",
       "colors": [
         "cinza",
@@ -142199,7 +142199,7 @@
         "FD0736 115"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege",
       "colors": [
         "bege"
@@ -142624,7 +142624,7 @@
         "ID2700"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Verde / Amarelo",
       "colors": [
         "verde",
@@ -142653,7 +142653,7 @@
         "ID2701"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -142681,7 +142681,7 @@
         "ID2704"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -142709,7 +142709,7 @@
         "ID2702"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -143223,7 +143223,7 @@
         "HQ4308 001"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -143936,7 +143936,7 @@
         "IQ7600 012"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -144170,7 +144170,7 @@
         "IQ7600 012"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -144370,7 +144370,7 @@
         "HQ4307 601"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -144764,7 +144764,7 @@
         "DW8806 012"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -145046,7 +145046,7 @@
         "3ME30113433"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -145901,7 +145901,7 @@
         "3MF10742143"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Bege / Vermelho",
       "colors": [
         "cinza",
@@ -146220,7 +146220,7 @@
         "KH6224"
       ],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -147020,7 +147020,7 @@
         "3ME10103740"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -147049,7 +147049,7 @@
         "IO3496 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -148231,7 +148231,7 @@
         "HQ4310 003"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -148259,7 +148259,7 @@
         "HQ4310 003"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -148342,7 +148342,7 @@
         "DW8806 005"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -148537,7 +148537,7 @@
         "HQ4308 003"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -148993,7 +148993,7 @@
       "name": "ACG MOUNTAIN FLY 2 Low",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -149019,7 +149019,7 @@
         "DV7903 002"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -149834,7 +149834,7 @@
         "DW8806 003"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -149862,7 +149862,7 @@
         "DW8806 003"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -149922,7 +149922,7 @@
         "IO3496 001"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -149950,7 +149950,7 @@
         "3MF30664607"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -149977,7 +149977,7 @@
         "3MF30600299"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -150005,7 +150005,7 @@
         "3MF30661748"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -150058,7 +150058,7 @@
       "name": "Mind 002",
       "tags": [],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -150086,7 +150086,7 @@
         "HQ4310 003"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -150675,7 +150675,7 @@
         "HF0015 002"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -151211,7 +151211,7 @@
       "name": "NK Mind 001",
       "tags": [],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho / Rosa",
       "colors": [
         "vermelho",
@@ -151240,7 +151240,7 @@
         "HQ4307 003"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -152220,7 +152220,7 @@
       "name": "Cloudvista 2 Cloudvista 2 Waterproof",
       "tags": [],
       "brand": "on",
-      "category": "training",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -152249,7 +152249,7 @@
         "3MF31124526"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -152613,7 +152613,7 @@
         "KI0163"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Rosa",
       "colors": [
         "cinza",
@@ -153166,7 +153166,7 @@
         "KH6225"
       ],
       "brand": "adidas",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -153332,7 +153332,7 @@
       "name": "RAF SIMONS RESPONSE TRAIL",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Verde / Preto",
       "colors": [
         "verde",
@@ -153356,7 +153356,7 @@
       "name": "RAF SIMONS RESPONSE TRAIL",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -153382,7 +153382,7 @@
         "BV1021 016"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -153411,7 +153411,7 @@
         "HQ3490 099"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -154104,7 +154104,7 @@
       "name": "Mind 002",
       "tags": [],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -154132,7 +154132,7 @@
         "HQ4308 003"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -154577,7 +154577,7 @@
         "3MF30670664"
       ],
       "brand": "on",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -154606,7 +154606,7 @@
         "3WG1077008"
       ],
       "brand": "on",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul / Preto",
       "colors": [
         "cinza",
@@ -154861,7 +154861,7 @@
         "HQ4308 012"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -154884,7 +154884,7 @@
         "HQ4308 012"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -156604,7 +156604,7 @@
       "name": "V2K Run",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Vermelho",
       "colors": [
         "cinza",
@@ -159564,7 +159564,7 @@
       "name": "Terrex agravic speed ultra 2",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -163147,7 +163147,7 @@
       "name": "Cloudvista 2",
       "tags": [],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Rosa / Bege / Amarelo",
       "colors": [
         "rosa",
@@ -164446,7 +164446,7 @@
       "name": "Cloudsolo",
       "tags": [],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Rosa / Branco",
       "colors": [
         "rosa",
@@ -165354,7 +165354,7 @@
       "name": "Mind 002",
       "tags": [],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Rosa",
       "colors": [
         "rosa"
@@ -166607,7 +166607,7 @@
       "name": "Comme Des Garcons Homme Plus x Nk Air Max TL 2.5 Pack",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -166653,7 +166653,7 @@
       "name": "P-6000",
       "tags": [],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -167066,7 +167066,7 @@
       "name": "TERREX AGRAVIC TT",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Vermelho",
       "colors": [
         "vermelho"
@@ -167088,7 +167088,7 @@
       "name": "TERREX AGRAVIC TT",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -167111,7 +167111,7 @@
       "name": "TERREX AGRAVIC TT",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -167133,7 +167133,7 @@
       "name": "TERREX AGRAVIC TT",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Branco / Cinza / Azul",
       "colors": [
         "branco",
@@ -167691,7 +167691,7 @@
       "name": "Terrex agravic speed ultra 2",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Vermelho",
       "colors": [
         "cinza",
@@ -167718,7 +167718,7 @@
       "name": "Terrex agravic speed ultra 2",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Amarelo",
       "colors": [
         "cinza",
@@ -169166,7 +169166,7 @@
       "name": "TERREX AGRAVIC TT",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -169189,7 +169189,7 @@
       "name": "TERREX AGRAVIC TT",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -169212,7 +169212,7 @@
       "name": "TERREX AGRAVIC TT",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -173806,7 +173806,7 @@
       "name": "TERREX FREEHIKER SL GTX",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -173832,7 +173832,7 @@
       "name": "TERREX FREEHIKER SL GTX",
       "tags": [],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -176615,7 +176615,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Preto",
       "colors": [
         "cinza",
@@ -177791,7 +177791,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Preto",
       "colors": [
         "cinza",
@@ -177819,7 +177819,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege / Azul",
       "colors": [
         "bege",
@@ -178431,7 +178431,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -178458,7 +178458,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -178484,7 +178484,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Preto",
       "colors": [
         "azul",
@@ -178511,7 +178511,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -178537,7 +178537,7 @@
       "name": "Adizero Evo SL 72",
       "tags": [],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Azul",
       "colors": [
         "cinza",
@@ -178749,7 +178749,7 @@
       "name": "On Cloudpulse Next",
       "tags": [],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Preto / Cinza / Azul",
       "colors": [
         "preto",
@@ -178802,7 +178802,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto / Branco",
       "colors": [
         "cinza",
@@ -178830,7 +178830,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Laranja / Branco",
       "colors": [
         "cinza",
@@ -178858,7 +178858,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Vermelho / Branco",
       "colors": [
         "vermelho",
@@ -178885,7 +178885,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Marrom",
       "colors": [
         "cinza",
@@ -178912,7 +178912,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -178938,7 +178938,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul / Laranja",
       "colors": [
         "azul",
@@ -178965,7 +178965,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -178992,7 +178992,7 @@
       "name": "React Wildhorse 10",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Rosa / Vermelho",
       "colors": [
         "rosa",
@@ -180598,7 +180598,7 @@
       "name": "On Cloudpulse Next",
       "tags": [],
       "brand": "on",
-      "category": "casual",
+      "category": "training",
       "colorway": "Marrom",
       "colors": [
         "marrom"
@@ -182244,7 +182244,7 @@
       "name": "ACG ZEGAMA TRAIL",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Verde",
       "colors": [
         "verde"
@@ -182375,7 +182375,7 @@
       "name": "ACG ZEGAMA TRAIL",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Laranja",
       "colors": [
         "laranja"
@@ -182568,7 +182568,7 @@
       "name": "ACG MOUNTAIN FLY GTX SE",
       "tags": [],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -183153,7 +183153,7 @@
         "HV8113 008"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Laranja",
       "colors": [
         "cinza",
@@ -183209,7 +183209,7 @@
         "HQ2056 104"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -183238,7 +183238,7 @@
         "HJ4497 600"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Preto / Azul",
       "colors": [
         "vermelho",
@@ -183278,7 +183278,7 @@
         "HQ4310-001"
       ],
       "brand": "nike",
-      "category": "training",
+      "category": "casual",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -185694,7 +185694,7 @@
         "IB2986 003"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto",
       "colors": [
         "preto"
@@ -186363,7 +186363,7 @@
         "HV8113 300"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -187230,7 +187230,7 @@
         "HF7545 100"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto / Rosa",
       "colors": [
         "cinza",
@@ -188127,7 +188127,7 @@
         "FV4227-003"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege / Cinza",
       "colors": [
         "bege",
@@ -188323,7 +188323,7 @@
         "HQ8492 400"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -190095,7 +190095,7 @@
         "HV8113 201"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul / Cinza",
       "colors": [
         "azul",
@@ -190271,7 +190271,7 @@
         "BZ6880 106"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -190288,7 +190288,7 @@
         "IO1904 104"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Marrom / Preto",
       "colors": [
         "cinza",
@@ -190794,7 +190794,7 @@
         "DW8806 007"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Marrom / Laranja",
       "colors": [
         "vermelho",
@@ -190813,7 +190813,7 @@
         "DW8806 006"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Cinza",
       "colors": [
         "preto",
@@ -191189,7 +191189,7 @@
         "KJ0751"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Azul",
       "colors": [
         "cinza",
@@ -191260,7 +191260,7 @@
         "JS3537"
       ],
       "brand": "adidas",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Rosa / Laranja",
       "colors": [
         "cinza",
@@ -192447,7 +192447,7 @@
         "FD0736 011"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Branco / Bege",
       "colors": [
         "cinza",
@@ -193010,7 +193010,7 @@
         "DW8806 008"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Marrom / Cinza / Preto",
       "colors": [
         "marrom",
@@ -193885,7 +193885,7 @@
         "3MF30664606"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Bege / Branco",
       "colors": [
         "cinza",
@@ -193904,7 +193904,7 @@
         "3MF30664607"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -193922,7 +193922,7 @@
         "3MF30664602"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza",
       "colors": [
         "cinza"
@@ -194518,7 +194518,7 @@
         "HV8113 010"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Branco",
       "colors": [
         "cinza",
@@ -194553,7 +194553,7 @@
         "KI1913"
       ],
       "brand": "adidas",
-      "category": "running",
+      "category": "casual",
       "colorway": "Vermelho / Rosa",
       "colors": [
         "vermelho",
@@ -195253,7 +195253,7 @@
         "3MF30664724"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Amarelo",
       "colors": [
         "amarelo"
@@ -195270,7 +195270,7 @@
         "3WF30602420"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Amarelo",
       "colors": [
         "amarelo"
@@ -195287,7 +195287,7 @@
         "3MF30660553"
       ],
       "brand": "on",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto / Azul",
       "colors": [
         "cinza",
@@ -195499,7 +195499,7 @@
         "HV8113 019"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Azul",
       "colors": [
         "azul"
@@ -198583,7 +198583,7 @@
         "HV8113 008"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -198850,7 +198850,7 @@
         "FV4227-233"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Bege / Laranja",
       "colors": [
         "bege",
@@ -198868,7 +198868,7 @@
         "FD0736 109"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -199316,7 +199316,7 @@
         "HV8113 114"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Vermelho / Cinza / Rosa",
       "colors": [
         "vermelho",
@@ -199895,7 +199895,7 @@
         "IH0946 300"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Preto / Marrom / Amarelo",
       "colors": [
         "preto",
@@ -199950,7 +199950,7 @@
         "DA5424 202"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Cinza / Azul",
       "colors": [
         "preto",
@@ -199969,7 +199969,7 @@
         "DA5424 205"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Cinza / Preto",
       "colors": [
         "cinza",
@@ -199987,7 +199987,7 @@
         "DA5424 203"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Laranja",
       "colors": [
         "preto",
@@ -200005,7 +200005,7 @@
         "DA5424 204"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Verde / Preto",
       "colors": [
         "verde",
@@ -200023,7 +200023,7 @@
         "DA5424 201"
       ],
       "brand": "nike",
-      "category": "casual",
+      "category": "running",
       "colorway": "Preto / Azul",
       "colors": [
         "preto",
@@ -200692,7 +200692,7 @@
         "IQ0296 491"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Azul / Cinza / Preto",
       "colors": [
         "azul",
@@ -200798,7 +200798,7 @@
         "IQ1120 311"
       ],
       "brand": "nike",
-      "category": "running",
+      "category": "casual",
       "colorway": "Cinza / Laranja / Amarelo",
       "colors": [
         "cinza",

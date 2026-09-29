@@ -24,11 +24,10 @@ export function BrandPage() {
     );
   }
 
-  const eixo = CATEGORIES.find((c) => c.slug === marca.category)?.name;
   return (
     <CatalogView
       titulo={marca.name}
-      subtitulo={`${marca.tagline} ${marca.blurb}. ${eixo ? eixo + '.' : ''}`}
+      subtitulo={`${marca.tagline} ${marca.blurb}. Filtre por tipo de tênis: running, training ou casual.`}
       marcaFixa={marca.slug}
     />
   );
@@ -62,7 +61,13 @@ export function SearchPage() {
 export function BrandsPage() {
   const { catalog } = useCatalog();
   const contagem = new Map<string, number>();
-  for (const p of catalog.products) contagem.set(p.brand, (contagem.get(p.brand) ?? 0) + 1);
+  // Tipos de tênis que cada marca tem de fato no catálogo (não um "eixo" fixo).
+  const tipos = new Map<string, Set<string>>();
+  for (const p of catalog.products) {
+    contagem.set(p.brand, (contagem.get(p.brand) ?? 0) + 1);
+    if (!tipos.has(p.brand)) tipos.set(p.brand, new Set());
+    tipos.get(p.brand)!.add(p.category);
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10">
@@ -87,7 +92,9 @@ export function BrandsPage() {
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4">
               <h2 className="font-display text-2xl font-extrabold uppercase text-white">{b.name}</h2>
               <p className="text-xs uppercase tracking-[0.2em] text-ouro">
-                {CATEGORIES.find((c) => c.slug === b.category)?.name}
+                {CATEGORIES.filter((c) => tipos.get(b.slug)?.has(c.slug))
+                  .map((c) => c.name)
+                  .join(' · ') || 'Em breve'}
               </p>
               <p className="mt-1 text-xs text-nevoa">
                 {contagem.get(b.slug) ?? 0} {(contagem.get(b.slug) ?? 0) === 1 ? 'modelo' : 'modelos'}

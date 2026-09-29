@@ -30,12 +30,24 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
   `src/config.ts`) ou no próprio produto do `catalog.json` — o produto vence a
   tabela — e tudo liga sozinho, inclusive o filtro.
 
-- **Uma marca puxa um eixo.** `BRANDS` em `src/config.ts` casa cada marca com
-  um uso (Nike → running, adidas → training, New Balance → casual…). É essa
-  lista que alimenta ao mesmo tempo a galeria de marcas da abertura, a página
-  `/marcas`, as faixas por marca do catálogo e os chips do filtro. Para
-  acrescentar marca, mexa **só ali**. Marca sem nenhum modelo no catálogo não
-  aparece na galeria da abertura.
+- **Marca e tipo de tênis são filtros independentes.** Running, Training e
+  Casual valem para todas as marcas: cada produto tem **um** tipo, definido no
+  cadastro (`category`, gravado por `scripts/build-catalog.mjs`), e o filtro
+  "Tipo de tênis" mostra só os produtos daquele tipo — Nike + Running, Adidas +
+  Casual, e assim por diante. O tipo sai do **modelo** (listas `MODELOS_TIPO`
+  no topo do script), não da marca nem do código do produto. Tênis no tipo
+  errado? Acrescente o modelo na lista certa e rode `npm run build-catalog`.
+
+- **As marcas ficam em `BRANDS`, em `src/config.ts`.** É essa lista que
+  alimenta a galeria de marcas da abertura, a página `/marcas`, as faixas por
+  marca do catálogo e os chips do filtro. Para acrescentar marca, mexa **só
+  ali**. Marca sem nenhum modelo no catálogo não aparece na galeria.
+
+- **Frases comerciais entre os tênis.** As grades intercalam cards com frases
+  de preço, economia, estilo e pagamento (`PROMOS` e `PARCELAS` em
+  `src/config.ts`). Aparecem com moderação — uma por vitrine curta, em faixas
+  alternadas, e 1 a cada 16 posições na grade inteira — e os tipos se alternam
+  para o cliente não ver sempre a mesma.
 
 - **As fotos das cartas de marca são de licença livre.** `public/hero/<slug>.webp`
   (660×990, retrato 2:3) saíram do Wikimedia Commons: alguém usando o tênis ou o
@@ -181,7 +193,9 @@ src/
     Layout.tsx              faixa, cabeçalho com busca, rodapé
     Hero.tsx                abertura compacta + galeria de marcas + eixos
     BrandGallery.tsx        "Escolha a marca": a sanfona e os modelos da marca aberta
-    CatalogView.tsx         separada por marca, com filtros (marca, uso, cor, preço)
+    CatalogView.tsx         separada por marca, com filtros (marca, tipo, cor, preço)
+    ProductGrid.tsx         a grade de tênis, com as frases comerciais intercaladas
+    PromoCard.tsx           o card de frase comercial e a vez de cada frase
     ProductCard.tsx         a carta ligada à página do produto
     ui/card-7.tsx                    carta 3D
     ui/elastic-gallery.tsx           galeria sanfona (a mesma do catálogo da Arkad)

@@ -1,13 +1,14 @@
 // Início: abertura da campanha, carrossel de marcas e uma amostra do catálogo.
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import ProductCard from '../components/ProductCard';
+import ProductGrid from '../components/ProductGrid';
 import { COPY } from '../config';
 import { useCatalog } from '../lib/catalog';
 
 export default function Home() {
   const { ready, error, catalog } = useCatalog();
-  const destaques = catalog.products.slice(0, 8);
+  // 7 tênis e uma frase comercial: duas fileiras cheias.
+  const destaques = catalog.products.slice(0, 7);
 
   return (
     <>
@@ -49,11 +50,7 @@ export default function Home() {
             O catálogo ainda está sendo montado. Volte em instantes.
           </p>
         ) : (
-          <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
-            {destaques.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
+          <ProductGrid produtos={destaques} promos={{ primeira: 5, aCada: 1000 }} />
         )}
       </section>
     </>
