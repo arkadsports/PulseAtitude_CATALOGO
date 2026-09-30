@@ -1,12 +1,14 @@
 // Página do produto: galeria à esquerda, ficha e pedido à direita.
 // O tamanho escolhido aqui é o que viaja no botão do WhatsApp — é isso que
 // transforma a visita em pedido sem ninguém ter de digitar o número do pé.
-import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
+// "Concluir pedido" leva nome, cor, tamanho, código e o link do produto, cuja
+// pré-visualização mostra a foto do tênis na conversa (veja whatsappLink).
+import { useEffect, useMemo, useRef, useState, type MouseEvent, type SyntheticEvent } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, MessageCircle, X } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { CATEGORIES, STORE, brandBySlug } from '../config';
-import { img, priceLabel, sortSizes, useCatalog, whatsappLink } from '../lib/catalog';
+import { cover, img, nomeCompleto, priceLabel, sortSizes, useCatalog, whatsappLink } from '../lib/catalog';
 
 const SEM_FOTO = '/sem-foto.svg';
 
@@ -18,6 +20,9 @@ export default function ProductPage() {
   const [foto, setFoto] = useState(produto?.cover ?? 0);
   const [tamanho, setTamanho] = useState<string>();
   const [zoom, setZoom] = useState(false);
+  // Tentou concluir sem tamanho: o seletor pisca e pede o número.
+  const [pedeTamanho, setPedeTamanho] = useState(false);
+  const seletor = useRef<HTMLFieldSetElement>(null);
   const [idAnterior, setIdAnterior] = useState(produto?.id);
 
   // Trocar de produto sem sair da rota — ou o catálogo chegar depois da tela —
@@ -28,6 +33,7 @@ export default function ProductPage() {
     setFoto(produto?.cover ?? 0);
     setTamanho(undefined);
     setZoom(false);
+    setPedeTamanho(false);
   }
 
   const tamanhos = useMemo(() => (produto ? sortSizes(produto.sizes) : []), [produto]);
@@ -66,6 +72,15 @@ export default function ProductPage() {
   const marca = brandBySlug.get(produto.brand);
   const eixo = CATEGORIES.find((c) => c.slug === produto.category);
   const total = Math.max(produto.photos, 1);
+  // Concluir sem escolher o tamanho, quando o par tem tamanhos, não abre o
+  // WhatsApp: leva o cliente ao seletor. Pedido pela metade atrasa todo mundo.
+  const concluir = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (tamanhos.length > 0 && !tamanho) {
+      e.preventDefault();
+      setPedeTamanho(true);
+      seletor.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
   const cair = (e: SyntheticEvent<HTMLImageElement>) => {
     const alvo = e.currentTarget;
     if (!alvo.src.endsWith(SEM_FOTO)) alvo.src = SEM_FOTO;
@@ -155,7 +170,10 @@ export default function ProductPage() {
           <p className="mt-6 font-display text-4xl font-extrabold text-ouro-claro">{priceLabel(produto)}</p>
 
           {/* Tamanhos — só os que existem para este par. */}
-          <fieldset className="mt-8">
+          <fieldset
+            ref={seletor}
+            className={`mt-8 rounded-2xl transition-shadow ${pedeTamanho && !tamanho ? 'ring-2 ring-ouro ring-offset-8 ring-offset-black' : ''}`}
+          >
             <legend className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-nevoa">
               Tamanho (BR)
             </legend>
@@ -182,20 +200,44 @@ export default function ProductPage() {
             )}
           </fieldset>
 
+          {/* Resumo do pedido: o que vai na mensagem, com a foto que aparece na conversa. */}
+          <div className="mt-7 flex items-center gap-4 rounded-2xl border border-fio bg-carvao p-3">
+            <img
+              src={cover(produto)}
+              alt=""
+              onError={cair}
+              className="h-20 w-20 shrink-0 rounded-xl bg-grafite object-cover"
+            />
+            <div className="min-w-0 text-sm">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-ouro">Seu pedido</p>
+              <p className="truncate font-semibold text-white">{nomeCompleto(produto)}</p>
+              <p className="text-nevoa">
+                {[produto.colorway, tamanho ? `Tamanho ${tamanho}` : tamanhos.length ? 'Tamanho: escolha acima' : null]
+                  .filter(Boolean)
+                  .join(' · ')}
+              </p>
+            </div>
+          </div>
+
           <a
             href={whatsappLink(produto, tamanho)}
+            onClick={concluir}
             target="_blank"
             rel="noreferrer"
-            className="btn-ouro mt-7 flex h-14 items-center justify-center rounded-xl text-base"
+            className="btn-ouro mt-4 flex h-14 items-center justify-center gap-2 rounded-xl text-base"
           >
-            {tamanho ? `Pedir no tamanho ${tamanho}` : 'Pedir pelo WhatsApp'}
+            <MessageCircle className="h-5 w-5" aria-hidden />
+            {tamanho ? `Concluir pedido · tamanho ${tamanho}` : 'Concluir pedido no WhatsApp'}
           </a>
 
-          {tamanhos.length > 0 && !tamanho ? (
-            <p className="mt-2 text-center text-xs text-nevoa">
-              Escolha o tamanho e ele já vai escrito na mensagem.
-            </p>
-          ) : null}
+          <p
+            role={pedeTamanho && !tamanho ? 'alert' : undefined}
+            className={`mt-2 text-center text-xs ${pedeTamanho && !tamanho ? 'font-semibold text-ouro-claro' : 'text-nevoa'}`}
+          >
+            {pedeTamanho && !tamanho
+              ? 'Escolha o tamanho para concluir o pedido.'
+              : 'Abre o WhatsApp da Pulse com o pedido escrito e a foto do tênis.'}
+          </p>
 
           <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-fio pt-6 text-sm">
             <div>
@@ -203,7 +245,7 @@ export default function ProductPage() {
               <dd className="font-semibold text-white">{produto.id}</dd>
             </div>
             <div>
-              <dt className="text-nevoa">Uso</dt>
+              <dt className="text-nevoa">Tipo</dt>
               <dd className="font-semibold text-white">{eixo?.name ?? '—'}</dd>
             </div>
             <div>

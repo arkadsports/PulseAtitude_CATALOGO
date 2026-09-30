@@ -58,6 +58,15 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
   use sem autorização. As logos, em `public/marcas/<slug>.png`, são brancas com
   fundo transparente.
 
+- **O pedido vai com a foto do tênis.** O link do WhatsApp (`wa.me`) só aceita
+  texto, então "Concluir pedido" manda nome, cor, tamanho, código e preço, e
+  termina com o link `/p/<id>?t=<tamanho>`. Esse endereço é uma função da
+  Vercel (`api/p.js`) que entrega ao WhatsApp a pré-visualização do produto —
+  a foto aparece na conversa com a loja — e leva quem clica para a página do
+  produto. A foto é a capa em JPEG (`npm run og-imagens`, no R2 em `og/`).
+  Produto novo no catálogo precisa rodar essa etapa, ou a conversa vai sem foto.
+  Sem tamanho escolhido, o botão não abre o WhatsApp: leva ao seletor.
+
 - **Os filtros moram na URL.** `?q=&marca=&eixo=&cor=&min=&max=`. O cliente manda o
   link do que achou e o outro lado abre exatamente a mesma lista. É também o
   que faz `/marca/nike` e `/categoria/running` serem a mesma tela com um
@@ -96,6 +105,7 @@ npm run capas           # 3b. escolhe a capa (nunca a sola) -> data/capas.json
 npm run cores           # 3c. tira as cores da capa        -> data/cores.json
 npm run upload-images   # 4. sobe para o R2
 npm run build-catalog   # de novo, para gravar capa e cores no catálogo
+npm run og-imagens      # 5. foto do pedido no WhatsApp -> R2 og/<id>.jpg
 ```
 
 As etapas 3b e 3c usam um modelo de visão que roda no computador (instale uma

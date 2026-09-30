@@ -118,16 +118,33 @@ export const priceLabel = (p: Product) => {
 };
 
 // ---------- Pedido ----------
-/** Link do pedido, já com o tamanho escolhido na página. Sem tamanho, o
- *  campo vai em branco para o cliente completar — nunca chutamos um número. */
-export function whatsappLink(p: Product, size?: string) {
+/** Nome para o cliente ler: marca + modelo, sem repetir ("On Cloud 5", não "On On Cloud 5"). */
+export function nomeCompleto(p: Product) {
   const marca = brandBySlug.get(p.brand)?.name ?? p.brand;
-  const partes = [
-    `Olá! Quero pedir na ${STORE.name}: ${marca} ${p.name}${p.colorway ? ' (' + p.colorway + ')' : ''}.`,
-    `Código: ${p.id}.`,
-    size ? `Tamanho: ${size}.` : 'Tamanho: ',
-  ];
-  const texto = encodeURIComponent(partes.join(' '));
+  return p.name.toLowerCase().startsWith(marca.toLowerCase() + ' ') ? p.name : `${marca} ${p.name}`;
+}
+
+/** Link do pedido no WhatsApp, já com o tamanho escolhido na página. Sem
+ *  tamanho, o campo vai em branco para o cliente completar — nunca chutamos
+ *  um número.
+ *
+ *  A foto: o wa.me só leva texto, então a mensagem termina com o link
+ *  /p/<id> (api/p.js), e o WhatsApp mostra a foto do tênis na pré-visualização
+ *  desse link, na conversa com a loja. */
+export function whatsappLink(p: Product, size?: string) {
+  const origem = typeof window === 'undefined' ? '' : window.location.origin;
+  const linhas = [
+    `Olá! Quero concluir meu pedido na ${STORE.name}:`,
+    '',
+    `*${nomeCompleto(p)}*`,
+    p.colorway ? `Cor: ${p.colorway}` : null,
+    `Tamanho: ${size ?? ''}`,
+    `Código: ${p.id}`,
+    `Preço: ${priceLabel(p)}`,
+    '',
+    `${origem}/p/${p.id}${size ? `?t=${encodeURIComponent(size)}` : ''}`,
+  ].filter((l) => l !== null);
+  const texto = encodeURIComponent(linhas.join('\n'));
   return STORE.whatsapp ? `https://wa.me/${STORE.whatsapp}?text=${texto}` : `https://wa.me/?text=${texto}`;
 }
 
