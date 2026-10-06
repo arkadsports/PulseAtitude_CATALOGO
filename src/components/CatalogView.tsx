@@ -13,7 +13,9 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SlidersHorizontal, X } from 'lucide-react';
+import GradeToggle from './GradeToggle';
 import ProductGrid from './ProductGrid';
+import { useGrade } from '../lib/grade';
 import { BRANDS, CATEGORIES, COLORS, type Brand } from '../config';
 import { normalize, priceOf, useCatalog, type Product } from '../lib/catalog';
 
@@ -22,6 +24,8 @@ import { normalize, priceOf, useCatalog, type Product } from '../lib/catalog';
 const POR_VEZ = 48;
 /** Posições de cada marca na visão separada por marca (duas fileiras). */
 const POR_MARCA = 8;
+/** Na grade compacta cabem mais, e 12 fecha linhas de 3, 4 e 6 colunas. */
+const POR_MARCA_COMPACTA = 12;
 /** Frases comerciais na grade inteira: a primeira na 8ª posição, depois 1 a cada 16. */
 const PROMOS_GRADE = { primeira: 7, aCada: 16 };
 /** Na faixa de cada marca, uma frase na 6ª posição — só em faixas alternadas. */
@@ -289,11 +293,14 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo }: 
         </p>
       ) : (
         <>
-          <p className="mb-5 text-sm text-nevoa">
-            <strong className="text-white">{resultados.length}</strong>{' '}
-            {resultados.length === 1 ? 'modelo' : 'modelos'}
-            {marca ? null : <> em {porMarcaNaGrade.length} {porMarcaNaGrade.length === 1 ? 'marca' : 'marcas'}</>}
-          </p>
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <p className="text-sm text-nevoa">
+              <strong className="text-white">{resultados.length}</strong>{' '}
+              {resultados.length === 1 ? 'modelo' : 'modelos'}
+              {marca ? null : <> em {porMarcaNaGrade.length} {porMarcaNaGrade.length === 1 ? 'marca' : 'marcas'}</>}
+            </p>
+            <GradeToggle />
+          </div>
           {marca ? (
             <>
               <ProductGrid key={chaveFiltro} produtos={visiveis} promos={PROMOS_GRADE} />
@@ -344,9 +351,13 @@ function FaixaDaMarca({
   comFrase: boolean;
   onVerTodos: () => void;
 }) {
-  // A frase ocupa uma das posições: as duas fileiras continuam cheias.
-  const cabem = comFrase && produtos.length >= PROMO_FAIXA.primeira ? POR_MARCA - 1 : POR_MARCA;
-  const sobra = produtos.length - POR_MARCA;
+  const { compacta } = useGrade();
+  // Na ampla, a frase ocupa uma das posições e as duas fileiras continuam
+  // cheias. Na compacta ela é uma faixa à parte e não toma lugar de tênis.
+  const vagas = compacta ? POR_MARCA_COMPACTA : POR_MARCA;
+  const temFrase = comFrase && produtos.length >= PROMO_FAIXA.primeira;
+  const cabem = temFrase && !compacta ? vagas - 1 : vagas;
+  const sobra = produtos.length - cabem;
   return (
     <section aria-label={marca.name}>
       <header className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-fio pb-4">
@@ -369,7 +380,7 @@ function FaixaDaMarca({
           </button>
         ) : null}
       </header>
-      <ProductGrid produtos={produtos.slice(0, cabem)} promos={cabem < POR_MARCA ? PROMO_FAIXA : false} />
+      <ProductGrid produtos={produtos.slice(0, cabem)} promos={temFrase ? PROMO_FAIXA : false} />
     </section>
   );
 }

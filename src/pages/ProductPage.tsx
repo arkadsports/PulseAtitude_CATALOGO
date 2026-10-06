@@ -1,12 +1,15 @@
 // Página do produto: galeria à esquerda, ficha e pedido à direita.
 // O tamanho escolhido aqui é o que viaja no botão do WhatsApp — é isso que
 // transforma a visita em pedido sem ninguém ter de digitar o número do pé.
-// "Concluir pedido" leva nome, cor, tamanho, código e o link do produto, cuja
-// pré-visualização mostra a foto do tênis na conversa (veja whatsappLink).
+// "Adicionar ao carrinho" junta vários pares num pedido só (página /carrinho).
+// "Pedir só este" vai direto ao WhatsApp com nome, cor, tamanho, código e o
+// link do produto, cuja pré-visualização mostra a foto (veja whatsappLink).
 import { useEffect, useMemo, useRef, useState, type MouseEvent, type SyntheticEvent } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, ChevronLeft, ChevronRight, MessageCircle, X } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
+import { ArrowLeft, Check, ChevronLeft, ChevronRight, MessageCircle, ShoppingBag, X } from 'lucide-react';
+import ProductGrid from '../components/ProductGrid';
+import { useCart } from '../lib/cart';
+import { useGrade } from '../lib/grade';
 import { CATEGORIES, STORE, brandBySlug } from '../config';
 import { cover, img, nomeCompleto, priceLabel, sortSizes, useCatalog, whatsappLink } from '../lib/catalog';
 
@@ -22,6 +25,10 @@ export default function ProductPage() {
   const [zoom, setZoom] = useState(false);
   // Tentou concluir sem tamanho: o seletor pisca e pede o número.
   const [pedeTamanho, setPedeTamanho] = useState(false);
+  const { add, count } = useCart();
+  const { compacta } = useGrade();
+  // O par que acabou de entrar no carrinho (para o aviso "Adicionado").
+  const [adicionado, setAdicionado] = useState<string>();
   const seletor = useRef<HTMLFieldSetElement>(null);
   const [idAnterior, setIdAnterior] = useState(produto?.id);
 
@@ -34,13 +41,14 @@ export default function ProductPage() {
     setTamanho(undefined);
     setZoom(false);
     setPedeTamanho(false);
+    setAdicionado(undefined);
   }
 
   const tamanhos = useMemo(() => (produto ? sortSizes(produto.sizes) : []), [produto]);
 
   const relacionados = useMemo(() => {
     if (!produto) return [];
-    return (productsByBrand.get(produto.brand) ?? []).filter((p) => p.id !== produto.id).slice(0, 4);
+    return (productsByBrand.get(produto.brand) ?? []).filter((p) => p.id !== produto.id).slice(0, 6);
   }, [produto, productsByBrand]);
 
   // Setas do teclado andam na galeria; Esc fecha o zoom.
@@ -74,12 +82,21 @@ export default function ProductPage() {
   const total = Math.max(produto.photos, 1);
   // Concluir sem escolher o tamanho, quando o par tem tamanhos, não abre o
   // WhatsApp: leva o cliente ao seletor. Pedido pela metade atrasa todo mundo.
-  const concluir = (e: MouseEvent<HTMLAnchorElement>) => {
+  const faltaTamanho = () => {
     if (tamanhos.length > 0 && !tamanho) {
-      e.preventDefault();
       setPedeTamanho(true);
       seletor.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return true;
     }
+    return false;
+  };
+  const concluir = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (faltaTamanho()) e.preventDefault();
+  };
+  const adicionar = () => {
+    if (faltaTamanho()) return;
+    add(produto.id, tamanho ?? '');
+    setAdicionado(tamanho ?? '');
   };
   const cair = (e: SyntheticEvent<HTMLImageElement>) => {
     const alvo = e.currentTarget;
@@ -219,15 +236,39 @@ export default function ProductPage() {
             </div>
           </div>
 
+          <button
+            type="button"
+            onClick={adicionar}
+            className="btn-ouro mt-4 flex h-14 w-full items-center justify-center gap-2 rounded-xl text-base"
+          >
+            <ShoppingBag className="h-5 w-5" aria-hidden />
+            {tamanho ? `Adicionar ao carrinho · tam. ${tamanho}` : 'Adicionar ao carrinho'}
+          </button>
+
+          {adicionado !== undefined ? (
+            <div
+              role="status"
+              className="mt-3 flex items-center justify-between gap-3 rounded-xl border border-ouro/40 bg-carvao px-4 py-3 text-sm"
+            >
+              <span className="flex items-center gap-2 text-white">
+                <Check className="h-4 w-4 text-ouro" aria-hidden />
+                No carrinho{adicionado ? ` (tam. ${adicionado})` : ''}
+              </span>
+              <Link to="/carrinho" className="font-bold uppercase tracking-wider text-ouro-claro hover:text-white">
+                Ver carrinho ({count}) →
+              </Link>
+            </div>
+          ) : null}
+
           <a
             href={whatsappLink(produto, tamanho)}
             onClick={concluir}
             target="_blank"
             rel="noreferrer"
-            className="btn-ouro mt-4 flex h-14 items-center justify-center gap-2 rounded-xl text-base"
+            className="mt-3 flex h-12 items-center justify-center gap-2 rounded-xl border border-fio text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:border-ouro hover:text-ouro-claro"
           >
-            <MessageCircle className="h-5 w-5" aria-hidden />
-            {tamanho ? `Concluir pedido · tamanho ${tamanho}` : 'Concluir pedido no WhatsApp'}
+            <MessageCircle className="h-4 w-4" aria-hidden />
+            Pedir só este no WhatsApp
           </a>
 
           <p
@@ -235,8 +276,8 @@ export default function ProductPage() {
             className={`mt-2 text-center text-xs ${pedeTamanho && !tamanho ? 'font-semibold text-ouro-claro' : 'text-nevoa'}`}
           >
             {pedeTamanho && !tamanho
-              ? 'Escolha o tamanho para concluir o pedido.'
-              : 'Abre o WhatsApp da Pulse com o pedido escrito e a foto do tênis.'}
+              ? 'Escolha o tamanho primeiro.'
+              : 'Vários pares? Junte no carrinho e mande tudo numa mensagem, com a foto de cada um.'}
           </p>
 
           <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-fio pt-6 text-sm">
@@ -266,11 +307,8 @@ export default function ProductPage() {
           <h2 className="mb-6 font-display text-2xl font-extrabold uppercase text-white">
             Mais de {marca?.name ?? 'a marca'}
           </h2>
-          <div className="grid justify-items-center gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
-            {relacionados.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
+          {/* Ampla: 4 cartas grandes. Compacta: 6, duas linhas cheias de 3. */}
+          <ProductGrid produtos={relacionados.slice(0, compacta ? 6 : 4)} />
         </section>
       ) : null}
 

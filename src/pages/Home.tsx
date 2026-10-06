@@ -1,14 +1,18 @@
 // Início: abertura da campanha, carrossel de marcas e uma amostra do catálogo.
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import GradeToggle from '../components/GradeToggle';
 import ProductGrid from '../components/ProductGrid';
+import { useGrade } from '../lib/grade';
 import { COPY } from '../config';
 import { useCatalog } from '../lib/catalog';
 
 export default function Home() {
   const { ready, error, catalog } = useCatalog();
-  // 7 tênis e uma frase comercial: duas fileiras cheias.
-  const destaques = catalog.products.slice(0, 7);
+  const { compacta } = useGrade();
+  // Ampla: 7 tênis e uma frase, duas fileiras cheias. Compacta: 12 tênis
+  // (linhas cheias de 3, 4 ou 6) e a frase em faixa à parte.
+  const destaques = catalog.products.slice(0, compacta ? 12 : 7);
 
   return (
     <>
@@ -33,12 +37,15 @@ export default function Home() {
               O que chegou
             </h2>
           </div>
-          <Link
-            to="/catalogo"
-            className="text-sm font-semibold uppercase tracking-wider text-nevoa transition-colors hover:text-ouro-claro"
-          >
-            Ver tudo →
-          </Link>
+          <div className="flex items-center gap-4">
+            <GradeToggle />
+            <Link
+              to="/catalogo"
+              className="text-sm font-semibold uppercase tracking-wider text-nevoa transition-colors hover:text-ouro-claro"
+            >
+              Ver tudo →
+            </Link>
+          </div>
         </div>
 
         {error ? (

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T12:52:43.349Z",
+  "generatedAt": "2026-10-06T22:53:03.875Z",
   "products": [
     {
       "id": "256429145",
@@ -7688,7 +7688,7 @@
     },
     {
       "id": "254804140",
-      "name": "Adizero Dropset Elite Hyrox 36 36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43",
+      "name": "Adizero Dropset Elite Hyrox",
       "tags": [],
       "brand": "adidas",
       "category": "training",
@@ -9846,7 +9846,18 @@
       "colors": [
         "azul"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -22120,7 +22131,7 @@
     },
     {
       "id": "250875666",
-      "name": "Maison Margiela Calfskin Replica 36 37 38 39 40 41 42 43 44 45 46",
+      "name": "Maison Margiela Calfskin Replica",
       "tags": [],
       "brand": "adidas",
       "category": "casual",
@@ -29364,7 +29375,14 @@
         "azul",
         "preto"
       ],
-      "sizes": [],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -32412,7 +32430,7 @@
     },
     {
       "id": "248617674",
-      "name": "RAF SIMONS OZWEEGO 2 36 36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43 44 44.5 45",
+      "name": "RAF SIMONS OZWEEGO 2",
       "tags": [],
       "brand": "adidas",
       "category": "casual",
@@ -35169,7 +35187,18 @@
         "cinza",
         "branco"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -38495,7 +38524,18 @@
       "colors": [
         "preto"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -38510,7 +38550,18 @@
       "colors": [
         "cinza"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -40388,7 +40439,7 @@
     },
     {
       "id": "246906082",
-      "name": "Air Force1 07 low 36 36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43 44 45",
+      "name": "Air Force1 07 low",
       "tags": [],
       "brand": "nike",
       "category": "casual",
@@ -47609,7 +47660,18 @@
         "preto",
         "cinza"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -52867,7 +52929,19 @@
         "laranja",
         "vermelho"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -55678,7 +55752,18 @@
       "colors": [
         "preto"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -68587,7 +68672,7 @@
     },
     {
       "id": "242935945",
-      "name": "DUNK SB LOW 36 36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43 44 45",
+      "name": "DUNK SB LOW",
       "tags": [],
       "brand": "nike",
       "category": "casual",
@@ -86995,7 +87080,7 @@
     },
     {
       "id": "240513603",
-      "name": "Gucci x :36 37 38 39 40 41 42 43 44 45",
+      "name": "Gucci x",
       "tags": [],
       "brand": "adidas",
       "category": "casual",
@@ -90310,7 +90395,7 @@
     },
     {
       "id": "240166832",
-      "name": "ACG Ultrafly TRAIL 40 40.5 41 42 42.5 43 44 44.5 45",
+      "name": "ACG Ultrafly TRAIL",
       "tags": [],
       "brand": "nike",
       "category": "running",
@@ -95343,7 +95428,7 @@
     },
     {
       "id": "239600320",
-      "name": "24 25 26 27 28 29 30 31 32 33 34 35",
+      "name": "24 25 26 27 28 29 30 31 32",
       "tags": [],
       "brand": "new-balance",
       "category": "casual",
@@ -107942,7 +108027,7 @@
     },
     {
       "id": "238174412",
-      "name": "DUNK SB LOW 36 36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43 44 45",
+      "name": "DUNK SB LOW",
       "tags": [],
       "brand": "nike",
       "category": "casual",
@@ -121446,7 +121531,7 @@
     },
     {
       "id": "236674530",
-      "name": "STRUCTURE PLUS :36 36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43 44 45",
+      "name": "STRUCTURE PLUS",
       "tags": [],
       "brand": "nike",
       "category": "running",
@@ -124621,7 +124706,18 @@
         "vermelho",
         "rosa"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -126109,7 +126205,7 @@
     },
     {
       "id": "236148794",
-      "name": "SAMBA JANE 35 36 36.5 37 38 38.5 39 40 40.5 41",
+      "name": "SAMBA JANE",
       "tags": [],
       "brand": "adidas",
       "category": "casual",
@@ -126118,7 +126214,15 @@
         "rosa",
         "laranja"
       ],
-      "sizes": [],
+      "sizes": [
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -151666,7 +151770,19 @@
         "cinza",
         "preto"
       ],
-      "sizes": [],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -157250,7 +157366,7 @@
     },
     {
       "id": "231351550",
-      "name": "Air Force1 07 low36.5 37.5 38 38.5 39 40 40.5 41 42 42.5 43 44 45",
+      "name": "Air Force1 07 low36.5",
       "tags": [],
       "brand": "nike",
       "category": "casual",
@@ -157259,7 +157375,17 @@
         "preto",
         "vermelho"
       ],
-      "sizes": [],
+      "sizes": [
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null
@@ -173154,7 +173280,7 @@
     },
     {
       "id": "229080010",
-      "name": "CDG x Air Max 9540 40.5 41 42 42.5 43 44 45 46 47 48.5",
+      "name": "CDG x Air Max 9540",
       "tags": [],
       "brand": "nike",
       "category": "casual",
@@ -173162,7 +173288,15 @@
       "colors": [
         "azul"
       ],
-      "sizes": [],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
       "photos": 5,
       "cover": 1,
       "price": null

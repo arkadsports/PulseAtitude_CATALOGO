@@ -147,6 +147,10 @@ function acharTipo(nome, descricao) {
   return TIPO_PADRAO;
 }
 
+/** Uma sequência de 3 ou mais tamanhos soltos ("36 36.5 37.5 38"): é a grade,
+ *  mesmo quando o fornecedor não escreve "尺码" antes. */
+const GRADE_SOLTA = /(?:^|[\s:：])((?:(?:3[3-9]|4[0-9])(?:\.5)?[\s,]+){2,}(?:3[3-9]|4[0-9])(?:\.5)?)(?=\s|$)/;
+
 /** Tamanhos a partir do título: "36-45", "size 39~44", "eur 40 41 42". */
 function acharTamanhos(titulo) {
   const t = normal(titulo);
@@ -165,6 +169,11 @@ function acharTamanhos(titulo) {
   if (trecho) {
     const soltos = [...trecho.matchAll(/\b(3[3-9]|4[0-6])\b/g)].map((m) => m[1]);
     if (soltos.length) return [...new Set(soltos)].sort((a, b) => Number(a) - Number(b));
+  }
+  const grade = t.match(GRADE_SOLTA);
+  if (grade) {
+    const soltos = [...grade[1].matchAll(/\b(3[3-9]|4[0-6])\b/g)].map((m) => m[1]);
+    return [...new Set(soltos)].sort((a, b) => Number(a) - Number(b));
   }
   return [];
 }
@@ -188,6 +197,7 @@ function limparNome(titulo) {
     .replace(/\b(size|eur|tamanho|sizes?)\b[\s:]*[\d\s\-~–,]*/gi, ' ')
     .replace(/\b(3[0-9]|4[0-9])\s*[-~–]\s*(3[0-9]|4[0-9])\b/g, ' ')
     .replace(/[#@]\S+/g, ' ')
+    .replace(new RegExp(GRADE_SOLTA.source, 'g'), ' ')
     .replace(/\s{2,}/g, ' ')
     .replace(/^[\s\-–—|,.:#×]+|[\s\-–—|,.:#×]+$/g, '')
     .trim();

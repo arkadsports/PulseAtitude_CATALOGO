@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/p/:id", "destination": "/api/p?id=:id" },
+    { "source": "/c", "destination": "/api/c" },
     { "source": "/((?!data/|img/|hero/|marcas/|assets/|api/|favicon).*)", "destination": "/index.html" }
   ]
 }

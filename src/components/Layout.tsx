@@ -1,8 +1,9 @@
 // Moldura do site: faixa de campanha, cabeçalho com busca, conteúdo, rodapé.
 import { useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { Search } from 'lucide-react';
+import { Search, ShoppingBag } from 'lucide-react';
 import { CATEGORIES, COPY, STORE } from '../config';
+import { useCart } from '../lib/cart';
 import { useCatalog } from '../lib/catalog';
 
 const FAIXA = [COPY.chamada, COPY.atitude, COPY.entrega, COPY.subchamada];
@@ -81,7 +82,7 @@ function BarraDeBusca() {
   return (
     <form
       role="search"
-      className="relative min-w-0 flex-1 basis-64"
+      className="relative order-3 w-full min-w-0 md:order-none md:w-auto md:flex-1 md:basis-64"
       onSubmit={(e) => {
         e.preventDefault();
         const termo = q.trim();
@@ -98,6 +99,25 @@ function BarraDeBusca() {
         className="h-11 w-full rounded-full border border-fio bg-grafite pl-10 pr-4 text-sm text-white placeholder:text-nevoa focus:border-ouro focus:outline-none"
       />
     </form>
+  );
+}
+
+/** O carrinho no cabeçalho, com quantos pares já foram escolhidos. */
+function IconeCarrinho() {
+  const { count } = useCart();
+  return (
+    <Link
+      to="/carrinho"
+      aria-label={count ? `Carrinho: ${count} ${count === 1 ? 'par' : 'pares'}` : 'Carrinho vazio'}
+      className="relative order-2 ml-auto grid h-11 w-11 shrink-0 place-items-center rounded-full border border-fio bg-grafite text-white transition-colors hover:border-ouro md:order-last md:ml-0"
+    >
+      <ShoppingBag className="h-5 w-5" />
+      {count ? (
+        <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-br from-ouro-claro to-ouro-escuro px-1 text-[11px] font-bold text-black">
+          {count}
+        </span>
+      ) : null}
+    </Link>
   );
 }
 
@@ -124,7 +144,7 @@ export default function Layout() {
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-3">
           <Logo />
 
-          <nav className="order-3 flex w-full gap-5 overflow-x-auto pb-1 md:order-none md:w-auto md:pb-0">
+          <nav className="order-4 flex w-full gap-5 overflow-x-auto pb-1 md:order-none md:w-auto md:pb-0">
             <NavLink to="/catalogo" className={linkClasse}>
               Catálogo
             </NavLink>
@@ -139,6 +159,7 @@ export default function Layout() {
           </nav>
 
           <BarraDeBusca />
+          <IconeCarrinho />
         </div>
       </header>
 

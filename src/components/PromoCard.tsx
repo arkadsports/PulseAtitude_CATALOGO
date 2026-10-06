@@ -91,3 +91,37 @@ export default function PromoCard({ promo }: { promo: Promo }) {
     </aside>
   );
 }
+
+/** A mesma frase em faixa, para a grade compacta: ocupa a linha inteira em
+ *  vez de uma casa, que no celular é pequena demais para a frase. */
+export function PromoFaixa({ promo }: { promo: Promo }) {
+  const { texto: rotulo, Icone } = ROTULO[promo.tipo];
+  const pagamento = promo.tipo === 'pagamento';
+  return (
+    <aside
+      aria-label={`${rotulo}: ${promo.texto}`}
+      className="relative col-span-full flex items-center gap-4 overflow-hidden rounded-xl border border-ouro/40 bg-carvao px-4 py-3 sm:px-6 sm:py-4"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{ background: 'radial-gradient(60% 120% at 100% 50%, rgba(215,151,42,.25) 0%, rgba(5,5,5,0) 70%)' }}
+      />
+      {pagamento ? (
+        <p className="ouro-texto relative shrink-0 font-display text-4xl font-black leading-none sm:text-5xl">
+          {PARCELAS.vezes}x
+        </p>
+      ) : (
+        <Icone className="relative h-7 w-7 shrink-0 text-ouro" aria-hidden />
+      )}
+      <div className="relative min-w-0">
+        <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-ouro">
+          {pagamento ? PARCELAS.texto : rotulo}
+        </p>
+        <p className="font-display text-base font-black uppercase leading-tight text-white sm:text-xl">
+          {promo.texto}
+        </p>
+      </div>
+    </aside>
+  );
+}

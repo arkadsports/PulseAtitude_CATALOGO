@@ -58,6 +58,20 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
   use sem autorização. As logos, em `public/marcas/<slug>.png`, são brancas com
   fundo transparente.
 
+- **Carrinho: vários pares num pedido só.** Fica guardado no navegador
+  (`src/lib/cart.tsx`) e termina numa mensagem de WhatsApp (`src/lib/pedido.ts`).
+  O WhatsApp só mostra a pré-visualização do **primeiro** link, então a
+  mensagem abre com o link do pedido inteiro, `/c?i=id:tamanho:qtd,...`
+  (`api/c.js`): a imagem é uma montagem com a foto de cada item
+  (`api/colagem.js`, gerada na hora com o sharp), e quem toca abre `/pedido`,
+  com foto, tamanho e quantidade de tudo. No celular, "Enviar com as fotos"
+  usa o compartilhamento do aparelho para mandar uma foto de verdade por item
+  (`api/foto.js` entrega as fotos pelo endereço do site).
+
+- **Grade compacta no celular.** Três tênis por linha (`src/lib/grade.tsx`,
+  carta pequena em `ProductCardMini.tsx`); o botão ao lado da contagem troca
+  para as cartas grandes, e a escolha fica guardada.
+
 - **O pedido vai com a foto do tênis.** O link do WhatsApp (`wa.me`) só aceita
   texto, então "Concluir pedido" manda nome, cor, tamanho, código e preço, e
   termina com o link `/p/<id>?t=<tamanho>`. Esse endereço é uma função da
@@ -205,14 +219,17 @@ src/
     BrandGallery.tsx        "Escolha a marca": a sanfona e os modelos da marca aberta
     CatalogView.tsx         separada por marca, com filtros (marca, tipo, cor, preço)
     ProductGrid.tsx         a grade de tênis, com as frases comerciais intercaladas
-    PromoCard.tsx           o card de frase comercial e a vez de cada frase
+    PromoCard.tsx           o card de frase comercial (e a faixa, na grade compacta)
+    ProductCardMini.tsx     a carta pequena da grade compacta
+    GradeToggle.tsx         o botão grade compacta / cartas grandes
     ProductCard.tsx         a carta ligada à página do produto
     ui/card-7.tsx                    carta 3D
     ui/elastic-gallery.tsx           galeria sanfona (a mesma do catálogo da Arkad)
   pages/
     Home.tsx                início
     Lists.tsx               /catalogo, /marca/:slug, /categoria/:slug, /marcas, /busca
-    ProductPage.tsx         galeria, tamanhos e pedido
+    ProductPage.tsx         galeria, tamanhos, carrinho e pedido
+    Cart.tsx                /carrinho e /pedido
 ```
 
 Os dois componentes de `ui/` vieram prontos de fora. O cabeçalho de cada um

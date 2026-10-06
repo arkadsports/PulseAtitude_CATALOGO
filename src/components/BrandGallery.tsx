@@ -6,18 +6,25 @@
 // Tipo e marca são independentes: o tipo vem do cadastro de cada produto.
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import GradeToggle from './GradeToggle';
 import ProductGrid from './ProductGrid';
 import { ElasticGallery, type ElasticItem } from './ui/elastic-gallery';
 import { BRANDS, CATEGORIES } from '../config';
 import { normalize, useCatalog } from '../lib/catalog';
+import { useGrade } from '../lib/grade';
 
-const PREVIEW = 7; // modelos mostrados antes do "ver todos" (+1 frase comercial = 2 fileiras)
+// Modelos mostrados antes do "ver todos". Na ampla, 7 + 1 frase = 2 fileiras;
+// na compacta, 12 (fecha linhas de 3, 4 e 6) e a frase vem em faixa à parte.
+const PREVIEW_AMPLA = 7;
+const PREVIEW_COMPACTA = 12;
 
 export default function BrandGallery() {
   const { catalog } = useCatalog();
   const navigate = useNavigate();
   const [q, setQ] = useState('');
   const [tipo, setTipo] = useState('');
+  const { compacta } = useGrade();
+  const PREVIEW = compacta ? PREVIEW_COMPACTA : PREVIEW_AMPLA;
 
   // Só entra marca que tem modelo: painel que leva a uma página vazia frustra.
   const marcas = useMemo(() => {
@@ -128,12 +135,15 @@ export default function BrandGallery() {
               Modelos · {ativa.name}
             </h3>
           </div>
-  <Link
-            to={linkMarca({})}
-            className="text-sm font-semibold uppercase tracking-wider text-ouro-claro transition-colors hover:text-white"
-          >
-            Ver os {modelos.length.toLocaleString('pt-BR')} →
-          </Link>
+          <div className="flex items-center gap-4">
+            <GradeToggle />
+            <Link
+              to={linkMarca({})}
+              className="text-sm font-semibold uppercase tracking-wider text-ouro-claro transition-colors hover:text-white"
+            >
+              Ver os {modelos.length.toLocaleString('pt-BR')} →
+            </Link>
+          </div>
         </div>
 
         {/* Tipo de tênis dentro da marca: só os tipos que ela tem. */}
