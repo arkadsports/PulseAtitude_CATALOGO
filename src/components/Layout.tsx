@@ -153,6 +153,12 @@ export default function Layout() {
                 {c.name}
               </NavLink>
             ))}
+            <NavLink to="/camisas" className={linkClasse}>
+              Camisas
+            </NavLink>
+            <NavLink to="/bermudas" className={linkClasse}>
+              Bermudas
+            </NavLink>
             <NavLink to="/marcas" className={linkClasse}>
               Marcas
             </NavLink>
@@ -184,6 +190,16 @@ export default function Layout() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/camisas" className="hover:text-white">
+                  Camisas
+                </Link>
+              </li>
+              <li>
+                <Link to="/bermudas" className="hover:text-white">
+                  Bermudas
+                </Link>
+              </li>
               <li>
                 <Link to="/marcas" className="hover:text-white">
                   Todas as marcas

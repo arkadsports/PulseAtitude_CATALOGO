@@ -6,6 +6,8 @@
 //   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET
 // Depois:
 //   npm run upload-images              -> envia e mantém a cópia local
+//   npm run upload-images -- --filtro=- -> só as pastas cujo nome casa com a regex
+//   npm run upload-images -- --forcar   -> envia de novo o que já está no bucket
 //   npm run upload-images -- --apagar  -> envia e apaga a cópia local de cada
 //                                         arquivo JÁ CONFIRMADO no bucket
 // E coloque a URL pública do bucket em VITE_IMAGE_BASE no .env e na Vercel.
@@ -20,6 +22,7 @@ if (!R2_ACCOUNT_ID || !R2_ACCESS_KEY_ID || !R2_SECRET_ACCESS_KEY || !R2_BUCKET) 
   process.exit(1);
 }
 const APAGAR = process.argv.includes('--apagar');
+const FORCAR = process.argv.includes('--forcar');
 const s3 = new S3Client({
   region: 'auto',
   endpoint: `https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
@@ -49,7 +52,15 @@ async function apagarComTentativas(p) {
 }
 
 const files = [];
-for await (const f of walk(IMG)) if (f.endsWith('.webp')) files.push(f);
+// --filtro=<regex>: só as pastas cujo nome casa (ex.: --filtro=- para as roupas,
+// "<álbum>-<cor>"). Poupa conferir no bucket as dezenas de milhares que já subiram.
+const filtro = process.argv.find((x) => x.startsWith('--filtro='))?.slice(9);
+const casa = filtro ? new RegExp(filtro) : null;
+for await (const f of walk(IMG)) {
+  if (!f.endsWith('.webp')) continue;
+  if (casa && !casa.test(path.basename(path.dirname(f)))) continue;
+  files.push(f);
+}
 // Primeiro a capa de todo mundo, do álbum mais novo ao mais antigo (a ordem da
 // vitrine); depois as outras miniaturas, e por último as fotos grandes. Assim a
 // grade enche de foto antes, mesmo com o envio pela metade.
@@ -63,7 +74,8 @@ let sent = 0, skipped = 0, apagados = 0, falhas = 0, travados = 0;
 await Promise.all(files.map((f) => limit(async () => {
   const Key = path.relative(IMG, f).split(path.sep).join('/');
   let noBucket = false;
-  try { await s3.send(new HeadObjectCommand({ Bucket: R2_BUCKET, Key })); noBucket = true; skipped++; } catch {}
+  // --forcar: envia de novo mesmo o que já está lá (foto refeita, ex.: roupas-recorte).
+  if (!FORCAR) try { await s3.send(new HeadObjectCommand({ Bucket: R2_BUCKET, Key })); noBucket = true; skipped++; } catch {}
 
   if (!noBucket) {
     try {

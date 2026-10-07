@@ -31,6 +31,9 @@ const LADO = 600;
 
 const catalogo = JSON.parse(await fs.readFile('public/data/catalog.json', 'utf8'));
 const produtos = catalogo.products.filter((p) => (p.photos ?? 0) > 0);
+// --forcar=<regex>: refaz a foto dos produtos cujo id casa (ex.: --forcar=- para as roupas).
+const forcar = process.argv.find((a) => a.startsWith('--forcar='))?.slice(9);
+const refazer = forcar ? new RegExp(forcar) : null;
 console.log(`${produtos.length} produtos para conferir/enviar a foto do WhatsApp...`);
 
 const limit = pLimit(16);
@@ -42,6 +45,7 @@ await Promise.all(
     limit(async () => {
       const Key = `og/${p.id}.jpg`;
       try {
+        if (refazer?.test(p.id)) throw new Error('refazer');
         await s3.send(new HeadObjectCommand({ Bucket: R2_BUCKET, Key }));
         pulados++;
         return;

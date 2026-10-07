@@ -10,12 +10,14 @@ export const FOTOS = (process.env.VITE_IMAGE_BASE || 'https://pub-dbd133e902ba43
 // Nomes de BRANDS em src/config.ts — só para os textos da pré-visualização.
 const MARCAS = {
   nike: 'Nike', on: 'On', adidas: 'Adidas', asics: 'ASICS', 'new-balance': 'New Balance',
-  puma: 'Puma', mizuno: 'Mizuno', vans: 'Vans',
+  puma: 'Puma', mizuno: 'Mizuno', vans: 'Vans', 'under-armour': 'Under Armour', arcteryx: "Arc'teryx",
+  gymshark: 'Gymshark', alo: 'Alo', outras: '',
 };
 
 /** "On Cloud 5" já traz a marca no nome: não vira "On On Cloud 5". */
 export function nomeCompleto(p) {
   const marca = MARCAS[p.brand] ?? p.brand;
+  if (!marca) return p.name; // "outras": o nome sozinho
   return p.name.toLowerCase().startsWith(marca.toLowerCase() + ' ') ? p.name : `${marca} ${p.name}`;
 }
 

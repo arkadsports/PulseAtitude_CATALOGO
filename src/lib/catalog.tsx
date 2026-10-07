@@ -2,7 +2,7 @@
 // É o único ponto que sabe de onde vêm os produtos: trocar a origem (Yupoo,
 // planilha, banco) não mexe em nenhuma tela.
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { IMAGE_BASE, PRICES, STORE, brandBySlug, type CategorySlug } from '../config';
+import { IMAGE_BASE, KINDS, PRICES, STORE, brandBySlug, type CategorySlug, type ProductKind } from '../config';
 
 export type Product = {
   /** Código do produto — é ele que vai no pedido. */
@@ -10,7 +10,10 @@ export type Product = {
   name: string;
   /** slug da marca, como em config.ts */
   brand: string;
-  category: CategorySlug;
+  /** tênis, camisa ou bermuda — ausente = tênis (o catálogo nasceu só de tênis) */
+  kind?: ProductKind;
+  /** running, training ou casual — só tênis tem */
+  category?: CategorySlug;
   /** Cor da peça, do jeito que o cliente enxerga: "Preto / Ouro". */
   colorway?: string;
   /** Slugs de COLORS (config.ts), da cor que mais aparece para a que menos. */
@@ -72,9 +75,11 @@ export function CatalogProvider({ children }: { children: ReactNode }) {
       const b = productsByBrand.get(p.brand) ?? [];
       b.push(p);
       productsByBrand.set(p.brand, b);
-      const c = productsByCategory.get(p.category) ?? [];
-      c.push(p);
-      productsByCategory.set(p.category, c);
+      if (p.category) {
+        const c = productsByCategory.get(p.category) ?? [];
+        c.push(p);
+        productsByCategory.set(p.category, c);
+      }
     }
     return {
       ready,
@@ -120,6 +125,7 @@ export const priceLabel = (p: Product) => {
 // ---------- Pedido ----------
 /** Nome para o cliente ler: marca + modelo, sem repetir ("On Cloud 5", não "On On Cloud 5"). */
 export function nomeCompleto(p: Product) {
+  if (p.brand === 'outras') return p.name; // "Outras marcas Camisa 9938" não ajuda ninguém
   const marca = brandBySlug.get(p.brand)?.name ?? p.brand;
   return p.name.toLowerCase().startsWith(marca.toLowerCase() + ' ') ? p.name : `${marca} ${p.name}`;
 }
@@ -148,6 +154,12 @@ export function whatsappLink(p: Product, size?: string) {
   return STORE.whatsapp ? `https://wa.me/${STORE.whatsapp}?text=${texto}` : `https://wa.me/?text=${texto}`;
 }
 
+// ---------- Tipo de produto ----------
+/** tênis, camisa ou bermuda (o que não diz nada é tênis). */
+export const kindOf = (p: Product): ProductKind => p.kind ?? 'tenis';
+/** "Camisa", "Bermuda", "Tênis". */
+export const nomeDoTipo = (p: Product) => KINDS.find((k) => k.slug === kindOf(p))?.singular ?? '';
+
 // ---------- Busca ----------
 export const normalize = (s: string) =>
   s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -158,11 +170,19 @@ export function searchProducts(products: Product[], q: string) {
   if (!words.length) return [];
   return products.filter((p) => {
     const marca = brandBySlug.get(p.brand)?.name ?? p.brand;
-    const hay = normalize([p.id, p.name, marca, p.category, p.colorway, ...(p.tags ?? [])].join(' '));
+    const hay = normalize([p.id, p.name, marca, p.category, nomeDoTipo(p), p.colorway, ...(p.tags ?? [])].join(' '));
     return words.every((w) => hay.includes(w));
   });
 }
 
 /** Ordena tamanhos como número, não como texto ("9" antes de "10"). */
-export const sortSizes = (sizes: string[]) =>
-  [...sizes].sort((a, b) => Number(a) - Number(b) || a.localeCompare(b));
+export const sortSizes = (sizes: string[]) => [...sizes].sort((a, b) => ordemDoTamanho(a) - ordemDoTamanho(b));
+
+/** Roupa vem em letras (P..3XL); tênis, em número. Letras na ordem da grade. */
+const GRADE_LETRAS = ['PP', 'XS', 'P', 'S', 'M', 'G', 'L', 'GG', 'XL', 'XG', '2XL', 'XXL', 'XGG', '3XL', 'XXXL', '4XL'];
+function ordemDoTamanho(t: string) {
+  const n = Number(t);
+  if (Number.isFinite(n)) return n;
+  const i = GRADE_LETRAS.indexOf(t.toUpperCase());
+  return i >= 0 ? 1000 + i : 2000;
+}

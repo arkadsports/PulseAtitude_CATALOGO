@@ -67,6 +67,18 @@ export const PRICES: Record<string, number> = {
 // ---------------------------------------------------------------------------
 // Eixos do catálogo — os três usos que a marca vende.
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// Tipo de produto — tênis, camisas e bermudas. É o filtro "Produto".
+// Running/Training/Casual (logo abaixo) valem só para tênis.
+// ---------------------------------------------------------------------------
+export type ProductKind = 'tenis' | 'camisa' | 'bermuda';
+
+export const KINDS: { slug: ProductKind; name: string; singular: string }[] = [
+  { slug: 'tenis', name: 'Tênis', singular: 'Tênis' },
+  { slug: 'camisa', name: 'Camisas', singular: 'Camisa' },
+  { slug: 'bermuda', name: 'Bermudas', singular: 'Bermuda' },
+];
+
 export type CategorySlug = 'running' | 'training' | 'casual';
 
 export const CATEGORIES: { slug: CategorySlug; name: string; blurb: string }[] = [
@@ -87,12 +99,14 @@ export type Brand = {
   /** Linha de apoio da carta. */
   blurb: string;
   /** Foto da carta: alguém usando o tênis da marca ou o modelo mais conhecido.
-   *  Retrato 2:3 (660×990), em public/hero/<slug>.webp. */
-  hero: string;
+   *  Retrato 2:3 (660×990), em public/hero/<slug>.webp. Sem ela, a galeria
+   *  usa a capa do produto mais novo da marca. */
+  hero?: string;
   /** Crédito da foto, quando a licença pede (CC BY-SA). CC0 não pede. */
   heroCredito?: { autor: string; licenca: string; url: string };
-  /** Logo em branco, fundo transparente, para as cartas do carrossel. */
-  logo: string;
+  /** Logo em branco, fundo transparente, para as cartas do carrossel. Sem
+   *  logo, aparece o nome escrito. */
+  logo?: string;
 };
 
 export const BRANDS: Brand[] = [
@@ -164,6 +178,49 @@ export const BRANDS: Brand[] = [
     hero: '/hero/vans.webp',
     heroCredito: { autor: 'Downtowngal', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Vans_sneakers_and_socks.jpg' },
     logo: '/marcas/vans.png',
+  },
+  // Marcas que só têm roupa (camisas e bermudas) por enquanto.
+  {
+    slug: 'under-armour',
+    name: 'Under Armour',
+    tagline: 'PROTEJA',
+    blurb: 'o seu treino',
+    hero: '/hero/under-armour.webp',
+    heroCredito: { autor: 'Scroogebz', licenca: 'CC BY 4.0', url: 'https://commons.wikimedia.org/wiki/File:Ebenezer_Addo-Kufuor_UA_HumbleStayHungry_2025.jpg' },
+    logo: '/marcas/under-armour.png',
+  },
+  {
+    slug: 'arcteryx',
+    name: "Arc'teryx",
+    tagline: 'FEITA',
+    blurb: 'para a trilha',
+    hero: '/hero/arcteryx.webp',
+    heroCredito: { autor: 'Matti Blume', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:OutDoor_2018,_Friedrichshafen_(1X7A0364).jpg' },
+    logo: '/marcas/arcteryx.png',
+  },
+  {
+    slug: 'gymshark',
+    name: 'Gymshark',
+    tagline: 'DO TREINO',
+    blurb: 'para o dia',
+    hero: '/hero/gymshark.webp',
+    heroCredito: { autor: 'JamesDPerrett', licenca: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Ben_Francis.jpg' },
+    logo: '/marcas/gymshark.png',
+  },
+  {
+    slug: 'alo',
+    name: 'Alo',
+    tagline: 'LEVEZA',
+    blurb: 'em movimento',
+    hero: '/hero/alo.webp',
+    heroCredito: { autor: 'ajay_suresh', licenca: 'CC BY 4.0', url: 'https://commons.wikimedia.org/wiki/File:Alo_Yoga_-_Georgetown_(55263670962).jpg' },
+  },
+  // Roupa sem marca escrita pelo fornecedor: melhor "outras" que chutar.
+  {
+    slug: 'outras',
+    name: 'Outras marcas',
+    tagline: 'PERFORMANCE',
+    blurb: 'com preço justo',
   },
 ];
 

@@ -11,7 +11,7 @@ import ProductGrid from '../components/ProductGrid';
 import { useCart } from '../lib/cart';
 import { useGrade } from '../lib/grade';
 import { CATEGORIES, STORE, brandBySlug } from '../config';
-import { cover, img, nomeCompleto, priceLabel, sortSizes, useCatalog, whatsappLink } from '../lib/catalog';
+import { cover, img, kindOf, nomeCompleto, nomeDoTipo, priceLabel, sortSizes, useCatalog, whatsappLink } from '../lib/catalog';
 
 const SEM_FOTO = '/sem-foto.svg';
 
@@ -192,7 +192,7 @@ export default function ProductPage() {
             className={`mt-8 rounded-2xl transition-shadow ${pedeTamanho && !tamanho ? 'ring-2 ring-ouro ring-offset-8 ring-offset-black' : ''}`}
           >
             <legend className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-nevoa">
-              Tamanho (BR)
+              {kindOf(produto) === 'tenis' ? 'Tamanho (BR)' : 'Tamanho'}
             </legend>
             {tamanhos.length === 0 ? (
               <p className="text-sm text-nevoa">Tamanhos sob consulta.</p>
@@ -287,7 +287,7 @@ export default function ProductPage() {
             </div>
             <div>
               <dt className="text-nevoa">Tipo</dt>
-              <dd className="font-semibold text-white">{eixo?.name ?? '—'}</dd>
+              <dd className="font-semibold text-white">{eixo?.name ?? nomeDoTipo(produto)}</dd>
             </div>
             <div>
               <dt className="text-nevoa">Prazo</dt>

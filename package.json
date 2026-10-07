@@ -15,7 +15,11 @@
     "cores": "node --env-file-if-exists=.env scripts/cores.mjs",
     "upload-images": "node --env-file=.env scripts/upload-r2.mjs",
     "og-imagens": "node --env-file=.env scripts/og-imagens.mjs",
-    "seed": "node scripts/seed-demo.mjs"
+    "seed": "node scripts/seed-demo.mjs",
+    "sync-roupas": "node --env-file-if-exists=.env scripts/sync-roupas.mjs",
+    "roupas-fotos": "node --env-file-if-exists=.env scripts/roupas-fotos.mjs",
+    "roupas-imagens": "node --env-file-if-exists=.env scripts/roupas-imagens.mjs",
+    "roupas-recorte": "node --env-file-if-exists=.env scripts/roupas-recorte.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

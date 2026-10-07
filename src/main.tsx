@@ -7,7 +7,7 @@ import { CatalogProvider } from './lib/catalog';
 import { GradeProvider } from './lib/grade';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import { BrandPage, BrandsPage, CatalogPage, CategoryPage, SearchPage } from './pages/Lists';
+import { BrandPage, BrandsPage, CatalogPage, CategoryPage, KindPage, SearchPage } from './pages/Lists';
 import ProductPage from './pages/ProductPage';
 import { CartPage, OrderPage } from './pages/Cart';
 
@@ -24,7 +24,8 @@ function SubirAoTrocarDePagina() {
 //   /                     início — campanha, marcas e novidades
 //   /catalogo             tudo, com busca e filtros
 //   /marca/:slug          catálogo travado numa marca
-//   /categoria/:slug      running, training ou casual
+//   /categoria/:slug      running, training ou casual (só tênis)
+//   /camisas, /bermudas   as roupas
 //   /marcas               vitrine das marcas
 //   /produto/:id          galeria, tamanhos e pedido
 //   /busca?q=             busca
@@ -44,6 +45,8 @@ createRoot(document.getElementById('root')!).render(
             <Route path="marcas" element={<BrandsPage />} />
             <Route path="marca/:slug" element={<BrandPage />} />
             <Route path="categoria/:slug" element={<CategoryPage />} />
+            <Route path="camisas" element={<KindPage kind="camisa" />} />
+            <Route path="bermudas" element={<KindPage kind="bermuda" />} />
             <Route path="produto/:id" element={<ProductPage />} />
             <Route path="busca" element={<SearchPage />} />
             <Route path="carrinho" element={<CartPage />} />

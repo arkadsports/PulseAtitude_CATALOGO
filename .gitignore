@@ -6,6 +6,8 @@ dist
 # (e no Cloudflare R2). O repositório pode ser público — o catálogo do
 # fornecedor não entra nele.
 data/raw/
+data/raw-roupas/
+data/roupas.json
 data/.lote.json
 fotos.log
 fotos.err

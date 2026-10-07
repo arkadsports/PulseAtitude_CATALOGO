@@ -58,6 +58,29 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
   use sem autorização. As logos, em `public/marcas/<slug>.png`, são brancas com
   fundo transparente.
 
+- **Camisas e bermudas vêm de outro fornecedor** (`YUPOO_ROUPAS` no `.env`).
+  Cada álbum é um modelo em várias cores, e cada **cor** vira um produto com
+  só **frente e costas**, sem repetir foto. O fornecedor mistura closes,
+  montagens, vistas de lado e fotos repetidas, e o nome da cor só existe
+  escrito na imagem — então `scripts/roupas-fotos.mjs` escolhe pela própria
+  foto (fundo branco, uma peça só, contorno simétrico, impressão digital, cor
+  média; regras e limites no cabeçalho). Cor com só uma vista reta fica com
+  uma foto. Álbum com alguém vestindo a peça segue outro caminho: o modelo de
+  visão separa pessoa de frente e de costas, e a cor é medida na roupa, sem
+  pele nem fundo. Álbum de fundo escuro, sem nada aproveitável, fica de fora.
+  Depois, `roupas-recorte` apaga a etiqueta que o fornecedor escreve no canto
+  da foto e recorta em volta da peça. A
+  marca vem da descrição do fornecedor (品牌) ou do prefixo do código (NK, UA,
+  AD...); sem isso, "Outras marcas". Os tamanhos vêm de 尺码 (M-3X).
+
+```
+npm run sync-roupas       # lê as categorias de CATEGORIAS -> data/raw-roupas/
+npm run roupas-fotos      # escolhe frente e costas de cada cor -> data/roupas.json
+npm run roupas-imagens    # baixa só as escolhidas -> IMG_DIR/<álbum>-<cor>/
+npm run roupas-recorte    # apaga a etiqueta do fornecedor e recorta na peça
+npm run build-catalog     # junta ao catálogo (e depois cores, upload, og-imagens)
+```
+
 - **Carrinho: vários pares num pedido só.** Fica guardado no navegador
   (`src/lib/cart.tsx`) e termina numa mensagem de WhatsApp (`src/lib/pedido.ts`).
   O WhatsApp só mostra a pré-visualização do **primeiro** link, então a
@@ -81,7 +104,9 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
   Produto novo no catálogo precisa rodar essa etapa, ou a conversa vai sem foto.
   Sem tamanho escolhido, o botão não abre o WhatsApp: leva ao seletor.
 
-- **Os filtros moram na URL.** `?q=&marca=&eixo=&cor=&min=&max=`. O cliente manda o
+- **Os filtros moram na URL.** `?q=&produto=&marca=&eixo=&cor=&min=&max=`, e
+  na tela ficam em listas suspensas (um botão por filtro, que diz o que está
+  escolhido). O cliente manda o
   link do que achou e o outro lado abre exatamente a mesma lista. É também o
   que faz `/marca/nike` e `/categoria/running` serem a mesma tela com um
   filtro travado.

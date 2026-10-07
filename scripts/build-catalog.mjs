@@ -13,6 +13,7 @@
 // preencher (em src/config.ts, por marca, ou no próprio produto).
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { nomeDaCor } from './lib/cor.mjs';
 
 const RAW = path.resolve('data/raw');
 const SAIDA = path.resolve('public/data/catalog.json');
@@ -213,6 +214,79 @@ const ler = async (f, padrao) => {
   }
 };
 
+// ---------------------------------------------------------------------------
+// Roupas — camisas e bermudas. Cada álbum do fornecedor é um modelo em várias
+// cores; roupas-fotos.mjs escolheu frente e costas de cada cor, e cada cor
+// vira um produto "<álbum>-<n>". Roupa não tem tipo de tênis (category).
+// ---------------------------------------------------------------------------
+const NOME_TIPO = { camisa: 'Camisa', bermuda: 'Bermuda' };
+
+// A marca vem do que o fornecedor escreve na descrição (品牌：...)...
+const MARCA_DESCRICAO = [
+  ['nike', ['耐克']],
+  ['under-armour', ['安德玛', '安得玛', '安德码', '它德玛']],
+  ['adidas', ['阿迪', '荷花三叶']],
+  ['puma', ['彪马', '标马']],
+];
+// ...ou do prefixo do código do modelo. Sem nenhum dos dois: "outras".
+const MARCA_PREFIXO = {
+  NK: 'nike', JD: 'nike', UA: 'under-armour', AD: 'adidas', ON: 'on', PU: 'puma', NB: 'new-balance',
+  AR: 'arcteryx', ALO: 'alo', GY: 'gymshark',
+};
+
+function marcaDaRoupa(album) {
+  const desc = album.descricao.match(/品牌[：:]\s*(\S+)/)?.[1] ?? '';
+  for (const [slug, nomes] of MARCA_DESCRICAO) if (nomes.some((n) => desc.includes(n))) return slug;
+  const prefixo = album.titulo.toUpperCase().match(/^[A-Z]+/)?.[0];
+  return MARCA_PREFIXO[prefixo] ?? 'outras';
+}
+
+/** "尺码：M-3X" -> M, L, XL, 2XL, 3XL. Sem a grade escrita: sob consulta. */
+function tamanhosDaRoupa(album) {
+  const t = album.descricao.match(/尺码[：:]\s*([A-Z0-9一\-~]+)/i)?.[1]?.toUpperCase() ?? '';
+  const GRADE = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'];
+  const m = t.match(/^(S|M|L|XL)[-一~]?(\d)?X?/);
+  // "M" sozinho não diz até onde vai: não chutamos.
+  if (!m || (!m[2] && !/[-一~]/.test(t))) return [];
+  const ate = m[2] ? `${m[2]}XL` : '3XL'; // "M-" e "M一": a grade do fornecedor é M a 3XL
+  return GRADE.slice(GRADE.indexOf(m[1]), GRADE.indexOf(ate) + 1);
+}
+
+async function produtosDeRoupa(manifest, cores) {
+  const albuns = await ler(path.resolve('data/raw-roupas/albuns.json'), {});
+  const escolhas = await ler(path.resolve('data/roupas.json'), {});
+  const out = [];
+  for (const [id, coresDoAlbum] of Object.entries(escolhas)) {
+    const album = albuns[id];
+    if (!album) continue;
+    const codigo = album.titulo.replace(/[#\s]/g, '').toUpperCase() || id;
+    const marca = marcaDaRoupa(album);
+    const sizes = tamanhosDaRoupa(album);
+    coresDoAlbum.forEach((c, k) => {
+      const pid = `${id}-${k}`;
+      const fotos = manifest[pid] ?? 0;
+      if (!fotos) return; // sem foto baixada ainda: entra quando houver
+      // Foto com modelo: a capa tem pele e a outra peça, então a cor vem da
+      // medida da roupa feita em roupas-fotos.mjs. Peça estendida: a da capa.
+      const suasCores = c.comModelo ? [nomeDaCor(...c.rgb)] : (cores[pid] ?? []);
+      out.push({
+        id: pid,
+        kind: album.tipo,
+        name: `${NOME_TIPO[album.tipo]} ${codigo}`,
+        tags: [codigo],
+        brand: marca,
+        colorway: suasCores.map((cor) => NOME_COR[cor] ?? cor).join(' / '),
+        colors: suasCores,
+        sizes,
+        photos: fotos,
+        cover: 0, // a frente
+        price: null,
+      });
+    });
+  }
+  return out;
+}
+
 async function main() {
   const albums = await ler(path.join(RAW, 'albums.json'), null);
   if (!albums) {
@@ -265,9 +339,16 @@ async function main() {
     });
   }
 
+  // Roupas: camisas e bermudas do outro fornecedor (sync-roupas + roupas-fotos).
+  const roupas = await produtosDeRoupa(manifest, cores);
+  products.push(...roupas);
+  if (roupas.length) console.log(`  roupas: ${roupas.length} (uma por cor de cada modelo)`);
+
   // Mais novo primeiro: o número do álbum cresce com o tempo no Yupoo, e é esta
-  // ordem que a vitrine usa em "O que chegou" e na grade.
-  products.sort((x, y) => Number(y.id) - Number(x.id));
+  // ordem que a vitrine usa em "O que chegou" e na grade. (Roupa tem id
+  // "<álbum>-<cor>": vale o número do álbum, e as cores na ordem do álbum.)
+  const ordem = (p) => Number(p.id.split('-')[0]);
+  products.sort((x, y) => ordem(y) - ordem(x) || x.id.localeCompare(y.id));
 
   await fs.mkdir(path.dirname(SAIDA), { recursive: true });
   await fs.writeFile(

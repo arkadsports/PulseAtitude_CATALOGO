@@ -9,8 +9,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import GradeToggle from './GradeToggle';
 import ProductGrid from './ProductGrid';
 import { ElasticGallery, type ElasticItem } from './ui/elastic-gallery';
-import { BRANDS, CATEGORIES } from '../config';
-import { normalize, useCatalog } from '../lib/catalog';
+import { BRANDS, CATEGORIES, KINDS } from '../config';
+import { cover, kindOf, normalize, useCatalog, type Product } from '../lib/catalog';
 import { useGrade } from '../lib/grade';
 
 // Modelos mostrados antes do "ver todos". Na ampla, 7 + 1 frase = 2 fileiras;
@@ -30,17 +30,30 @@ export default function BrandGallery() {
   const marcas = useMemo(() => {
     const conta = new Map<string, number>();
     const tipos = new Map<string, Set<string>>();
+    const produtos = new Map<string, Set<string>>();
+    const primeiro = new Map<string, Product>(); // o mais novo: o catálogo vem nessa ordem
     for (const p of catalog.products) {
       conta.set(p.brand, (conta.get(p.brand) ?? 0) + 1);
       if (!tipos.has(p.brand)) tipos.set(p.brand, new Set());
-      tipos.get(p.brand)!.add(p.category);
+      if (p.category) tipos.get(p.brand)!.add(p.category);
+      if (!produtos.has(p.brand)) produtos.set(p.brand, new Set());
+      produtos.get(p.brand)!.add(kindOf(p));
+      if (!primeiro.has(p.brand)) primeiro.set(p.brand, p);
     }
-    return BRANDS.map((b) => ({
-      ...b,
-      modelos: conta.get(b.slug) ?? 0,
-      // Os tipos que a marca tem de fato no catálogo, na ordem de CATEGORIES.
-      tipos: CATEGORIES.filter((c) => tipos.get(b.slug)?.has(c.slug)),
-    })).filter((b) => b.modelos > 0);
+    return BRANDS.map((b) => {
+      const capa = primeiro.get(b.slug);
+      return {
+        ...b,
+        modelos: conta.get(b.slug) ?? 0,
+        // Os tipos de tênis que a marca tem de fato, na ordem de CATEGORIES...
+        tipos: CATEGORIES.filter((c) => tipos.get(b.slug)?.has(c.slug)),
+        // ...e as roupas, para o selo da carta ("Running · Camisas").
+        roupas: KINDS.filter((k) => k.slug !== 'tenis' && produtos.get(b.slug)?.has(k.slug)),
+        // Sem foto própria, a carta usa a capa do produto mais novo da marca.
+        foto: b.hero ?? (capa ? cover(capa, 'full') : '/sem-foto.svg'),
+      };
+    // "Outras marcas" é filtro, não marca: não vira carta da galeria.
+    }).filter((b) => b.modelos > 0 && b.slug !== 'outras');
   }, [catalog.products]);
 
   const [slug, setSlug] = useState('');
@@ -51,12 +64,16 @@ export default function BrandGallery() {
       marcas.map((b) => ({
         id: b.slug,
         title: b.name,
-        category: b.tipos.map((c) => c.name).join(' · '),
+        category: [...b.tipos, ...b.roupas].map((c) => c.name).join(' · '),
         meta: `${b.modelos.toLocaleString('pt-BR')} ${b.modelos === 1 ? 'modelo' : 'modelos'} · ${b.tagline.toLowerCase()} ${b.blurb}`,
-        src: b.hero,
+        src: b.foto,
         alt: `${b.name}: ${b.tagline.toLowerCase()} ${b.blurb}`,
-        badge: <img src={b.logo} alt="" aria-hidden className="h-8 w-auto max-w-[96px] object-contain md:h-11 md:max-w-[130px]" />,
-        icon: <img src={b.logo} alt="" aria-hidden className="h-6 w-auto max-w-[44px] object-contain md:h-7 md:max-w-[50px]" />,
+        badge: b.logo ? (
+          <img src={b.logo} alt="" aria-hidden className="h-8 w-auto max-w-[96px] object-contain md:h-11 md:max-w-[130px]" />
+        ) : undefined,
+        icon: b.logo ? (
+          <img src={b.logo} alt="" aria-hidden className="h-6 w-auto max-w-[44px] object-contain md:h-7 md:max-w-[50px]" />
+        ) : undefined,
         cta: 'Ver modelos',
       })),
     [marcas],
@@ -130,7 +147,9 @@ export default function BrandGallery() {
       <div className="mt-10">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-fio pb-4">
           <div className="flex items-center gap-4">
-            <img src={ativa.logo} alt="" aria-hidden className="h-9 w-auto max-w-[110px] object-contain" />
+            {ativa.logo ? (
+              <img src={ativa.logo} alt="" aria-hidden className="h-9 w-auto max-w-[110px] object-contain" />
+            ) : null}
             <h3 className="font-display text-2xl font-extrabold uppercase leading-none text-white">
               Modelos · {ativa.name}
             </h3>

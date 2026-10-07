@@ -4,11 +4,12 @@
 import { Link } from 'react-router-dom';
 import { InteractiveProductCard } from './ui/card-7';
 import { CATEGORIES, brandBySlug } from '../config';
-import { cover, priceLabel, sortSizes, type Product } from '../lib/catalog';
+import { cover, nomeDoTipo, priceLabel, sortSizes, type Product } from '../lib/catalog';
 
 export default function ProductCard({ product }: { product: Product }) {
   const marca = brandBySlug.get(product.brand);
-  const eixo = CATEGORIES.find((c) => c.slug === product.category)?.name;
+  // Selo: o tipo de tênis (Running...) ou, na roupa, "Camisa"/"Bermuda".
+  const eixo = CATEGORIES.find((c) => c.slug === product.category)?.name ?? nomeDoTipo(product);
 
   // "relative" com "hover:z-10": a carta cresce 5% ao passar o mouse e não pode
   // ficar por baixo da vizinha. "w-full max-w-[340px]": a grade centraliza o
