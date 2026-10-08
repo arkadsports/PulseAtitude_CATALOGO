@@ -49,14 +49,23 @@ Sai do ar? `npm run build` gera `dist/`, que é o que a Vercel publica.
   alternadas, e 1 a cada 16 posições na grade inteira — e os tipos se alternam
   para o cliente não ver sempre a mesma.
 
-- **As fotos das cartas de marca são de licença livre.** `public/hero/<slug>.webp`
-  (660×990, retrato 2:3) saíram do Wikimedia Commons: alguém usando o tênis ou o
-  modelo mais conhecido da marca. As CC BY-SA pedem crédito ao autor — ele está
-  em `heroCredito`, em `src/config.ts`, e aparece discreto embaixo da galeria
-  de marcas, quando a marca está aberta.
-  CC0 não pede nada. Foto de campanha da própria marca tem direito autoral: não
-  use sem autorização. As logos, em `public/marcas/<slug>.png`, são brancas com
-  fundo transparente.
+- **As cartas da galeria de marcas são peças de propaganda** (`public/hero/<marca>.webp`,
+  quadradas, mostradas inteiras): o produto mais vendido da marca no mundo,
+  **desde que esteja no catálogo** — Air Force 1, Cloud 5, Samba OG, 530,
+  Speedcat; o que não temos (o Old Skool da Vans) é trocado pelo que temos.
+  A peça é feita com a foto do produto do próprio site (foto de campanha da
+  marca tem direito autoral). Para trocar o produto: `ANUNCIOS` em
+  `scripts/anuncios.mjs` e `npm run anuncios`. As logos ficam em
+  `public/marcas/<slug>.png`, brancas com fundo transparente.
+
+- **No celular, o menu é uma barra lateral** (botão de três linhas,
+  `MenuLateral.tsx`): Calçados (corrida, treino, casual), Roupas
+  (camisetas, bermudas) e Marcas. A barra de filtros gruda abaixo do
+  cabeçalho ao rolar a lista.
+
+- **Roupas têm tamanho e cor para escolher.** Sem grade na descrição do
+  fornecedor, vale a dele, M a 3XL. Cada cor é um produto; na página, as
+  outras cores do mesmo modelo aparecem como miniaturas.
 
 - **Camisas e bermudas vêm de outro fornecedor** (`YUPOO_ROUPAS` no `.env`).
   Cada álbum é um modelo em várias cores, e cada **cor** vira um produto com

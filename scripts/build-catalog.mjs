@@ -241,13 +241,16 @@ function marcaDaRoupa(album) {
   return MARCA_PREFIXO[prefixo] ?? 'outras';
 }
 
-/** "尺码：M-3X" -> M, L, XL, 2XL, 3XL. Sem a grade escrita: sob consulta. */
+/** "尺码：M-3X" -> M, L, XL, 2XL, 3XL. Sem a grade na descrição, vale a grade
+ *  padrão do fornecedor, M a 3XL — é a que ele escreve na etiqueta das fotos
+ *  ("M-3XL") em quase todos os modelos, e o cliente precisa poder escolher. */
+const GRADE_PADRAO_ROUPA = ['M', 'L', 'XL', '2XL', '3XL'];
 function tamanhosDaRoupa(album) {
   const t = album.descricao.match(/尺码[：:]\s*([A-Z0-9一\-~]+)/i)?.[1]?.toUpperCase() ?? '';
   const GRADE = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'];
   const m = t.match(/^(S|M|L|XL)[-一~]?(\d)?X?/);
-  // "M" sozinho não diz até onde vai: não chutamos.
-  if (!m || (!m[2] && !/[-一~]/.test(t))) return [];
+  // "M" sozinho não diz até onde vai: fica a grade padrão.
+  if (!m || (!m[2] && !/[-一~]/.test(t))) return GRADE_PADRAO_ROUPA;
   const ate = m[2] ? `${m[2]}XL` : '3XL'; // "M-" e "M一": a grade do fornecedor é M a 3XL
   return GRADE.slice(GRADE.indexOf(m[1]), GRADE.indexOf(ate) + 1);
 }

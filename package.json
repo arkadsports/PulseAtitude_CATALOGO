@@ -19,7 +19,8 @@
     "sync-roupas": "node --env-file-if-exists=.env scripts/sync-roupas.mjs",
     "roupas-fotos": "node --env-file-if-exists=.env scripts/roupas-fotos.mjs",
     "roupas-imagens": "node --env-file-if-exists=.env scripts/roupas-imagens.mjs",
-    "roupas-recorte": "node --env-file-if-exists=.env scripts/roupas-recorte.mjs"
+    "roupas-recorte": "node --env-file-if-exists=.env scripts/roupas-recorte.mjs",
+    "anuncios": "node --env-file-if-exists=.env scripts/anuncios.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -322,7 +322,14 @@ export default function CatalogView({ titulo, subtitulo, marcaFixa, eixoFixo, pr
           Busca à vista; o resto em listas suspensas, para não poluir a tela.
           Cada botão diz o que está escolhido ("Marca: Nike"); abre uma lista
           por vez, e ela fecha ao escolher, ao tocar fora ou com Esc. */}
-      <section ref={painelRef} aria-label="Filtros" className="relative mb-8">
+      {/* Gruda logo abaixo do cabeçalho (--cabecalho, medido no Layout): rolando a
+          lista, os filtros continuam à mão. */}
+      <section
+        ref={painelRef}
+        aria-label="Filtros"
+        style={{ top: 'var(--cabecalho, 0px)' }}
+        className="sticky z-20 -mx-4 mb-8 bg-breu/95 px-4 py-3 backdrop-blur-md"
+      >
         <div className="flex flex-wrap items-center gap-2">
           <div className="relative min-w-0 flex-1 basis-full sm:basis-64">
             <SlidersHorizontal className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ouro" />

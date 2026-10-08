@@ -46,6 +46,14 @@ export default function ProductPage() {
 
   const tamanhos = useMemo(() => (produto ? sortSizes(produto.sizes) : []), [produto]);
 
+  // Roupa: cada cor é um produto "<álbum>-<n>". As outras cores do mesmo
+  // modelo viram miniaturas para trocar de cor sem voltar à lista.
+  const outrasCores = useMemo(() => {
+    if (!produto || !produto.id.includes('-')) return [];
+    const modelo = produto.id.split('-')[0] + '-';
+    return (productsByBrand.get(produto.brand) ?? []).filter((p) => p.id.startsWith(modelo));
+  }, [produto, productsByBrand]);
+
   const relacionados = useMemo(() => {
     if (!produto) return [];
     return (productsByBrand.get(produto.brand) ?? []).filter((p) => p.id !== produto.id).slice(0, 6);
@@ -185,6 +193,35 @@ export default function ProductPage() {
           {produto.colorway ? <p className="mt-2 text-lg text-nevoa">{produto.colorway}</p> : null}
 
           <p className="mt-6 font-display text-4xl font-extrabold text-ouro-claro">{priceLabel(produto)}</p>
+
+          {/* Cores do modelo (roupas): a atual em destaque, as outras levam a ela. */}
+          {outrasCores.length > 1 ? (
+            <fieldset className="mt-8">
+              <legend className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-nevoa">
+                Cor{produto.colorway ? `: ${produto.colorway}` : ''}
+              </legend>
+              <div className="flex flex-wrap gap-2">
+                {outrasCores.map((p) => {
+                  const atual = p.id === produto.id;
+                  return (
+                    <Link
+                      key={p.id}
+                      to={`/produto/${p.id}`}
+                      replace
+                      aria-current={atual}
+                      aria-label={`Cor ${p.colorway || p.id}`}
+                      title={p.colorway}
+                      className={`h-16 w-16 overflow-hidden rounded-xl border-2 bg-grafite transition-colors ${
+                        atual ? 'border-ouro' : 'border-transparent hover:border-fio'
+                      }`}
+                    >
+                      <img src={cover(p)} alt="" loading="lazy" onError={cair} className="h-full w-full object-cover" />
+                    </Link>
+                  );
+                })}
+              </div>
+            </fieldset>
+          ) : null}
 
           {/* Tamanhos — só os que existem para este par. */}
           <fieldset

@@ -23,6 +23,8 @@ export interface ElasticItem {
   /** Etiqueta pequena acima do título. Ex.: "Running". */
   category: string;
   src: string;
+  /** Imagem do painel fechado (uma fatia estreita). Sem ela, usa "src". */
+  srcFechado?: string;
   alt: string;
   /** Selo ao lado do título (aqui: a logo) e reserva se a imagem falhar. */
   badge?: ReactNode;
@@ -142,8 +144,8 @@ function ElasticGallery({
         className={cn(
           // Altura fixa: é o que mantém a animação estável enquanto os painéis
           // abrem. Rola só na horizontal, e só pelas setas ou pelo arrasto.
-          'flex h-[260px] w-full flex-row gap-2 overflow-x-auto overflow-y-hidden',
-          'md:h-[340px] md:gap-3',
+          'flex h-[300px] w-full flex-row gap-2 overflow-x-auto overflow-y-hidden',
+          'md:h-[420px] md:gap-3',
           'snap-x scroll-px-2 md:scroll-px-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
           className,
         )}
@@ -163,7 +165,7 @@ function ElasticGallery({
             onKeyDown={(e) => keyDown(e, index)}
             className={cn(
               'group relative m-0 shrink-0 cursor-pointer appearance-none snap-start overflow-hidden rounded-2xl p-0 text-left',
-              'border border-fio bg-carvao',
+              'border border-fio bg-[#070707]',
               // A transição de "flex" é o que produz o efeito sanfona.
               'transition-[flex,min-width,filter] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]',
               'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ouro-claro',
@@ -185,7 +187,7 @@ function ElasticGallery({
                 </div>
               ) : (
                 <img
-                  src={item.src}
+                  src={active ? item.src : (item.srcFechado ?? item.src)}
                   alt={item.alt}
                   loading={index < 6 ? 'eager' : 'lazy'}
                   decoding="async"
@@ -193,15 +195,17 @@ function ElasticGallery({
                     setFailed((antes) => (antes.has(item.id) ? antes : new Set(antes).add(item.id)));
                   }}
                   className={cn(
-                    'absolute inset-0 h-full w-full object-cover transition-transform duration-1000',
-                    active ? 'scale-100' : 'scale-110',
+                    'absolute inset-0 h-full w-full transition-transform duration-1000',
+                    // Aberto: a imagem inteira, sem corte (a peça de propaganda já
+                    // tem título e produto). Fechado: uma fatia, para identificar.
+                    active ? 'scale-100 object-contain object-top' : 'scale-110 object-cover',
                   )}
                 />
               )}
               {/* Escurecido embaixo, para o texto ficar legível */}
               <div
                 className={cn(
-                  'absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-500',
+                  'absolute inset-0 bg-linear-to-t from-black/90 via-transparent to-transparent transition-opacity duration-500',
                   active ? 'opacity-100' : 'opacity-0',
                 )}
               />

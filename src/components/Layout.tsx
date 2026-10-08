@@ -1,8 +1,9 @@
 // Moldura do site: faixa de campanha, cabeçalho com busca, conteúdo, rodapé.
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Search, ShoppingBag } from 'lucide-react';
 import { CATEGORIES, COPY, STORE } from '../config';
+import MenuLateral from './MenuLateral';
 import { useCart } from '../lib/cart';
 import { useCatalog } from '../lib/catalog';
 
@@ -129,6 +130,19 @@ const linkClasse = ({ isActive }: { isActive: boolean }) =>
 export default function Layout() {
   const { catalog } = useCatalog();
 
+  // A altura do cabeçalho vira a variável --cabecalho: a barra de filtros
+  // gruda logo abaixo dele, e ele muda de altura entre celular e computador.
+  const cabecalho = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = cabecalho.current;
+    if (!el) return;
+    const medir = () => document.documentElement.style.setProperty('--cabecalho', `${el.offsetHeight}px`);
+    medir();
+    const obs = new ResizeObserver(medir);
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col bg-breu">
       <Marquise />
@@ -140,11 +154,13 @@ export default function Layout() {
         </p>
       ) : null}
 
-      <header className="sticky top-0 z-30 border-b border-fio bg-breu/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-3">
+      <header ref={cabecalho} className="sticky top-0 z-30 border-b border-fio bg-breu/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 md:gap-x-6">
+          {/* Celular: o menu fica na barra lateral (botão de três linhas). */}
+          <MenuLateral />
           <Logo />
 
-          <nav className="order-4 flex w-full gap-5 overflow-x-auto pb-1 md:order-none md:w-auto md:pb-0">
+          <nav className="hidden gap-5 md:flex">
             <NavLink to="/catalogo" className={linkClasse}>
               Catálogo
             </NavLink>

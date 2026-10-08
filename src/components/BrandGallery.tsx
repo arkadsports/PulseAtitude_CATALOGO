@@ -51,6 +51,9 @@ export default function BrandGallery() {
         roupas: KINDS.filter((k) => k.slug !== 'tenis' && produtos.get(b.slug)?.has(k.slug)),
         // Sem foto própria, a carta usa a capa do produto mais novo da marca.
         foto: b.hero ?? (capa ? cover(capa, 'full') : '/sem-foto.svg'),
+        // Painel fechado: a foto de um produto da marca (a peça de propaganda,
+        // estreita, viraria um pedaço de letreiro).
+        fotoFechado: capa ? cover(capa) : undefined,
       };
     // "Outras marcas" é filtro, não marca: não vira carta da galeria.
     }).filter((b) => b.modelos > 0 && b.slug !== 'outras');
@@ -64,9 +67,12 @@ export default function BrandGallery() {
       marcas.map((b) => ({
         id: b.slug,
         title: b.name,
-        category: [...b.tipos, ...b.roupas].map((c) => c.name).join(' · '),
-        meta: `${b.modelos.toLocaleString('pt-BR')} ${b.modelos === 1 ? 'modelo' : 'modelos'} · ${b.tagline.toLowerCase()} ${b.blurb}`,
+        // Curto, para não subir sobre o produto da peça: os tipos de produto
+        // (o tipo de tênis fica nos botões logo abaixo da galeria).
+        category: [...(b.tipos.length ? [KINDS[0]] : []), ...b.roupas].map((c) => c.name).join(' · '),
+        meta: `${b.modelos.toLocaleString('pt-BR')} ${b.modelos === 1 ? 'modelo' : 'modelos'}`,
         src: b.foto,
+        srcFechado: b.fotoFechado,
         alt: `${b.name}: ${b.tagline.toLowerCase()} ${b.blurb}`,
         badge: b.logo ? (
           <img src={b.logo} alt="" aria-hidden className="h-8 w-auto max-w-[96px] object-contain md:h-11 md:max-w-[130px]" />
